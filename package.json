@@ -1,0 +1,20 @@
+{
+  "name": "web-accessibility-crawler",
+  "version": "1.0.0",
+  "main": "check-url.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "scan": "node check-url.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axe-core": "^4.10.3",
+    "fs-extra": "^11.3.0",
+    "puppeteer": "^24.8.0"
+  }
+}
