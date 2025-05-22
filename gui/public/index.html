@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessibility Crawler GUI</title>
+  <style>
+    body { font-family: sans-serif; padding: 1rem; }
+    input { width: 300px; }
+    pre   { background: #f4f4f4; padding: 1rem; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>Accessibility Crawler</h1>
+  <p>
+    URL: <input id="url" placeholder="https://example.com" />
+    <button id="scan">Scan starten</button>
+  </p>
+  <div id="status"></div>
+  <h2>Ergebnis (JSON)</h2>
+  <pre id="output"></pre>
+  <script>
+    document.getElementById("scan").addEventListener("click", async () => {
+      const url = document.getElementById("url").value.trim();
+      const status = document.getElementById("status");
+      const out    = document.getElementById("output");
+      status.textContent = "";
+      out.textContent    = "";
+
+      if (!url) {
+        status.textContent = "Bitte eine URL eingeben.";
+        return;
+      }
+      status.textContent = "🔍 Scanne …";
+      try {
+        const resp = await fetch("/api/scan", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url })
+        });
+        const data = await resp.json();
+        if (data.success) {
+          status.textContent = "✔ Scan abgeschlossen.";
+          out.textContent    = JSON.stringify(data.result, null, 2);
+        } else {
+          status.textContent = "❌ Fehler: " + data.error;
+        }
+      } catch (e) {
+        status.textContent = "🚨 Netzwerk-Fehler: " + e.message;
+      }
+    });
+  </script>
+</body>
+</html>

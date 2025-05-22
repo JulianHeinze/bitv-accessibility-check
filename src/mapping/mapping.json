@@ -1,0 +1,783 @@
+[
+    {
+      "wcag_id": "1.1.1",
+      "en_id": "9.1.1",
+      "name": "Non-text Content",
+      "name_de": "Nicht-Text-Inhalt",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for the situations listed below.\n\nControls, Input: If non-text content is a control or accepts user input, then it has a name that describes its purpose.\nTime-Based Media: If non-text content is time-based media, then text alternatives at least provide descriptive identification of the non-text content.\nTest: If non-text content is a test or exercise that would be invalid if presented in text, then text alternatives at least provide descriptive identification of the non-text content.\nSensory: If non-text content is primarily intended to create a specific sensory experience, then text alternatives at least provide descriptive identification of the non-text content.\nCAPTCHA: If the purpose of non-text content is to confirm that content is being accessed by a person rather than a computer, then text alternatives that identify and describe the purpose of the non-text content are provided.\nDecoration, Formatting, Invisible: If non-text content is pure decoration, is used only for visual formatting, or is not presented to users, then it is implemented in a way that it can be ignored by assistive technology.",
+      "description_de": "Alle Nicht-Text-Inhalte, die dem Benutzer präsentiert werden, haben eine Textalternative, die einem äquivalenten Zweck dient, mit Ausnahme der folgenden Situationen:\n\n• Steuerelemente, Eingabe: Wenn Nicht-Text-Inhalt ein Steuerelement ist oder Benutzereingaben akzeptiert, hat er einen Namen, der seinen Zweck beschreibt.\n• Zeitbasierte Medien: Wenn Nicht-Text-Inhalt zeitbasierte Medien sind, liefern Textalternativen mindestens eine beschreibende Identifizierung des Inhalts.\n• Test: Wenn Nicht-Text-Inhalt ein Test oder eine Übung ist, die als Text ungültig wäre, liefern Textalternativen mindestens eine beschreibende Identifizierung.\n• Sensorisch: Wenn Nicht-Text-Inhalt hauptsächlich eine Sinneserfahrung erzeugen soll, liefern Textalternativen mindestens eine beschreibende Identifizierung.\n• CAPTCHA: Wenn Nicht-Text-Inhalt genutzt wird, um zu bestätigen, dass ein Mensch zugreift, werden Textalternativen bereitgestellt, die Zweck und Funktion beschreiben, sowie alternative CAPTCHA-Formen für unterschiedliche Wahrnehmungsarten.\n• Dekoration, Formatierung, unsichtbar: Wenn Nicht-Text-Inhalt reine Dekoration ist, nur zur visuellen Formatierung dient oder nicht angezeigt wird, ist er so implementiert, dass assistive Technologien ihn ignorieren können."
+    },
+    {
+      "wcag_id": "1.2.1",
+      "en_id": "9.2.1",
+      "name": "Audio-only and Video-only (Prerecorded)",
+      "name_de": "Reine Audio- und Videoinhalte (aufgezeichnet)",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "For prerecorded audio-only and prerecorded video-only media, the following are true, except when the audio or video is a media alternative for text and is clearly labeled as such:\n\n• Prerecorded Audio-only: An alternative for time-based media is provided that presents equivalent information for prerecorded audio-only content.\n• Prerecorded Video-only: Either an alternative for time-based media or an audio track is provided that presents equivalent information for prerecorded video-only content.",
+      "description_de": "Für aufgezeichnete reine Audio- und reine Videomedien gilt, außer wenn sie als Medienalternative für Text dienen und entsprechend gekennzeichnet sind:\n\n• Aufgezeichneter reiner Audioinhalt: Es wird eine Alternative für zeitbasierte Medien bereitgestellt, die äquivalente Informationen liefert.\n• Aufgezeichneter reiner Videoinhalt: Es wird entweder eine Alternative für zeitbasierte Medien oder eine Audiospur bereitgestellt, die äquivalente Informationen liefert."
+    },
+    {
+      "wcag_id": "1.2.2",
+      "en_id": "9.2.2",
+      "name": "Captions (Prerecorded)",
+      "name_de": "Untertitel (aufgezeichnet)",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "Captions are provided for all prerecorded audio content in synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
+      "description_de": "Für alle aufgezeichneten Audioinhalte in synchronisierten Medien werden Untertitel bereitgestellt, außer wenn die Medien als Alternative für Text dienen und entsprechend gekennzeichnet sind."
+    },
+    {
+      "wcag_id": "1.2.3",
+      "en_id": "9.2.3",
+      "name": "Audio Description or Media Alternative (Prerecorded)",
+      "name_de": "Audiodeskription oder Medienalternative (aufgezeichnet)",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.",
+      "description_de": "Für synchronisierte Medien wird eine Alternative für zeitbasierte Medien oder eine Audiodeskription des aufgezeichneten Videoinhalts bereitgestellt, außer wenn die Medien als Alternative für Text dienen und entsprechend gekennzeichnet sind."
+    },
+    {
+      "wcag_id": "1.2.4",
+      "en_id": "9.2.4",
+      "name": "Captions (Live)",
+      "name_de": "Untertitel (Live)",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "Captions are provided for all live audio content in synchronized media.",
+      "description_de": "Für alle Live-Audioinhalte in synchronisierten Medien werden Untertitel bereitgestellt."
+    },
+    {
+      "wcag_id": "1.2.5",
+      "en_id": "9.2.5",
+      "name": "Audio Description (Prerecorded)",
+      "name_de": "Audiodeskription (aufgezeichnet)",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "Audio description is provided for all prerecorded video content in synchronized media.",
+      "description_de": "Für alle aufgezeichneten Videoinhalte in synchronisierten Medien wird eine Audiodeskription bereitgestellt."
+    },
+    {
+      "wcag_id": "1.2.6",
+      "en_id": "9.2.6",
+      "name": "Sign Language (Prerecorded)",
+      "name_de": "Gebärdensprache (aufgezeichnet)",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "Sign language interpretation is provided for all prerecorded audio content in synchronized media.",
+      "description_de": "Für alle aufgezeichneten Audioinhalte in synchronisierten Medien wird eine Übersetzung in die Gebärdensprache bereitgestellt."
+    },
+    {
+      "wcag_id": "1.2.7",
+      "en_id": "9.2.7",
+      "name": "Extended Audio Description (Prerecorded)",
+      "name_de": "Erweiterte Audiodeskription (aufgezeichnet)",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "Where pauses in foreground audio are insufficient to allow audio descriptions to convey the sense of the video, extended audio description is provided for all prerecorded video content in synchronized media.",
+      "description_de": "Wenn Pausen im Vordergrund-Audio nicht ausreichen, um den Videoinhalt verständlich zu beschreiben, wird für alle aufgezeichneten Videoinhalte in synchronisierten Medien eine erweiterte Audiodeskription bereitgestellt."
+    },
+    {
+      "wcag_id": "1.2.8",
+      "en_id": "9.2.8",
+      "name": "Media Alternative (Prerecorded)",
+      "name_de": "Medienalternative (aufgezeichnet)",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "An alternative for time-based media is provided for all prerecorded synchronized media and for all prerecorded video-only media.",
+      "description_de": "Für alle aufgezeichneten synchronisierten Medien und für alle aufgezeichneten reinen Videomedien wird eine Alternative für zeitbasierte Medien bereitgestellt."
+    },
+    {
+      "wcag_id": "1.2.9",
+      "en_id": "9.2.9",
+      "name": "Audio-only (Live)",
+      "name_de": "Reiner Audioinhalt (Live)",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "An alternative for time-based media that presents equivalent information for live audio-only content is provided.",
+      "description_de": "Für live übertragenen reinen Audioinhalt wird eine Alternative für zeitbasierte Medien bereitgestellt, die äquivalente Informationen liefert."
+    },
+    {
+      "wcag_id": "1.3.1",
+      "en_id": "9.3.1",
+      "name": "Info and Relationships",
+      "name_de": "Info und Beziehungen",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+      "description_de": "Informationen, Struktur und Beziehungen, die durch die Darstellung vermittelt werden, können programmgesteuert bestimmt oder als Text bereitgestellt werden."
+    },
+    {
+      "wcag_id": "1.3.2",
+      "en_id": "9.3.2",
+      "name": "Meaningful Sequence",
+      "name_de": "Bedeutungstragende Reihenfolge",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+      "description_de": "Wenn die Darstellungsreihenfolge die Bedeutung beeinflusst, kann die richtige Leseabfolge programmgesteuert bestimmt werden."
+    },
+    {
+      "wcag_id": "1.3.3",
+      "en_id": "9.3.3",
+      "name": "Sensory Characteristics",
+      "name_de": "Sensorische Eigenschaften",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, color, size, visual location, orientation, or sound.",
+      "description_de": "Anleitungen zum Verständnis und zur Bedienung des Inhalts stützen sich nicht ausschließlich auf sensorische Eigenschaften wie Form, Farbe, Größe, visuelle Position, Ausrichtung oder Ton."
+    },
+    {
+      "wcag_id": "1.3.4",
+      "en_id": "9.3.4",
+      "name": "Orientation",
+      "name_de": "Bildschirmausrichtung",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape, unless a specific display orientation is essential.",
+      "description_de": "Die Darstellung und Bedienung von Inhalten ist nicht auf eine einzige Bildschirmausrichtung wie Hoch- oder Querformat beschränkt, es sei denn, sie ist unentbehrlich."
+    },
+    {
+      "wcag_id": "1.3.5",
+      "en_id": "9.3.5",
+      "name": "Identify Input Purpose",
+      "name_de": "Bestimmung des Eingabezwecks",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "The purpose of each input field collecting information about the user can be programmatically determined when the input field serves a purpose identified in the Input Purposes for user interface components section.",
+      "description_de": "Der Zweck jedes Eingabefelds für Benutzerdaten kann programmgesteuert bestimmt werden, wenn er im Abschnitt „Eingabezwecke für Bestandteile der Benutzerschnittstelle“ definiert ist."
+    },
+    {
+      "wcag_id": "1.3.6",
+      "en_id": "9.3.6",
+      "name": "Identify Purpose",
+      "name_de": "Bestimmung des Zwecks",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "In content implemented using markup languages, the purpose of user interface components, icons, and regions can be programmatically determined.",
+      "description_de": "In Inhalten mit Auszeichnungssprachen kann der Zweck von UI-Komponenten, Symbolen und Bereichen programmgesteuert bestimmt werden."
+    },
+    {
+      "wcag_id": "1.4.1",
+      "en_id": "9.4.1",
+      "name": "Use of Color",
+      "name_de": "Benutzung von Farbe",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+      "description_de": "Farbe wird nicht als alleiniges visuelles Mittel zur Informationsvermittlung, Aktionserkennung oder Unterscheidung von Elementen genutzt."
+    },
+    {
+      "wcag_id": "1.4.2",
+      "en_id": "9.4.2",
+      "name": "Audio Control",
+      "name_de": "Audio-Steuerelement",
+      "principle": "Perceivable",
+      "level": "A",
+      "description": "If any audio on a web page plays automatically for more than 3 seconds, a mechanism is available to pause or stop the audio, or to control audio volume independently from the overall system volume level.",
+      "description_de": "Wenn Audio automatisch länger als 3 Sekunden abgespielt wird, gibt es einen Mechanismus zum Pausieren oder Beenden bzw. zur Lautstärkeregelung unabhängig von der Systemlautstärke."
+    },
+    {
+      "wcag_id": "1.4.3",
+      "en_id": "9.4.3",
+      "name": "Contrast (Minimum)",
+      "name_de": "Kontrast (Minimum)",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for large text (3:1), incidental text, and logotypes.",
+      "description_de": "Text und Textbilder haben ein Kontrastverhältnis von mindestens 4,5:1, außer bei großem Text (3:1), nebensächlichem Text und Wortbildmarken."
+    },
+    {
+      "wcag_id": "1.4.4",
+      "en_id": "9.4.4",
+      "name": "Resize Text",
+      "name_de": "Textgröße ändern",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+      "description_de": "Mit Ausnahme von Untertiteln und Textbildern kann Text ohne Assistive Technologie bis zu 200 % vergrößert werden, ohne Inhalt oder Funktionalität zu verlieren."
+    },
+    {
+      "wcag_id": "1.4.5",
+      "en_id": "9.4.5",
+      "name": "Images of Text",
+      "name_de": "Bilder eines Textes",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text except when the image of text is essential or can be customized.",
+      "description_de": "Wenn die genutzten Techniken die visuelle Darstellung ermöglichen, wird Text statt Bilder von Text verwendet, außer das Bild ist unentbehrlich oder visuell anpassbar."
+    },
+    {
+      "wcag_id": "1.4.6",
+      "en_id": "9.4.6",
+      "name": "Contrast (Enhanced)",
+      "name_de": "Kontrast (erhöht)",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "The visual presentation of text and images of text has a contrast ratio of at least 7:1, except for large text (4.5:1), incidental text, and logotypes.",
+      "description_de": "Text und Textbilder haben ein Kontrastverhältnis von mindestens 7:1, außer bei großem Text (4,5:1), nebensächlichem Text und Wortbildmarken."
+    },
+    {
+      "wcag_id": "1.4.7",
+      "en_id": "9.4.7",
+      "name": "Low or No Background Audio",
+      "name_de": "Leiser oder kein Hintergrund-Audioinhalt",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "For prerecorded audio-only content that contains primarily speech, background sounds are either absent, can be turned off, or are at least 20 dB lower than the foreground speech content.",
+      "description_de": "Für aufgezeichneten reinen Audioinhalt mit hauptsächlich Sprache gilt: Hintergrundgeräusche sind nicht vorhanden, abschaltbar oder mindestens 20 dB leiser als die Sprachanteile."
+    },
+    {
+      "wcag_id": "1.4.8",
+      "en_id": "9.4.8",
+      "name": "Visual Presentation",
+      "name_de": "Visuelle Präsentation",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "For the visual presentation of blocks of text, mechanisms are available to select foreground/background colors, limit line length, disable justification, set line spacing, paragraph spacing, and allow 200% text resizing without horizontal scrolling.",
+      "description_de": "Für Textblöcke gibt es Mechanismen, um Vorder-/Hintergrundfarben zu wählen, Zeilenlänge zu begrenzen, Blocksatz zu deaktivieren, Zeilen- und Absatzabstand einzustellen und 200 % Textvergrößerung ohne horizontales Scrollen zu ermöglichen."
+    },
+    {
+      "wcag_id": "1.4.9",
+      "en_id": "9.4.9",
+      "name": "Images of Text (No Exception)",
+      "name_de": "Bilder eines Textes (keine Ausnahme)",
+      "principle": "Perceivable",
+      "level": "AAA",
+      "description": "Images of text are only used for pure decoration or where a particular presentation of text is essential.",
+      "description_de": "Bilder von Text werden nur rein dekorativ oder wenn eine bestimmte Präsentation des Textes unentbehrlich ist, genutzt."
+    },
+    {
+      "wcag_id": "1.4.10",
+      "en_id": "9.4.10",
+      "name": "Reflow",
+      "name_de": "Umfluss (Reflow)",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "Content can be presented without loss of information or functionality and without two-dimensional scrolling for viewport widths of 320 CSS pixels (vertical scrolling) and heights of 256 CSS pixels (horizontal scrolling), unless two-dimensional layout is essential.",
+      "description_de": "Inhalte können dargestellt werden, ohne Informations- oder Funktionsverlust und ohne zweidimensionales Scrollen bei 320 CSS-Pixel Breite (vertikales Scrollen) und 256 CSS-Pixel Höhe (horizontales Scrollen), außer zweidimensionales Layout ist unentbehrlich."
+    },
+    {
+      "wcag_id": "1.4.11",
+      "en_id": "9.4.11",
+      "name": "Non-text Contrast",
+      "name_de": "Nicht-Text-Kontrast",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "Visual information required to identify UI components and graphical objects has a contrast ratio of at least 3:1 against adjacent colors.",
+      "description_de": "Visuelle Informationen zur Identifizierung von UI-Bestandteilen und grafischen Objekten haben ein Kontrastverhältnis von mindestens 3:1 zum umgebenden Farbton."
+    },
+    {
+      "wcag_id": "1.4.12",
+      "en_id": "9.4.12",
+      "name": "Text Spacing",
+      "name_de": "Textabstand",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "No loss of content or functionality occurs by setting line height ≥1.5× font size, paragraph spacing ≥2× font size, letter spacing ≥0.12× font size, and word spacing ≥0.16× font size.",
+      "description_de": "Kein Verlust von Inhalt oder Funktionalität bei Zeilenhöhe ≥1,5× Schriftgröße, Absatzabstand ≥2× Schriftgröße, Buchstabenabstand ≥0,12× Schriftgröße und Wortabstand ≥0,16× Schriftgröße."
+    },
+    {
+      "wcag_id": "1.4.13",
+      "en_id": "9.4.13",
+      "name": "Content on Hover or Focus",
+      "name_de": "Inhalt bei Überfahren mit dem Zeiger oder Tastaturfokus („Hover“ oder „Focus“)",
+      "principle": "Perceivable",
+      "level": "AA",
+      "description": "Additional content triggered by hover or focus is dismissible, hoverable, and remains visible until dismissed or no longer valid.",
+      "description_de": "Zusätzlicher Inhalt bei Hover oder Fokus ist verwerfbar, bleibt beim Überfahren mit dem Zeiger zugänglich und bleibt so lange sichtbar, bis er verworfen oder ungültig ist."
+    },
+    {
+      "wcag_id": "2.1.1",
+      "en_id": "10.1.1",
+      "name": "Keyboard",
+      "name_de": "Tastatur",
+      "principle": "Operable",
+      "level": "A",
+      "description": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+      "description_de": "Alle Funktionen sind über eine Tastaturschnittstelle bedienbar, ohne dass bestimmte Zeitabstände für Tastenanschläge erforderlich sind."
+    },
+    {
+      "wcag_id": "2.1.2",
+      "en_id": "10.1.2",
+      "name": "No Keyboard Trap",
+      "name_de": "Keine Tastaturfalle",
+      "principle": "Operable",
+      "level": "A",
+      "description": "If keyboard focus can be moved to a component, focus can be moved away using only the keyboard, and if more than standard keys are required, the method is documented.",
+      "description_de": "Wenn der Tastaturfokus auf ein Element gelangen kann, lässt er sich auch mit der Tastatur entfernen; bei speziellen Tasten wird die Methode dokumentiert."
+    },
+    {
+      "wcag_id": "2.1.3",
+      "en_id": "10.1.3",
+      "name": "Keyboard (No Exception)",
+      "name_de": "Tastatur (keine Ausnahme)",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+      "description_de": "Alle Funktionen sind über eine Tastaturschnittstelle bedienbar, ohne dass bestimmte Zeitabstände für Tastenanschläge erforderlich sind."
+    },
+    {
+      "wcag_id": "2.1.4",
+      "en_id": "10.1.4",
+      "name": "Character Key Shortcuts",
+      "name_de": "Zeichentastenbefehle",
+      "principle": "Operable",
+      "level": "A",
+      "description": "If a keyboard shortcut uses only printable characters, at least one of the following is true: it can be turned off; remapped to include non-printable keys; or active only on focus.",
+      "description_de": "Wenn ein Tastenkürzel nur druckbare Zeichen nutzt, kann es abgeschaltet, auf nicht-druckbare Tasten umgelegt oder nur bei Fokus aktiviert werden."
+    },
+    {
+      "wcag_id": "2.2.1",
+      "en_id": "10.2.1",
+      "name": "Timing Adjustable",
+      "name_de": "Zeiteinteilung anpassbar",
+      "principle": "Operable",
+      "level": "A",
+      "description": "For each time limit set by the content, users can turn it off, adjust it over a wide range, extend it with warning, unless essential or real-time.",
+      "description_de": "Bei jeder Frist kann der Benutzer sie abschalten, anpassen (mindestens zehnfach verlängern) oder mit Warnung und Verlängerungsmöglichkeit bedienen, außer sie ist unentbehrlich oder Echtzeit."
+    },
+    {
+      "wcag_id": "2.2.2",
+      "en_id": "10.2.2",
+      "name": "Pause, Stop, Hide",
+      "name_de": "Pausieren, beenden, ausblenden",
+      "principle": "Operable",
+      "level": "A",
+      "description": "Moving, blinking, scrolling, or auto-updating information that starts automatically and lasts more than 5 seconds has a mechanism to pause, stop, or hide it.",
+      "description_de": "Sich bewegende, blinkende, scrollende oder automatisch aktualisierende Inhalte, die automatisch beginnen und länger als 5 Sekunden dauern, haben einen Mechanismus zum Pausieren, Beenden oder Ausblenden."
+    },
+    {
+      "wcag_id": "2.2.3",
+      "en_id": "10.2.3",
+      "name": "No Timing",
+      "name_de": "Keine Zeiteinteilung",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "Timing is not essential to the event or activity, except for non-interactive synchronized media and real-time events.",
+      "description_de": "Zeitliche Begrenzungen sind nicht essentiell für ein Ereignis, außer bei nicht-interaktiven synchronisierten Medien und Echtzeit-Ereignissen."
+    },
+    {
+      "wcag_id": "2.2.4",
+      "en_id": "10.2.4",
+      "name": "Interruptions",
+      "name_de": "Unterbrechungen",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "Interruptions can be postponed or suppressed, except those involving emergency.",
+      "description_de": "Unterbrechungen können aufgeschoben oder unterdrückt werden, außer im Notfall."
+    },
+    {
+      "wcag_id": "2.2.5",
+      "en_id": "10.2.5",
+      "name": "Re-authenticating",
+      "name_de": "Erneute Authentifizierung",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "When an authenticated session expires, the user can continue the activity without data loss after re-authenticating.",
+      "description_de": "Nach Ablauf einer authentifizierten Sitzung kann der Benutzer nach erneuter Authentifizierung ohne Datenverlust weitermachen."
+    },
+    {
+      "wcag_id": "2.2.6",
+      "en_id": "10.2.6",
+      "name": "Timeouts",
+      "name_de": "Zeitüberschreitung",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "Users are warned of inactivity that could cause data loss, unless data is preserved for more than 20 hours.",
+      "description_de": "Vor Benutzerinaktivität, die zu Datenverlust führen könnte, wird gewarnt, außer die Daten bleiben länger als 20 Stunden erhalten."
+    },
+    {
+      "wcag_id": "2.3.1",
+      "en_id": "10.3.1",
+      "name": "Three Flashes or Below Threshold",
+      "name_de": "Grenzwert von dreimaligem Blitzen oder weniger",
+      "principle": "Operable",
+      "level": "A",
+      "description": "Web pages do not contain anything that flashes more than three times in any one-second period, or the flash is below the general and red flash thresholds.",
+      "description_de": "Webseiten enthalten nichts, das mehr als dreimal in einer Sekunde blitzt, oder der Blitz liegt unter den allgemeinen und roten Grenzwerten."
+    },
+    {
+      "wcag_id": "2.3.2",
+      "en_id": "10.3.2",
+      "name": "Three Flashes",
+      "name_de": "Drei Blitze",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "Web pages do not contain anything that flashes more than three times in any one-second period.",
+      "description_de": "Webseiten enthalten nichts, das mehr als dreimal in einer Sekunde blitzt."
+    },
+    {
+      "wcag_id": "2.3.3",
+      "en_id": "10.3.3",
+      "name": "Animation from Interactions",
+      "name_de": "Animation durch Interaktionen",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "Motion animation triggered by interaction can be disabled, unless essential to functionality or conveying information.",
+      "description_de": "Animationen, die durch Interaktionen ausgelöst werden, können deaktiviert werden, außer sie sind unentbehrlich."
+    },
+    {
+      "wcag_id": "2.4.1",
+      "en_id": "10.4.1",
+      "name": "Bypass Blocks",
+      "name_de": "Blöcke umgehen",
+      "principle": "Operable",
+      "level": "A",
+      "description": "A mechanism is available to bypass blocks of content that are repeated on multiple pages.",
+      "description_de": "Ein Mechanismus ermöglicht das Umgehen sich wiederholender Inhaltsblöcke."
+    },
+    {
+      "wcag_id": "2.4.2",
+      "en_id": "10.4.2",
+      "name": "Page Titled",
+      "name_de": "Seite mit Titel versehen",
+      "principle": "Operable",
+      "level": "A",
+      "description": "Web pages have titles that describe topic or purpose.",
+      "description_de": "Webseiten haben einen Titel, der Thema oder Zweck beschreibt."
+    },
+    {
+      "wcag_id": "2.4.3",
+      "en_id": "10.4.3",
+      "name": "Focus Order",
+      "name_de": "Fokus-Reihenfolge",
+      "principle": "Operable",
+      "level": "A",
+      "description": "If sequential navigation affects meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+      "description_de": "Wenn die Navigationsreihenfolge Bedeutung oder Bedienung beeinflusst, erhalten fokussierbare Elemente Fokus in einer sinn- und bedienungserhaltenden Reihenfolge."
+    },
+    {
+      "wcag_id": "2.4.4",
+      "en_id": "10.4.4",
+      "name": "Link Purpose (In Context)",
+      "name_de": "Linkzweck (im Kontext)",
+      "principle": "Operable",
+      "level": "A",
+      "description": "The purpose of each link can be determined from the link text alone or with programmatically determined context.",
+      "description_de": "Der Zweck jedes Links ist aus dem Linktext allein oder zusammen mit programmgesteuert bestimmtem Kontext erkennbar."
+    },
+    {
+      "wcag_id": "2.4.5",
+      "en_id": "10.4.5",
+      "name": "Multiple Ways",
+      "name_de": "Verschiedene Methoden",
+      "principle": "Operable",
+      "level": "AA",
+      "description": "More than one way is available to locate a page within a set of pages, except when the page is the result of or step in a process.",
+      "description_de": "Es gibt mehr als eine Methode, um eine Seite innerhalb einer Reihe von Seiten zu finden, außer die Seite ist das Ergebnis oder ein Schritt in einem Prozess."
+    },
+    {
+      "wcag_id": "2.4.6",
+      "en_id": "10.4.6",
+      "name": "Headings and Labels",
+      "name_de": "Überschriften und Beschriftungen (Labels)",
+      "principle": "Operable",
+      "level": "AA",
+      "description": "Headings and labels describe topic or purpose.",
+      "description_de": "Überschriften und Labels beschreiben Thema oder Zweck."
+    },
+    {
+      "wcag_id": "2.4.7",
+      "en_id": "10.4.7",
+      "name": "Focus Visible",
+      "name_de": "Fokus sichtbar",
+      "principle": "Operable",
+      "level": "AA",
+      "description": "Any keyboard-operable UI has a mode where the keyboard focus indicator is visible.",
+      "description_de": "Jede per Tastatur bedienbare UI bietet einen Modus, in dem der Tastaturfokus sichtbar ist."
+    },
+    {
+      "wcag_id": "2.4.8",
+      "en_id": "10.4.8",
+      "name": "Location",
+      "name_de": "Position",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "Information about the user’s location within a set of web pages is available.",
+      "description_de": "Informationen zur Position des Benutzers innerhalb eines Satzes von Webseiten sind verfügbar."
+    },
+    {
+      "wcag_id": "2.4.9",
+      "en_id": "10.4.9",
+      "name": "Link Purpose (Link Only)",
+      "name_de": "Linkzweck (reiner Link)",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "A mechanism is available to allow the purpose of each link to be identified from link text alone.",
+      "description_de": "Ein Mechanismus erlaubt, den Zweck jedes Links allein aus dem Linktext zu erkennen."
+    },
+    {
+      "wcag_id": "2.4.10",
+      "en_id": "10.4.10",
+      "name": "Section Headings",
+      "name_de": "Abschnittsüberschriften",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "Section headings are used to organize the content.",
+      "description_de": "Abschnittsüberschriften werden zur Gliederung des Inhalts verwendet."
+    },
+    {
+      "wcag_id": "2.5.1",
+      "en_id": "10.5.1",
+      "name": "Pointer Gestures",
+      "name_de": "Zeigergesten",
+      "principle": "Operable",
+      "level": "A",
+      "description": "All functionality that uses multipoint or path-based gestures can be operated with a single pointer without a path-based gesture, unless essential.",
+      "description_de": "Funktionalitäten, die Mehrpunkt- oder Pfadgesten nutzen, können per einfachem Zeiger ohne Pfadgesten bedient werden, außer sie sind unentbehrlich."
+    },
+    {
+      "wcag_id": "2.5.2",
+      "en_id": "10.5.2",
+      "name": "Pointer Cancellation",
+      "name_de": "Zeigeraufhebung",
+      "principle": "Operable",
+      "level": "A",
+      "description": "For single-pointer functionality, the down-event is not used to execute the function, or completion is on up-event with abort/undo, or up-event reverses outcome, unless essential.",
+      "description_de": "Bei single-pointer-Funktionalität wird das Down-Event nicht zur Ausführung genutzt, oder die Funktion wird mit dem Up-Event abgeschlossen mit Abbrechen/Rückgängig-Option, außer es ist unentbehrlich."
+    },
+    {
+      "wcag_id": "2.5.3",
+      "en_id": "10.5.3",
+      "name": "Label in Name",
+      "name_de": "Beschriftung (Label) im Namen",
+      "principle": "Operable",
+      "level": "A",
+      "description": "For UI components with labels, the name contains the text that is presented visually.",
+      "description_de": "Bei UI-Komponenten mit Labels enthält der Name den visuell angezeigten Text."
+    },
+    {
+      "wcag_id": "2.5.4",
+      "en_id": "10.5.4",
+      "name": "Motion Actuation",
+      "name_de": "Auslösen durch Bewegung",
+      "principle": "Operable",
+      "level": "A",
+      "description": "Functionality operable by device or user motion can also be operated by UI components, and motion-based actuation can be disabled, unless essential.",
+      "description_de": "Funktionalitäten, die per Geräte- oder Benutzerbewegung bedient werden, können auch über UI-Komponenten gesteuert und Bewegungssteuerung deaktiviert werden, außer sie ist unentbehrlich."
+    },
+    {
+      "wcag_id": "2.5.5",
+      "en_id": "10.5.5",
+      "name": "Target Size",
+      "name_de": "Zielgröße",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "The size of the target for pointer inputs is at least 44 by 44 CSS pixels, except when an equivalent control exists, inline text, user-agent control, or essential.",
+      "description_de": "Die Größe von Zeigerzielen beträgt mindestens 44×44 CSS-Pixel, außer es gibt ein äquivalentes Element, es liegt inline in Text, der UA bestimmt die Größe oder es ist unentbehrlich."
+    },
+    {
+      "wcag_id": "2.5.6",
+      "en_id": "10.5.6",
+      "name": "Concurrent Input Mechanisms",
+      "name_de": "Gleichzeitig verfügbare Eingabemechanismen",
+      "principle": "Operable",
+      "level": "AAA",
+      "description": "Web content does not restrict use of input modalities available on a platform except where essential, required for security, or to respect user settings.",
+      "description_de": "Webinhalte schränken die Nutzung von auf der Plattform verfügbaren Eingabemodalitäten nicht ein, außer sie sind unentbehrlich, sicherheitsrelevant oder dienen Benutzereinstellungen."
+    },
+    {
+      "wcag_id": "3.1.1",
+      "en_id": "11.1.1",
+      "name": "Language of Page",
+      "name_de": "Sprache der Seite",
+      "principle": "Understandable",
+      "level": "A",
+      "description": "The default human language of each web page can be programmatically determined.",
+      "description_de": "Die voreingestellte menschliche Sprache jeder Webseite kann programmgesteuert bestimmt werden."
+    },
+    {
+      "wcag_id": "3.1.2",
+      "en_id": "11.1.2",
+      "name": "Language of Parts",
+      "name_de": "Sprache von Teilen",
+      "principle": "Understandable",
+      "level": "AA",
+      "description": "The human language of each passage or phrase in the content can be programmatically determined, except for proper names, technical terms, words of indeterminate language, and words or phrases that have become part of the vernacular.",
+      "description_de": "Die menschliche Sprache jedes Abschnitts oder Satzes kann programmgesteuert bestimmt werden, außer bei Eigennamen, Fachbegriffen, unklarer Sprache und Worten, die Teil der Alltagssprache sind."
+    },
+    {
+      "wcag_id": "3.1.3",
+      "en_id": "11.1.3",
+      "name": "Unusual Words",
+      "name_de": "Ungewöhnliche Wörter",
+      "principle": "Understandable",
+      "level": "AAA",
+      "description": "A mechanism is available for identifying specific definitions of words or phrases used in an unusual or restricted way.",
+      "description_de": "Ein Mechanismus ermöglicht das Erkennen von Wörtern oder Wendungen, die in ungewöhnlicher oder enger Bedeutung verwendet werden."
+    },
+    {
+      "wcag_id": "3.1.4",
+      "en_id": "11.1.4",
+      "name": "Abbreviations",
+      "name_de": "Abkürzungen",
+      "principle": "Understandable",
+      "level": "AAA",
+      "description": "A mechanism for identifying the expanded form or meaning of abbreviations is available.",
+      "description_de": "Ein Mechanismus ermöglicht das Erkennen der ausgeschriebenen Form oder Bedeutung von Abkürzungen."
+    },
+    {
+      "wcag_id": "3.1.5",
+      "en_id": "11.1.5",
+      "name": "Reading Level",
+      "name_de": "Leseniveau",
+      "principle": "Understandable",
+      "level": "AAA",
+      "description": "When text requires reading ability more advanced than lower secondary level, supplemental content or a simpler version is available.",
+      "description_de": "Wenn Texte Lese­fähigkeiten über dem Niveau der niedrigen Sekundarschule voraussetzen, gibt es ergänzende Inhalte oder eine einfachere Version."
+    },
+    {
+      "wcag_id": "3.1.6",
+      "en_id": "11.1.6",
+      "name": "Pronunciation",
+      "name_de": "Aussprache",
+      "principle": "Understandable",
+      "level": "AAA",
+      "description": "A mechanism is available for identifying specific pronunciation of words where ambiguity could arise without it.",
+      "description_de": "Ein Mechanismus ermöglicht das Erkennen der korrekten Aussprache von Wörtern, wenn sonst Mehrdeutigkeit bestünde."
+    },
+    {
+      "wcag_id": "3.2.1",
+      "en_id": "11.2.1",
+      "name": "On Focus",
+      "name_de": "Bei Fokus",
+      "principle": "Understandable",
+      "level": "A",
+      "description": "When any UI component receives focus, it does not initiate a change of context.",
+      "description_de": "Wenn ein UI-Element den Fokus erhält, löst das keine Kontextänderung aus."
+    },
+    {
+      "wcag_id": "3.2.2",
+      "en_id": "11.2.2",
+      "name": "On Input",
+      "name_de": "Bei Eingabe",
+      "principle": "Understandable",
+      "level": "A",
+      "description": "Changing the setting of any UI component does not automatically cause a change of context unless the user has been advised of the behavior.",
+      "description_de": "Das Ändern einer UI-Einstellung verursacht keine automatische Kontextänderung, außer der Benutzer wurde vorher darüber informiert."
+    },
+    {
+      "wcag_id": "3.2.3",
+      "en_id": "11.2.3",
+      "name": "Consistent Navigation",
+      "name_de": "Konsistente Navigation",
+      "principle": "Understandable",
+      "level": "AA",
+      "description": "Navigational mechanisms repeated on multiple pages occur in the same relative order each time.",
+      "description_de": "Wiederkehrende Navigationsmechanismen erscheinen in der gleichen relativen Reihenfolge."
+    },
+    {
+      "wcag_id": "3.2.4",
+      "en_id": "11.2.4",
+      "name": "Consistent Identification",
+      "name_de": "Konsistente Erkennung",
+      "principle": "Understandable",
+      "level": "AA",
+      "description": "Components with the same functionality within a set of pages are identified consistently.",
+      "description_de": "Elemente mit gleicher Funktionalität werden auf allen Seiten konsistent erkannt."
+    },
+    {
+      "wcag_id": "3.2.5",
+      "en_id": "11.2.5",
+      "name": "Change on Request",
+      "name_de": "Änderung auf Anfrage",
+      "principle": "Understandable",
+      "level": "AAA",
+      "description": "Changes of context are initiated only by user request or a mechanism is available to turn them off.",
+      "description_de": "Kontextänderungen erfolgen nur auf Benutzeranfrage oder können abgeschaltet werden."
+    },
+    {
+      "wcag_id": "3.3.1",
+      "en_id": "11.3.1",
+      "name": "Error Identification",
+      "name_de": "Fehlererkennung",
+      "principle": "Understandable",
+      "level": "A",
+      "description": "If an input error is detected, the item in error is identified and the error described to the user in text.",
+      "description_de": "Wenn ein Eingabefehler erkannt wird, wird der fehlerhafte Bestandteil benannt und der Fehler textlich beschrieben."
+    },
+    {
+      "wcag_id": "3.3.2",
+      "en_id": "11.3.2",
+      "name": "Labels or Instructions",
+      "name_de": "Beschriftungen (Labels) oder Anweisungen",
+      "principle": "Understandable",
+      "level": "A",
+      "description": "Labels or instructions are provided when content requires user input.",
+      "description_de": "Wenn Benutzereingabe erforderlich ist, werden Labels oder Anweisungen bereitgestellt."
+    },
+    {
+      "wcag_id": "3.3.3",
+      "en_id": "11.3.3",
+      "name": "Error Suggestion",
+      "name_de": "Fehlerempfehlung",
+      "principle": "Understandable",
+      "level": "AA",
+      "description": "If an input error is detected and suggestions for correction are known, then the suggestions are provided to the user.",
+      "description_de": "Wenn ein Eingabefehler erkannt wird und Korrekturhinweise vorhanden sind, werden sie dem Benutzer angezeigt."
+    },
+    {
+      "wcag_id": "3.3.4",
+      "en_id": "11.3.4",
+      "name": "Error Prevention (Legal, Financial, Data)",
+      "name_de": "Fehlervermeidung (rechtliche, finanzielle, Daten)",
+      "principle": "Understandable",
+      "level": "AA",
+      "description": "For pages that cause legal commitments, financial transactions, or data changes, at least one of: reversible, checked, or confirmed submissions.",
+      "description_de": "Bei rechtlich, finanziell oder datenrelevanten Seiten gilt mindestens eine der Maßnahmen: reversibel, geprüft oder bestätigt."
+    },
+    {
+      "wcag_id": "3.3.5",
+      "en_id": "11.3.5",
+      "name": "Help",
+      "name_de": "Hilfe",
+      "principle": "Understandable",
+      "level": "AAA",
+      "description": "Context-sensitive help is available.",
+      "description_de": "Es steht eine kontextsensitive Hilfe zur Verfügung."
+    },
+    {
+      "wcag_id": "3.3.6",
+      "en_id": "11.3.6",
+      "name": "Error Prevention (All)",
+      "name_de": "Fehlervermeidung (alle)",
+      "principle": "Understandable",
+      "level": "AAA",
+      "description": "For pages requiring user submission, at least one of: reversible, checked, or confirmed submissions.",
+      "description_de": "Bei Seiten mit Benutzerübermittlungen gilt mindestens eine Maßnahme: reversibel, geprüft oder bestätigt."
+    },
+    {
+      "wcag_id": "4.1.1",
+      "en_id": "12.1.1",
+      "name": "Parsing",
+      "name_de": "Syntaxanalyse",
+      "principle": "Robust",
+      "level": "A",
+      "description": "In content implemented using markup languages, elements have complete start and end tags, are nested correctly, have no duplicate attributes, and any IDs are unique.",
+      "description_de": "In Markup-Sprachen haben Elemente vollständige Start- und Endtags, sind korrekt verschachtelt, enthalten keine doppelten Attribute und alle IDs sind einzigartig."
+    },
+    {
+      "wcag_id": "4.1.2",
+      "en_id": "12.1.2",
+      "name": "Name, Role, Value",
+      "name_de": "Name, Rolle, Wert",
+      "principle": "Robust",
+      "level": "A",
+      "description": "For all UI components, the name and role can be programmatically determined; states, properties, and values can be set programmatically; and changes are available to assistive technologies.",
+      "description_de": "Für alle UI-Komponenten sind Name und Rolle programmgesteuert bestimmbar; Zustände, Eigenschaften und Werte können programmgesteuert gesetzt werden; Änderungen stehen assistiven Technologien zur Verfügung."
+    },
+    {
+      "wcag_id": "4.1.3",
+      "en_id": "12.1.3",
+      "name": "Status Messages",
+      "name_de": "Statusmeldungen",
+      "principle": "Robust",
+      "level": "AA",
+      "description": "In content implemented using markup languages, status messages can be programmatically determined through role or properties without receiving focus.",
+      "description_de": "In Markup-Inhalten lassen sich Statusmeldungen durch Rollen oder Eigenschaften programmgesteuert ermitteln, ohne Fokus zu benötigen."
+    }
+  ]
+  

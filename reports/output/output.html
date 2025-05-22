@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessibility-Report</title>
+  <style>
+    body { font-family: sans-serif; margin: 1rem; }
+    h1 { text-align: center; margin-bottom: 2rem; }
+    section { margin-bottom: 3rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem; font-size: 0.9rem; }
+    th { background: #f0f0f0; }
+    .critical { background: #f8d7da; }
+    .serious  { background: #fff3cd; }
+    .moderate { background: #d1ecf1; }
+    .pass     { background: #e6ffed; }
+    .fail     { background: #ffe6e6; }
+    .manual   { background: #fff8e6; }
+  </style>
+</head>
+<body>
+  <h1>Accessibility-Report</h1>
+
+    <section>
+      <h2>https://www.lage.de</h2>
+
+        <p>
+          Summary:
+          <span class="critical">kritisch: 0</span>,
+          <span class="serious">erheblich: 2</span>,
+          <span class="moderate">moderat: 4</span>
+        </p>
+
+          <table>
+            <thead>
+              <tr><th>Impact</th><th>Beschreibung</th><th>Elemente</th></tr>
+            </thead>
+            <tbody>
+                <tr class="serious">
+                  <td>serious</td>
+                  <td>Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</td>
+                  <td><div><a data-cc-if="options.link" class="cc_more_info" href="/Datenschutz">Mehr Infos</a></div><div><p class="title">Serviceportal</p></div><div><p class="title">Innenstadt-<br>entwicklung</p></div><div><p class="title">Wochenmarkt</p></div><div><span class="more">weiter <i class="far fa-angle-right"></i></span></div><div><span class="more">weiter <i class="far fa-angle-right"></i></span></div><div><span class="more">weiter <i class="far fa-angle-right"></i></span></div><div><span class="more">weiter <i class="far fa-angle-right"></i></span></div><div><a target="_self" href="/Rathaus-Politik/Dienstleistungen/Mitteilungen/Der-B%C3%BCrgermeister-informiert/" class="csslink_intern">alle Informationen anzeigen</a></div><div><a target="_self" href="/Rathaus-Politik/Dienstleistungen/Mitteilungen/Kurzmitteilungen/" class="csslink_intern">alle Mitteilungen anzeigen</a></div></td>
+                </tr>
+                <tr class="moderate">
+                  <td>moderate</td>
+                  <td>Ensure the banner landmark is at top level</td>
+                  <td><div><div class="logo" role="banner">
+                <a href="/" title="zur Startseite"><img src="/layout/lage/media/logo_stadt-lage2019.png?__ts=1565165390" title="Logo Stadt Lage" alt="Logo Stadt Lage"></a>
+            </div></div></td>
+                </tr>
+                <tr class="moderate">
+                  <td>moderate</td>
+                  <td>Ensure the document has at most one banner landmark</td>
+                  <td><div><header></div></td>
+                </tr>
+                <tr class="moderate">
+                  <td>moderate</td>
+                  <td>Ensure landmarks are unique</td>
+                  <td><div><header></div></td>
+                </tr>
+                <tr class="serious">
+                  <td>serious</td>
+                  <td>Ensure links are distinguished from surrounding text in a way that does not rely on color</td>
+                  <td><div><a data-cc-if="options.link" class="cc_more_info" href="/Datenschutz">Mehr Infos</a></div></td>
+                </tr>
+                <tr class="moderate">
+                  <td>moderate</td>
+                  <td>Ensure all page content is contained by landmarks</td>
+                  <td><div><div class="cc_banner-wrapper "></div><div><div class="sprungziel"></div><div><div class="titelbild-slider loaded"></div><div><div class="schnellnavigation"></div><div><a class="highslide-loading" title="Abbrechen" href="javascript:;" style="position: absolute; top: -9999px; opacity: 0.75; z-index: 1;">Bild wird geladen...</a></div></td>
+                </tr>
+            </tbody>
+          </table>
+
+        <h3>WCAG-Checkliste</h3>
+<table>
+  <thead>
+    <tr><th>SC</th><th>Name</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+      <tr class="manual">
+        <td>1.1.1</td>
+        <td>Nicht-Text-Inhalt</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.1</td>
+        <td>Reine Audio- und Videoinhalte (aufgezeichnet)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.2</td>
+        <td>Untertitel (aufgezeichnet)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.3</td>
+        <td>Audiodeskription oder Medienalternative (aufgezeichnet)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.4</td>
+        <td>Untertitel (Live)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.5</td>
+        <td>Audiodeskription (aufgezeichnet)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.6</td>
+        <td>Gebärdensprache (aufgezeichnet)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.7</td>
+        <td>Erweiterte Audiodeskription (aufgezeichnet)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.8</td>
+        <td>Medienalternative (aufgezeichnet)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.2.9</td>
+        <td>Reiner Audioinhalt (Live)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.3.1</td>
+        <td>Info und Beziehungen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.3.2</td>
+        <td>Bedeutungstragende Reihenfolge</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.3.3</td>
+        <td>Sensorische Eigenschaften</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.3.4</td>
+        <td>Bildschirmausrichtung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.3.5</td>
+        <td>Bestimmung des Eingabezwecks</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.3.6</td>
+        <td>Bestimmung des Zwecks</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.1</td>
+        <td>Benutzung von Farbe</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.2</td>
+        <td>Audio-Steuerelement</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.3</td>
+        <td>Kontrast (Minimum)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.4</td>
+        <td>Textgröße ändern</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.5</td>
+        <td>Bilder eines Textes</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.6</td>
+        <td>Kontrast (erhöht)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.7</td>
+        <td>Leiser oder kein Hintergrund-Audioinhalt</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.8</td>
+        <td>Visuelle Präsentation</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.9</td>
+        <td>Bilder eines Textes (keine Ausnahme)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.10</td>
+        <td>Umfluss (Reflow)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.11</td>
+        <td>Nicht-Text-Kontrast</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.12</td>
+        <td>Textabstand</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>1.4.13</td>
+        <td>Inhalt bei Überfahren mit dem Zeiger oder Tastaturfokus („Hover“ oder „Focus“)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.1.1</td>
+        <td>Tastatur</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.1.2</td>
+        <td>Keine Tastaturfalle</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.1.3</td>
+        <td>Tastatur (keine Ausnahme)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.1.4</td>
+        <td>Zeichentastenbefehle</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.2.1</td>
+        <td>Zeiteinteilung anpassbar</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.2.2</td>
+        <td>Pausieren, beenden, ausblenden</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.2.3</td>
+        <td>Keine Zeiteinteilung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.2.4</td>
+        <td>Unterbrechungen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.2.5</td>
+        <td>Erneute Authentifizierung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.2.6</td>
+        <td>Zeitüberschreitung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.3.1</td>
+        <td>Grenzwert von dreimaligem Blitzen oder weniger</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.3.2</td>
+        <td>Drei Blitze</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.3.3</td>
+        <td>Animation durch Interaktionen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.1</td>
+        <td>Blöcke umgehen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.2</td>
+        <td>Seite mit Titel versehen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.3</td>
+        <td>Fokus-Reihenfolge</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.4</td>
+        <td>Linkzweck (im Kontext)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.5</td>
+        <td>Verschiedene Methoden</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.6</td>
+        <td>Überschriften und Beschriftungen (Labels)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.7</td>
+        <td>Fokus sichtbar</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.8</td>
+        <td>Position</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.9</td>
+        <td>Linkzweck (reiner Link)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.4.10</td>
+        <td>Abschnittsüberschriften</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.5.1</td>
+        <td>Zeigergesten</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.5.2</td>
+        <td>Zeigeraufhebung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.5.3</td>
+        <td>Beschriftung (Label) im Namen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.5.4</td>
+        <td>Auslösen durch Bewegung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.5.5</td>
+        <td>Zielgröße</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>2.5.6</td>
+        <td>Gleichzeitig verfügbare Eingabemechanismen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.1.1</td>
+        <td>Sprache der Seite</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.1.2</td>
+        <td>Sprache von Teilen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.1.3</td>
+        <td>Ungewöhnliche Wörter</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.1.4</td>
+        <td>Abkürzungen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.1.5</td>
+        <td>Leseniveau</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.1.6</td>
+        <td>Aussprache</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.2.1</td>
+        <td>Bei Fokus</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.2.2</td>
+        <td>Bei Eingabe</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.2.3</td>
+        <td>Konsistente Navigation</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.2.4</td>
+        <td>Konsistente Erkennung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.2.5</td>
+        <td>Änderung auf Anfrage</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.3.1</td>
+        <td>Fehlererkennung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.3.2</td>
+        <td>Beschriftungen (Labels) oder Anweisungen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.3.3</td>
+        <td>Fehlerempfehlung</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.3.4</td>
+        <td>Fehlervermeidung (rechtliche, finanzielle, Daten)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.3.5</td>
+        <td>Hilfe</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>3.3.6</td>
+        <td>Fehlervermeidung (alle)</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>4.1.1</td>
+        <td>Syntaxanalyse</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>4.1.2</td>
+        <td>Name, Rolle, Wert</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+      <tr class="manual">
+        <td>4.1.3</td>
+        <td>Statusmeldungen</td>
+        <td>🔶 manuelle Prüfung erforderlich</td>
+      </tr>
+  </tbody>
+</table>
+
+
+    </section>
+
+</body>
+</html>
