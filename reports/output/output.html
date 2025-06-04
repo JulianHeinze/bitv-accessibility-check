@@ -1,477 +1,1323 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Accessibility-Report</title>
-  <style>
-    body { font-family: sans-serif; margin: 1rem; }
-    h1 { text-align: center; margin-bottom: 2rem; }
-    section { margin-bottom: 3rem; }
-    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-    th, td { border: 1px solid #ccc; padding: 0.5rem; font-size: 0.9rem; }
-    th { background: #f0f0f0; }
-    .critical { background: #f8d7da; }
-    .serious  { background: #fff3cd; }
-    .moderate { background: #d1ecf1; }
-    .pass     { background: #e6ffed; }
-    .fail     { background: #ffe6e6; }
-    .manual   { background: #fff8e6; }
-  </style>
-</head>
-<body>
-  <h1>Accessibility-Report</h1>
+  <head>
+    <meta charset="utf-8" />
+    <title>Accessibility‑Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root{
+        --pass:#176617;--fail:#a80000;--manual:#a06a00;
+        --bg-pass:#e9f8ea;--bg-fail:#fbeaea;--bg-manual:#fff7e6;
+      }
+      *{box-sizing:border-box;}
+      body{margin:0;padding:1rem 2rem;font-family:system-ui,sans-serif;color:#222;}
+      h1{font-size:1.9rem;margin:0 0 1.5rem;}
+      h2{font-size:1.5rem;margin:2.5rem 0 1rem;border-bottom:2px solid #ccc;padding-bottom:.25rem;}
+      table{width:100%;border-collapse:collapse;margin:0 0 2rem;}
+      th,td{border:1px solid #ddd;padding:.5rem;vertical-align:top;font-size:.875rem;}
+      th{background:#f6f7f8;text-align:left;font-weight:600;}
+      code{font-family:ui-monospace,monospace;font-size:.8rem;background:#f3f4f6;padding:.1rem .25rem;border-radius:4px;}
+      tr.pass{background:var(--bg-pass);}tr.fail{background:var(--bg-fail);}tr.manual{background:var(--bg-manual);} 
+      tr.pass td:last-child{color:var(--pass);}tr.fail td:last-child{color:var(--fail);}tr.manual td:last-child{color:var(--manual);} 
+      details{margin:0;}
+      details>summary{cursor:pointer;list-style:none;position:relative;font-weight:600;}
+      details>summary::-webkit-details-marker{display:none;}
+      details>summary:after{content:"▸";position:absolute;left:-1rem;transition:transform .2s ease;}
+      details[open]>summary:after{transform:rotate(90deg);}      
+      ul{margin:.25rem 0 .5rem 1rem;padding-left:1.25rem;}
+    </style>
+  </head>
+  <body>
+    <h1>Accessibility‑Report</h1>
+    <p>Generiert: 4.6.2025, 14:42:08</p>
 
-    <section>
       <h2>https://www.lage.de</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:10rem">WCAG (Level)</th>
+            <th style="width:14rem">Titel</th>
+            <th style="width:22rem">Beschreibung</th>
+            <th style="width:26rem">Prüfregel / Verstöße</th>
+            <th style="width:8rem">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="pass">
+              <td><strong>1.1.1</strong><br>Level A</td>
+              <td>Nicht-Text-Inhalt</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Alle Nicht-Text-Inhalte, die dem Benutzer präsentiert werden, haben eine Textalternative, die einem äquivalenten Zweck dient, mit Ausnahme der folgenden Situationen:
 
-        <p>
-          Summary:
-          <span class="critical">kritisch: 0</span>,
-          <span class="serious">erheblich: 2</span>,
-          <span class="moderate">moderat: 4</span>
-        </p>
+• Steuerelemente, Eingabe: Wenn Nicht-Text-Inhalt ein Steuerelement ist oder Benutzereingaben akzeptiert, hat er einen Namen, der seinen Zweck beschreibt.
+• Zeitbasierte Medien: Wenn Nicht-Text-Inhalt zeitbasierte Medien sind, liefern Textalternativen mindestens eine beschreibende Identifizierung des Inhalts.
+• Test: Wenn Nicht-Text-Inhalt ein Test oder eine Übung ist, die als Text ungültig wäre, liefern Textalternativen mindestens eine beschreibende Identifizierung.
+• Sensorisch: Wenn Nicht-Text-Inhalt hauptsächlich eine Sinneserfahrung erzeugen soll, liefern Textalternativen mindestens eine beschreibende Identifizierung.
+• CAPTCHA: Wenn Nicht-Text-Inhalt genutzt wird, um zu bestätigen, dass ein Mensch zugreift, werden Textalternativen bereitgestellt, die Zweck und Funktion beschreiben, sowie alternative CAPTCHA-Formen für unterschiedliche Wahrnehmungsarten.
+• Dekoration, Formatierung, unsichtbar: Wenn Nicht-Text-Inhalt reine Dekoration ist, nur zur visuellen Formatierung dient oder nicht angezeigt wird, ist er so implementiert, dass assistive Technologien ihn ignorieren können.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>✓ erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.1</strong><br>Level A</td>
+              <td>Reine Audio- und Videoinhalte (aufgezeichnet)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für aufgezeichnete reine Audio- und reine Videomedien gilt, außer wenn sie als Medienalternative für Text dienen und entsprechend gekennzeichnet sind:
 
-          <table>
-            <thead>
-              <tr><th>Impact</th><th>Beschreibung</th><th>Elemente</th></tr>
-            </thead>
-            <tbody>
-                <tr class="serious">
-                  <td>serious</td>
-                  <td>Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</td>
-                  <td><div><a data-cc-if="options.link" class="cc_more_info" href="/Datenschutz">Mehr Infos</a></div><div><p class="title">Serviceportal</p></div><div><p class="title">Innenstadt-<br>entwicklung</p></div><div><p class="title">Wochenmarkt</p></div><div><span class="more">weiter <i class="far fa-angle-right"></i></span></div><div><span class="more">weiter <i class="far fa-angle-right"></i></span></div><div><span class="more">weiter <i class="far fa-angle-right"></i></span></div><div><span class="more">weiter <i class="far fa-angle-right"></i></span></div><div><a target="_self" href="/Rathaus-Politik/Dienstleistungen/Mitteilungen/Der-B%C3%BCrgermeister-informiert/" class="csslink_intern">alle Informationen anzeigen</a></div><div><a target="_self" href="/Rathaus-Politik/Dienstleistungen/Mitteilungen/Kurzmitteilungen/" class="csslink_intern">alle Mitteilungen anzeigen</a></div></td>
-                </tr>
-                <tr class="moderate">
-                  <td>moderate</td>
-                  <td>Ensure the banner landmark is at top level</td>
-                  <td><div><div class="logo" role="banner">
-                <a href="/" title="zur Startseite"><img src="/layout/lage/media/logo_stadt-lage2019.png?__ts=1565165390" title="Logo Stadt Lage" alt="Logo Stadt Lage"></a>
-            </div></div></td>
-                </tr>
-                <tr class="moderate">
-                  <td>moderate</td>
-                  <td>Ensure the document has at most one banner landmark</td>
-                  <td><div><header></div></td>
-                </tr>
-                <tr class="moderate">
-                  <td>moderate</td>
-                  <td>Ensure landmarks are unique</td>
-                  <td><div><header></div></td>
-                </tr>
-                <tr class="serious">
-                  <td>serious</td>
-                  <td>Ensure links are distinguished from surrounding text in a way that does not rely on color</td>
-                  <td><div><a data-cc-if="options.link" class="cc_more_info" href="/Datenschutz">Mehr Infos</a></div></td>
-                </tr>
-                <tr class="moderate">
-                  <td>moderate</td>
-                  <td>Ensure all page content is contained by landmarks</td>
-                  <td><div><div class="cc_banner-wrapper "></div><div><div class="sprungziel"></div><div><div class="titelbild-slider loaded"></div><div><div class="schnellnavigation"></div><div><a class="highslide-loading" title="Abbrechen" href="javascript:;" style="position: absolute; top: -9999px; opacity: 0.75; z-index: 1;">Bild wird geladen...</a></div></td>
-                </tr>
-            </tbody>
-          </table>
-
-        <h3>WCAG-Checkliste</h3>
-<table>
-  <thead>
-    <tr><th>SC</th><th>Name</th><th>Status</th></tr>
-  </thead>
-  <tbody>
-      <tr class="manual">
-        <td>1.1.1</td>
-        <td>Nicht-Text-Inhalt</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.1</td>
-        <td>Reine Audio- und Videoinhalte (aufgezeichnet)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.2</td>
-        <td>Untertitel (aufgezeichnet)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.3</td>
-        <td>Audiodeskription oder Medienalternative (aufgezeichnet)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.4</td>
-        <td>Untertitel (Live)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.5</td>
-        <td>Audiodeskription (aufgezeichnet)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.6</td>
-        <td>Gebärdensprache (aufgezeichnet)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.7</td>
-        <td>Erweiterte Audiodeskription (aufgezeichnet)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.8</td>
-        <td>Medienalternative (aufgezeichnet)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.2.9</td>
-        <td>Reiner Audioinhalt (Live)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.3.1</td>
-        <td>Info und Beziehungen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.3.2</td>
-        <td>Bedeutungstragende Reihenfolge</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.3.3</td>
-        <td>Sensorische Eigenschaften</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.3.4</td>
-        <td>Bildschirmausrichtung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.3.5</td>
-        <td>Bestimmung des Eingabezwecks</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.3.6</td>
-        <td>Bestimmung des Zwecks</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.1</td>
-        <td>Benutzung von Farbe</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.2</td>
-        <td>Audio-Steuerelement</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.3</td>
-        <td>Kontrast (Minimum)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.4</td>
-        <td>Textgröße ändern</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.5</td>
-        <td>Bilder eines Textes</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.6</td>
-        <td>Kontrast (erhöht)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.7</td>
-        <td>Leiser oder kein Hintergrund-Audioinhalt</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.8</td>
-        <td>Visuelle Präsentation</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.9</td>
-        <td>Bilder eines Textes (keine Ausnahme)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.10</td>
-        <td>Umfluss (Reflow)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.11</td>
-        <td>Nicht-Text-Kontrast</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.12</td>
-        <td>Textabstand</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>1.4.13</td>
-        <td>Inhalt bei Überfahren mit dem Zeiger oder Tastaturfokus („Hover“ oder „Focus“)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.1.1</td>
-        <td>Tastatur</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.1.2</td>
-        <td>Keine Tastaturfalle</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.1.3</td>
-        <td>Tastatur (keine Ausnahme)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.1.4</td>
-        <td>Zeichentastenbefehle</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.2.1</td>
-        <td>Zeiteinteilung anpassbar</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.2.2</td>
-        <td>Pausieren, beenden, ausblenden</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.2.3</td>
-        <td>Keine Zeiteinteilung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.2.4</td>
-        <td>Unterbrechungen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.2.5</td>
-        <td>Erneute Authentifizierung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.2.6</td>
-        <td>Zeitüberschreitung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.3.1</td>
-        <td>Grenzwert von dreimaligem Blitzen oder weniger</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.3.2</td>
-        <td>Drei Blitze</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.3.3</td>
-        <td>Animation durch Interaktionen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.1</td>
-        <td>Blöcke umgehen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.2</td>
-        <td>Seite mit Titel versehen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.3</td>
-        <td>Fokus-Reihenfolge</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.4</td>
-        <td>Linkzweck (im Kontext)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.5</td>
-        <td>Verschiedene Methoden</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.6</td>
-        <td>Überschriften und Beschriftungen (Labels)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.7</td>
-        <td>Fokus sichtbar</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.8</td>
-        <td>Position</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.9</td>
-        <td>Linkzweck (reiner Link)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.4.10</td>
-        <td>Abschnittsüberschriften</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.5.1</td>
-        <td>Zeigergesten</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.5.2</td>
-        <td>Zeigeraufhebung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.5.3</td>
-        <td>Beschriftung (Label) im Namen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.5.4</td>
-        <td>Auslösen durch Bewegung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.5.5</td>
-        <td>Zielgröße</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>2.5.6</td>
-        <td>Gleichzeitig verfügbare Eingabemechanismen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.1.1</td>
-        <td>Sprache der Seite</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.1.2</td>
-        <td>Sprache von Teilen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.1.3</td>
-        <td>Ungewöhnliche Wörter</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.1.4</td>
-        <td>Abkürzungen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.1.5</td>
-        <td>Leseniveau</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.1.6</td>
-        <td>Aussprache</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.2.1</td>
-        <td>Bei Fokus</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.2.2</td>
-        <td>Bei Eingabe</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.2.3</td>
-        <td>Konsistente Navigation</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.2.4</td>
-        <td>Konsistente Erkennung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.2.5</td>
-        <td>Änderung auf Anfrage</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.3.1</td>
-        <td>Fehlererkennung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.3.2</td>
-        <td>Beschriftungen (Labels) oder Anweisungen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.3.3</td>
-        <td>Fehlerempfehlung</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.3.4</td>
-        <td>Fehlervermeidung (rechtliche, finanzielle, Daten)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.3.5</td>
-        <td>Hilfe</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>3.3.6</td>
-        <td>Fehlervermeidung (alle)</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>4.1.1</td>
-        <td>Syntaxanalyse</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>4.1.2</td>
-        <td>Name, Rolle, Wert</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-      <tr class="manual">
-        <td>4.1.3</td>
-        <td>Statusmeldungen</td>
-        <td>🔶 manuelle Prüfung erforderlich</td>
-      </tr>
-  </tbody>
-</table>
-
-
-    </section>
-
-</body>
+• Aufgezeichneter reiner Audioinhalt: Es wird eine Alternative für zeitbasierte Medien bereitgestellt, die äquivalente Informationen liefert.
+• Aufgezeichneter reiner Videoinhalt: Es wird entweder eine Alternative für zeitbasierte Medien oder eine Audiospur bereitgestellt, die äquivalente Informationen liefert.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.2</strong><br>Level A</td>
+              <td>Untertitel (aufgezeichnet)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für alle aufgezeichneten Audioinhalte in synchronisierten Medien werden Untertitel bereitgestellt, außer wenn die Medien als Alternative für Text dienen und entsprechend gekennzeichnet sind.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.3</strong><br>Level A</td>
+              <td>Audiodeskription oder Medienalternative (aufgezeichnet)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für synchronisierte Medien wird eine Alternative für zeitbasierte Medien oder eine Audiodeskription des aufgezeichneten Videoinhalts bereitgestellt, außer wenn die Medien als Alternative für Text dienen und entsprechend gekennzeichnet sind.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.4</strong><br>Level AA</td>
+              <td>Untertitel (Live)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für alle Live-Audioinhalte in synchronisierten Medien werden Untertitel bereitgestellt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.5</strong><br>Level AA</td>
+              <td>Audiodeskription (aufgezeichnet)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für alle aufgezeichneten Videoinhalte in synchronisierten Medien wird eine Audiodeskription bereitgestellt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.6</strong><br>Level AAA</td>
+              <td>Gebärdensprache (aufgezeichnet)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für alle aufgezeichneten Audioinhalte in synchronisierten Medien wird eine Übersetzung in die Gebärdensprache bereitgestellt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.7</strong><br>Level AAA</td>
+              <td>Erweiterte Audiodeskription (aufgezeichnet)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn Pausen im Vordergrund-Audio nicht ausreichen, um den Videoinhalt verständlich zu beschreiben, wird für alle aufgezeichneten Videoinhalte in synchronisierten Medien eine erweiterte Audiodeskription bereitgestellt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.8</strong><br>Level AAA</td>
+              <td>Medienalternative (aufgezeichnet)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für alle aufgezeichneten synchronisierten Medien und für alle aufgezeichneten reinen Videomedien wird eine Alternative für zeitbasierte Medien bereitgestellt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.2.9</strong><br>Level AAA</td>
+              <td>Reiner Audioinhalt (Live)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für live übertragenen reinen Audioinhalt wird eine Alternative für zeitbasierte Medien bereitgestellt, die äquivalente Informationen liefert.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="pass">
+              <td><strong>1.3.1</strong><br>Level A</td>
+              <td>Info und Beziehungen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Informationen, Struktur und Beziehungen, die durch die Darstellung vermittelt werden, können programmgesteuert bestimmt oder als Text bereitgestellt werden.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>✓ erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.3.2</strong><br>Level A</td>
+              <td>Bedeutungstragende Reihenfolge</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn die Darstellungsreihenfolge die Bedeutung beeinflusst, kann die richtige Leseabfolge programmgesteuert bestimmt werden.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.3.3</strong><br>Level A</td>
+              <td>Sensorische Eigenschaften</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Anleitungen zum Verständnis und zur Bedienung des Inhalts stützen sich nicht ausschließlich auf sensorische Eigenschaften wie Form, Farbe, Größe, visuelle Position, Ausrichtung oder Ton.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.3.4</strong><br>Level AA</td>
+              <td>Bildschirmausrichtung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Die Darstellung und Bedienung von Inhalten ist nicht auf eine einzige Bildschirmausrichtung wie Hoch- oder Querformat beschränkt, es sei denn, sie ist unentbehrlich.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.3.5</strong><br>Level AA</td>
+              <td>Bestimmung des Eingabezwecks</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Der Zweck jedes Eingabefelds für Benutzerdaten kann programmgesteuert bestimmt werden, wenn er im Abschnitt „Eingabezwecke für Bestandteile der Benutzerschnittstelle“ definiert ist.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.3.6</strong><br>Level AAA</td>
+              <td>Bestimmung des Zwecks</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>In Inhalten mit Auszeichnungssprachen kann der Zweck von UI-Komponenten, Symbolen und Bereichen programmgesteuert bestimmt werden.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="fail">
+              <td><strong>1.4.1</strong><br>Level A</td>
+              <td>Benutzung von Farbe</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Farbe wird nicht als alleiniges visuelles Mittel zur Informationsvermittlung, Aktionserkennung oder Unterscheidung von Elementen genutzt.</p>
+                  </details>
+                
+              </td>
+              <td>
+                  <details>
+                    <summary>2 Verstöße anzeigen</summary>
+                      <strong>Axe:</strong>
+                      <ul>
+                          <li><code>.cc_more_info</code> – Fix any of the following:
+  The link has insufficient color contrast of 2.17:1 with the surrounding text. (Minimum contrast is 3:1, link text: #e6a400, surrounding text: #ffffff)
+  The link has no styling (such as underline) to distinguish it from the surrounding text</li>
+                      </ul>
+                      <strong>IBM:</strong>
+                      <ul>
+                          <li><code>/html[1]/head[1]/link[17]</code> – Verify color is not used as the only visual means of conveying information</li>
+                      </ul>
+                  </details>
+                
+              </td>
+              <td>✗ nicht erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.2</strong><br>Level A</td>
+              <td>Audio-Steuerelement</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn Audio automatisch länger als 3 Sekunden abgespielt wird, gibt es einen Mechanismus zum Pausieren oder Beenden bzw. zur Lautstärkeregelung unabhängig von der Systemlautstärke.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="fail">
+              <td><strong>1.4.3</strong><br>Level AA</td>
+              <td>Kontrast (Minimum)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Text und Textbilder haben ein Kontrastverhältnis von mindestens 4,5:1, außer bei großem Text (3:1), nebensächlichem Text und Wortbildmarken.</p>
+                  </details>
+                
+              </td>
+              <td>
+                  <details>
+                    <summary>31 Verstöße anzeigen</summary>
+                      <strong>Axe:</strong>
+                      <ul>
+                          <li><code>.cc_more_info</code> – Fix any of the following:
+  Element has insufficient color contrast of 2.45 (foreground color: #e6a400, background color: #646c74, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>.flex-col-6.cards:nth-child(4) &gt; a[title&#x3D;&quot;Externer Link&quot;][target&#x3D;&quot;_blank&quot;] &gt; .caption &gt; .title</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.05 (foreground color: #6991b9, background color: #f4f6f8, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>.flex-col-6.cards:nth-child(5) &gt; a[title&#x3D;&quot;Externer Link&quot;][target&#x3D;&quot;_blank&quot;] &gt; .caption &gt; .title</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.05 (foreground color: #6991b9, background color: #f4f6f8, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>a[target&#x3D;&quot;_top&quot;][href$&#x3D;&quot;Wochenmarkt/&quot;] &gt; .caption &gt; .title</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.05 (foreground color: #6991b9, background color: #f4f6f8, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>a[href$&#x3D;&quot;Bauen-Wirtschaft/&quot;] &gt; .wmore.caption &gt; .more</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.3 (foreground color: #ffffff, background color: #6991b9, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>.flex-col-4.cards:nth-child(2) &gt; a &gt; .wmore.caption &gt; .more</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.3 (foreground color: #ffffff, background color: #6991b9, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>.flex-col-4.cards:nth-child(3) &gt; a &gt; .wmore.caption &gt; .more</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.3 (foreground color: #ffffff, background color: #6991b9, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>.flex-col-4.cards:nth-child(4) &gt; a &gt; .wmore.caption &gt; .more</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.3 (foreground color: #ffffff, background color: #6991b9, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>.column-2:nth-child(1) &gt; div &gt; .btn &gt; .csslink_intern[target&#x3D;&quot;_self&quot;]</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.3 (foreground color: #ffffff, background color: #6991b9, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                          <li><code>.column-2:nth-child(2) &gt; div &gt; .btn &gt; .csslink_intern[target&#x3D;&quot;_self&quot;]</code> – Fix any of the following:
+  Element has insufficient color contrast of 3.3 (foreground color: #ffffff, background color: #6991b9, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+                      </ul>
+                      <strong>IBM:</strong>
+                      <ul>
+                          <li><code>/html[1]/body[1]/div[1]/div[1]/p[1]/a[1]</code> – Text contrast of 2.46 with its background is less than the WCAG AA minimum requirements for text of size 17px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[1]/ul[1]/li[1]/a[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[1]/ul[1]/li[2]/a[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[1]/ul[1]/li[3]/a[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[1]/ul[1]/li[4]/a[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[1]/ul[1]/li[5]/a[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[1]/ul[1]/li[2]/small[1]</code> – Verify the contrast ratio of the text against the lightest and the darkest colors of the background meets the WCAG AA minimum requirements for text of size 12.8px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[1]/ul[1]/li[4]/small[1]</code> – Verify the contrast ratio of the text against the lightest and the darkest colors of the background meets the WCAG AA minimum requirements for text of size 12.8px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]</code> – Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/div[2]/p[1]</code> – Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/div[2]/p[1]</code> – Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/div[2]/p[1]</code> – Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]/div[2]/p[1]</code> – Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/a[1]/div[2]/p[1]</code> – Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/div[2]/span[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/div[2]/span[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/div[2]/span[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/div[2]/span[1]</code> – Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 400</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]</code> – Text contrast of 2.17 with its background is less than the WCAG AA minimum requirements for text of size 35.992px and weight of 600</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[2]</code> – Text contrast of 2.17 with its background is less than the WCAG AA minimum requirements for text of size 22px and weight of 300</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/span[1]</code> – Text contrast of 2.17 with its background is less than the WCAG AA minimum requirements for text of size 17.996px and weight of 600</li>
+                      </ul>
+                  </details>
+                
+              </td>
+              <td>✗ nicht erfüllt</td>
+            </tr>
+            <tr class="pass">
+              <td><strong>1.4.4</strong><br>Level AA</td>
+              <td>Textgröße ändern</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Mit Ausnahme von Untertiteln und Textbildern kann Text ohne Assistive Technologie bis zu 200 % vergrößert werden, ohne Inhalt oder Funktionalität zu verlieren.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>✓ erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.5</strong><br>Level AA</td>
+              <td>Bilder eines Textes</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn die genutzten Techniken die visuelle Darstellung ermöglichen, wird Text statt Bilder von Text verwendet, außer das Bild ist unentbehrlich oder visuell anpassbar.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.6</strong><br>Level AAA</td>
+              <td>Kontrast (erhöht)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Text und Textbilder haben ein Kontrastverhältnis von mindestens 7:1, außer bei großem Text (4,5:1), nebensächlichem Text und Wortbildmarken.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.7</strong><br>Level AAA</td>
+              <td>Leiser oder kein Hintergrund-Audioinhalt</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für aufgezeichneten reinen Audioinhalt mit hauptsächlich Sprache gilt: Hintergrundgeräusche sind nicht vorhanden, abschaltbar oder mindestens 20 dB leiser als die Sprachanteile.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.8</strong><br>Level AAA</td>
+              <td>Visuelle Präsentation</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für Textblöcke gibt es Mechanismen, um Vorder-/Hintergrundfarben zu wählen, Zeilenlänge zu begrenzen, Blocksatz zu deaktivieren, Zeilen- und Absatzabstand einzustellen und 200 % Textvergrößerung ohne horizontales Scrollen zu ermöglichen.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.9</strong><br>Level AAA</td>
+              <td>Bilder eines Textes (keine Ausnahme)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Bilder von Text werden nur rein dekorativ oder wenn eine bestimmte Präsentation des Textes unentbehrlich ist, genutzt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.10</strong><br>Level AA</td>
+              <td>Umfluss (Reflow)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Inhalte können dargestellt werden, ohne Informations- oder Funktionsverlust und ohne zweidimensionales Scrollen bei 320 CSS-Pixel Breite (vertikales Scrollen) und 256 CSS-Pixel Höhe (horizontales Scrollen), außer zweidimensionales Layout ist unentbehrlich.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.11</strong><br>Level AA</td>
+              <td>Nicht-Text-Kontrast</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Visuelle Informationen zur Identifizierung von UI-Bestandteilen und grafischen Objekten haben ein Kontrastverhältnis von mindestens 3:1 zum umgebenden Farbton.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="pass">
+              <td><strong>1.4.12</strong><br>Level AA</td>
+              <td>Textabstand</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Kein Verlust von Inhalt oder Funktionalität bei Zeilenhöhe ≥1,5× Schriftgröße, Absatzabstand ≥2× Schriftgröße, Buchstabenabstand ≥0,12× Schriftgröße und Wortabstand ≥0,16× Schriftgröße.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>✓ erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>1.4.13</strong><br>Level AA</td>
+              <td>Inhalt bei Überfahren mit dem Zeiger oder Tastaturfokus („Hover“ oder „Focus“)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Zusätzlicher Inhalt bei Hover oder Fokus ist verwerfbar, bleibt beim Überfahren mit dem Zeiger zugänglich und bleibt so lange sichtbar, bis er verworfen oder ungültig ist.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.1.1</strong><br>Level A</td>
+              <td>Tastatur</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Alle Funktionen sind über eine Tastaturschnittstelle bedienbar, ohne dass bestimmte Zeitabstände für Tastenanschläge erforderlich sind.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.1.2</strong><br>Level A</td>
+              <td>Keine Tastaturfalle</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn der Tastaturfokus auf ein Element gelangen kann, lässt er sich auch mit der Tastatur entfernen; bei speziellen Tasten wird die Methode dokumentiert.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.1.3</strong><br>Level AAA</td>
+              <td>Tastatur (keine Ausnahme)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Alle Funktionen sind über eine Tastaturschnittstelle bedienbar, ohne dass bestimmte Zeitabstände für Tastenanschläge erforderlich sind.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.1.4</strong><br>Level A</td>
+              <td>Zeichentastenbefehle</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn ein Tastenkürzel nur druckbare Zeichen nutzt, kann es abgeschaltet, auf nicht-druckbare Tasten umgelegt oder nur bei Fokus aktiviert werden.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.2.1</strong><br>Level A</td>
+              <td>Zeiteinteilung anpassbar</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Bei jeder Frist kann der Benutzer sie abschalten, anpassen (mindestens zehnfach verlängern) oder mit Warnung und Verlängerungsmöglichkeit bedienen, außer sie ist unentbehrlich oder Echtzeit.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.2.2</strong><br>Level A</td>
+              <td>Pausieren, beenden, ausblenden</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Sich bewegende, blinkende, scrollende oder automatisch aktualisierende Inhalte, die automatisch beginnen und länger als 5 Sekunden dauern, haben einen Mechanismus zum Pausieren, Beenden oder Ausblenden.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.2.3</strong><br>Level AAA</td>
+              <td>Keine Zeiteinteilung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Zeitliche Begrenzungen sind nicht essentiell für ein Ereignis, außer bei nicht-interaktiven synchronisierten Medien und Echtzeit-Ereignissen.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.2.4</strong><br>Level AAA</td>
+              <td>Unterbrechungen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Unterbrechungen können aufgeschoben oder unterdrückt werden, außer im Notfall.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.2.5</strong><br>Level AAA</td>
+              <td>Erneute Authentifizierung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Nach Ablauf einer authentifizierten Sitzung kann der Benutzer nach erneuter Authentifizierung ohne Datenverlust weitermachen.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.2.6</strong><br>Level AAA</td>
+              <td>Zeitüberschreitung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Vor Benutzerinaktivität, die zu Datenverlust führen könnte, wird gewarnt, außer die Daten bleiben länger als 20 Stunden erhalten.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.3.1</strong><br>Level A</td>
+              <td>Grenzwert von dreimaligem Blitzen oder weniger</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Webseiten enthalten nichts, das mehr als dreimal in einer Sekunde blitzt, oder der Blitz liegt unter den allgemeinen und roten Grenzwerten.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.3.2</strong><br>Level AAA</td>
+              <td>Drei Blitze</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Webseiten enthalten nichts, das mehr als dreimal in einer Sekunde blitzt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.3.3</strong><br>Level AAA</td>
+              <td>Animation durch Interaktionen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Animationen, die durch Interaktionen ausgelöst werden, können deaktiviert werden, außer sie sind unentbehrlich.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="fail">
+              <td><strong>2.4.1</strong><br>Level A</td>
+              <td>Blöcke umgehen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Ein Mechanismus ermöglicht das Umgehen sich wiederholender Inhaltsblöcke.</p>
+                  </details>
+                
+              </td>
+              <td>
+                  <details>
+                    <summary>15 Verstöße anzeigen</summary>
+                      <strong>IBM:</strong>
+                      <ul>
+                          <li><code>/html[1]/body[1]/div[1]/div[1]/a[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[1]/div[1]/p[1]/a[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[1]/ul[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/header[1]</code> – Multiple elements with &quot;banner&quot; role do not have unique labels</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/div[1]</code> – Multiple elements with &quot;banner&quot; role do not have unique labels</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[1]/ul[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/a[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[2]/a[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[3]/a[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[4]/a[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[5]/a[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[2]/ul[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[3]/ul[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/div[3]/div[1]/a[1]</code> – Content is not within a landmark element</li>
+                          <li><code>/html[1]/body[1]/div[4]/a[1]</code> – Content is not within a landmark element</li>
+                      </ul>
+                  </details>
+                
+              </td>
+              <td>✗ nicht erfüllt</td>
+            </tr>
+            <tr class="pass">
+              <td><strong>2.4.2</strong><br>Level A</td>
+              <td>Seite mit Titel versehen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Webseiten haben einen Titel, der Thema oder Zweck beschreibt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>✓ erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.4.3</strong><br>Level A</td>
+              <td>Fokus-Reihenfolge</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn die Navigationsreihenfolge Bedeutung oder Bedienung beeinflusst, erhalten fokussierbare Elemente Fokus in einer sinn- und bedienungserhaltenden Reihenfolge.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="pass">
+              <td><strong>2.4.4</strong><br>Level A</td>
+              <td>Linkzweck (im Kontext)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Der Zweck jedes Links ist aus dem Linktext allein oder zusammen mit programmgesteuert bestimmtem Kontext erkennbar.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>✓ erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.4.5</strong><br>Level AA</td>
+              <td>Verschiedene Methoden</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Es gibt mehr als eine Methode, um eine Seite innerhalb einer Reihe von Seiten zu finden, außer die Seite ist das Ergebnis oder ein Schritt in einem Prozess.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.4.6</strong><br>Level AA</td>
+              <td>Überschriften und Beschriftungen (Labels)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Überschriften und Labels beschreiben Thema oder Zweck.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="fail">
+              <td><strong>2.4.7</strong><br>Level AA</td>
+              <td>Fokus sichtbar</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Jede per Tastatur bedienbare UI bietet einen Modus, in dem der Tastaturfokus sichtbar ist.</p>
+                  </details>
+                
+              </td>
+              <td>
+                  <details>
+                    <summary>4 Verstöße anzeigen</summary>
+                      <strong>IBM:</strong>
+                      <ul>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/p[1]/a[1]</code> – Check the keyboard focus indicator is visible when using CSS declaration for &#x27;border&#x27; or &#x27;outline&#x27;</li>
+                          <li><code>/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/p[1]/a[1]</code> – Check the keyboard focus indicator is visible when using CSS declaration for &#x27;border&#x27; or &#x27;outline&#x27;</li>
+                          <li><code>/html[1]/body[1]/div[4]/a[1]</code> – Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus</li>
+                          <li><code>/html[1]/body[1]/div[4]/a[1]</code> – Check the keyboard focus indicator is visible when using CSS declaration for &#x27;border&#x27; or &#x27;outline&#x27;</li>
+                      </ul>
+                  </details>
+                
+              </td>
+              <td>✗ nicht erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.4.8</strong><br>Level AAA</td>
+              <td>Position</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Informationen zur Position des Benutzers innerhalb eines Satzes von Webseiten sind verfügbar.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.4.9</strong><br>Level AAA</td>
+              <td>Linkzweck (reiner Link)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Ein Mechanismus erlaubt, den Zweck jedes Links allein aus dem Linktext zu erkennen.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.4.10</strong><br>Level AAA</td>
+              <td>Abschnittsüberschriften</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Abschnittsüberschriften werden zur Gliederung des Inhalts verwendet.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.5.1</strong><br>Level A</td>
+              <td>Zeigergesten</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Funktionalitäten, die Mehrpunkt- oder Pfadgesten nutzen, können per einfachem Zeiger ohne Pfadgesten bedient werden, außer sie sind unentbehrlich.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.5.2</strong><br>Level A</td>
+              <td>Zeigeraufhebung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Bei single-pointer-Funktionalität wird das Down-Event nicht zur Ausführung genutzt, oder die Funktion wird mit dem Up-Event abgeschlossen mit Abbrechen/Rückgängig-Option, außer es ist unentbehrlich.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.5.3</strong><br>Level A</td>
+              <td>Beschriftung (Label) im Namen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Bei UI-Komponenten mit Labels enthält der Name den visuell angezeigten Text.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.5.4</strong><br>Level A</td>
+              <td>Auslösen durch Bewegung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Funktionalitäten, die per Geräte- oder Benutzerbewegung bedient werden, können auch über UI-Komponenten gesteuert und Bewegungssteuerung deaktiviert werden, außer sie ist unentbehrlich.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.5.5</strong><br>Level AAA</td>
+              <td>Zielgröße</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Die Größe von Zeigerzielen beträgt mindestens 44×44 CSS-Pixel, außer es gibt ein äquivalentes Element, es liegt inline in Text, der UA bestimmt die Größe oder es ist unentbehrlich.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>2.5.6</strong><br>Level AAA</td>
+              <td>Gleichzeitig verfügbare Eingabemechanismen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Webinhalte schränken die Nutzung von auf der Plattform verfügbaren Eingabemodalitäten nicht ein, außer sie sind unentbehrlich, sicherheitsrelevant oder dienen Benutzereinstellungen.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="pass">
+              <td><strong>3.1.1</strong><br>Level A</td>
+              <td>Sprache der Seite</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Die voreingestellte menschliche Sprache jeder Webseite kann programmgesteuert bestimmt werden.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>✓ erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.1.2</strong><br>Level AA</td>
+              <td>Sprache von Teilen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Die menschliche Sprache jedes Abschnitts oder Satzes kann programmgesteuert bestimmt werden, außer bei Eigennamen, Fachbegriffen, unklarer Sprache und Worten, die Teil der Alltagssprache sind.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.1.3</strong><br>Level AAA</td>
+              <td>Ungewöhnliche Wörter</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Ein Mechanismus ermöglicht das Erkennen von Wörtern oder Wendungen, die in ungewöhnlicher oder enger Bedeutung verwendet werden.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.1.4</strong><br>Level AAA</td>
+              <td>Abkürzungen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Ein Mechanismus ermöglicht das Erkennen der ausgeschriebenen Form oder Bedeutung von Abkürzungen.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.1.5</strong><br>Level AAA</td>
+              <td>Leseniveau</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn Texte Lese­fähigkeiten über dem Niveau der niedrigen Sekundarschule voraussetzen, gibt es ergänzende Inhalte oder eine einfachere Version.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.1.6</strong><br>Level AAA</td>
+              <td>Aussprache</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Ein Mechanismus ermöglicht das Erkennen der korrekten Aussprache von Wörtern, wenn sonst Mehrdeutigkeit bestünde.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.2.1</strong><br>Level A</td>
+              <td>Bei Fokus</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn ein UI-Element den Fokus erhält, löst das keine Kontextänderung aus.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.2.2</strong><br>Level A</td>
+              <td>Bei Eingabe</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Das Ändern einer UI-Einstellung verursacht keine automatische Kontextänderung, außer der Benutzer wurde vorher darüber informiert.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.2.3</strong><br>Level AA</td>
+              <td>Konsistente Navigation</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wiederkehrende Navigationsmechanismen erscheinen in der gleichen relativen Reihenfolge.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.2.4</strong><br>Level AA</td>
+              <td>Konsistente Erkennung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Elemente mit gleicher Funktionalität werden auf allen Seiten konsistent erkannt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.2.5</strong><br>Level AAA</td>
+              <td>Änderung auf Anfrage</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Kontextänderungen erfolgen nur auf Benutzeranfrage oder können abgeschaltet werden.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.3.1</strong><br>Level A</td>
+              <td>Fehlererkennung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn ein Eingabefehler erkannt wird, wird der fehlerhafte Bestandteil benannt und der Fehler textlich beschrieben.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.3.2</strong><br>Level A</td>
+              <td>Beschriftungen (Labels) oder Anweisungen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn Benutzereingabe erforderlich ist, werden Labels oder Anweisungen bereitgestellt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.3.3</strong><br>Level AA</td>
+              <td>Fehlerempfehlung</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Wenn ein Eingabefehler erkannt wird und Korrekturhinweise vorhanden sind, werden sie dem Benutzer angezeigt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.3.4</strong><br>Level AA</td>
+              <td>Fehlervermeidung (rechtliche, finanzielle, Daten)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Bei rechtlich, finanziell oder datenrelevanten Seiten gilt mindestens eine der Maßnahmen: reversibel, geprüft oder bestätigt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.3.5</strong><br>Level AAA</td>
+              <td>Hilfe</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Es steht eine kontextsensitive Hilfe zur Verfügung.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>3.3.6</strong><br>Level AAA</td>
+              <td>Fehlervermeidung (alle)</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Bei Seiten mit Benutzerübermittlungen gilt mindestens eine Maßnahme: reversibel, geprüft oder bestätigt.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>4.1.1</strong><br>Level A</td>
+              <td>Syntaxanalyse</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>In Markup-Sprachen haben Elemente vollständige Start- und Endtags, sind korrekt verschachtelt, enthalten keine doppelten Attribute und alle IDs sind einzigartig.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+            <tr class="pass">
+              <td><strong>4.1.2</strong><br>Level A</td>
+              <td>Name, Rolle, Wert</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>Für alle UI-Komponenten sind Name und Rolle programmgesteuert bestimmbar; Zustände, Eigenschaften und Werte können programmgesteuert gesetzt werden; Änderungen stehen assistiven Technologien zur Verfügung.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>✓ erfüllt</td>
+            </tr>
+            <tr class="manual">
+              <td><strong>4.1.3</strong><br>Level AA</td>
+              <td>Statusmeldungen</td>
+              <td>
+                  <details>
+                    <summary>Beschreibung anzeigen</summary>
+                    <p>In Markup-Inhalten lassen sich Statusmeldungen durch Rollen oder Eigenschaften programmgesteuert ermitteln, ohne Fokus zu benötigen.</p>
+                  </details>
+                
+              </td>
+              <td>
+–
+              </td>
+              <td>⚠️ manuell prüfen</td>
+            </tr>
+        </tbody>
+      </table>
+  </body>
 </html>

@@ -1,100 +1,87 @@
 #!/usr/bin/env node
+// -----------------------------------------------------------------------------
+// Kommandozeilen-Interface für den Accessibility-Crawler
+// -----------------------------------------------------------------------------
 
-// src/cli.js
-
-const path = require("path");
-const fs = require("fs-extra");
-const yargs = require("yargs");
+const path   = require("path");
+const fs     = require("fs-extra");
+const yargs  = require("yargs");
 const { hideBin } = require("yargs/helpers");
 
-const { loadSitemap } = require("./crawler/sitemapLoader");
-const { runAxeScan } = require("./scanner/axeScan");
+const { loadSitemap }    = require("./crawler/sitemapLoader");
+const { runAxeScan }     = require("./scanner/axeScan");
+const { runIbmScan }     = require("./scanner/ibmcheck");
 const { generateReport } = require("./report/reportGenerator");
-const { thresholds, concurrency: defaultConcurrency } = require("./config/settings");
+const { concurrency: defaultConcurrency } = require("./config/settings");
 
 async function main() {
   const argv = yargs(hideBin(process.argv))
-    .usage("Usage: $0 scan [options]")
-    .option("u", {
-      alias: "url",
-      type: "string",
-      describe: "Single URL to scan",
-    })
-    .option("s", {
-      alias: "sitemap",
-      type: "string",
-      describe: "URL of sitemap.xml to load multiple URLs",
-    })
-    .option("o", {
-      alias: "output",
-      type: "string",
-      default: "./data/results.json",
-      describe: "Output path for raw JSON results",
-    })
-    .option("r", {
-      alias: "report",
-      type: "string",
-      default: "./reports/output/output.html",
-      describe: "Path for the generated HTML report",
-    })
-    .option("c", {
-      alias: "concurrency",
-      type: "number",
-      default: defaultConcurrency,
-      describe: "Number of parallel Puppeteer instances",
-    })
-    .help()
-    .alias("help", "h")
-    .argv;
+    .usage("Usage: $0 --url <URL> [opts]  |  $0 --sitemap <URL>")
+    .option("url",        { alias: "u", type: "string", describe: "Single URL to scan" })
+    .option("sitemap",    { alias: "s", type: "string", describe: "URL of sitemap.xml" })
 
-  // URLs sammeln
-  let urls = [];
-  if (argv.url) {
-    urls.push(argv.url);
-  } else if (argv.sitemap) {
-    console.log(`🕸  Lade Sitemap: ${argv.sitemap}`);
-    urls = await loadSitemap(argv.sitemap);
-  } else {
-    console.error("⚠️  Bitte mindestens --url oder --sitemap angeben.");
-    process.exit(1);
-  }
+    .option("output",     { alias: "o", type: "string",
+                            default: "./data/resultsraw.json",
+                            describe: "Output path for raw JSON" })
+    .option("report",     { alias: "r", type: "string",
+                            default: "./reports/output/output.html",
+                            describe: "HTML report path" })
+    .option("template",   { alias: "t", type: "string",
+                            default: "./reports/templates/bitv-report-template.html",
+                            describe: "Handlebars template" })
 
+    .option("mapping",    { alias: "m", type: "string",
+                            default: path.join(__dirname, "mapping", "rule_to_wcag.json"),
+                            describe: "Rule→WCAG mapping JSON" })
+    .option("criteria",   { alias: "k", type: "string",
+                            default: path.join(__dirname, "mapping", "mapping.json"),
+                            describe: "WCAG criteria metadata JSON" })
+
+    .option("concurrency",{ alias: "c", type: "number",
+                            default: defaultConcurrency,
+                            describe: "Parallel browser instances" })
+
+    .check((a) => {
+      if (!a.url && !a.sitemap) throw new Error("Bitte --url oder --sitemap angeben.");
+      return true;
+    })
+    .help("h").alias("h", "help").argv;
+
+  /* ---------- URLs sammeln ---------- */
+  const urls = argv.url ? [argv.url] : await loadSitemap(argv.sitemap);
   console.log(`🔍  Scanne ${urls.length} URLs (parallel: ${argv.concurrency})`);
 
-  // Batch-Scan mit Concurrency-Limit
+  /* ---------- Scans ausführen ---------- */
   const results = [];
-  const limit = argv.concurrency;
-  for (let i = 0; i < urls.length; i += limit) {
-    const batch = urls.slice(i, i + limit);
-    const batchResults = await Promise.all(
-      batch.map(async (u) => {
-        try {
-          const res = await runAxeScan(u);
-          return { url: u, result: res };
-        } catch (err) {
-          console.error(`❌ Fehler beim Scannen von ${u}:`, err.message);
-          return { url: u, error: err.message };
-        }
-      })
-    );
+  for (let i = 0; i < urls.length; i += argv.concurrency) {
+    const batch = urls.slice(i, i + argv.concurrency);
+    const batchResults = await Promise.all(batch.map(async (u) => {
+      const settled = await Promise.allSettled([runAxeScan(u), runIbmScan(u)]);
+      const [axeRes, ibmRes] = settled.map((r) =>
+        r.status === "fulfilled"
+          ? { ok: true, data: r.value }
+          : { ok: false, error: r.reason?.message || String(r.reason) }
+      );
+      return { url: u, results: { axe: axeRes, ibm: ibmRes } };
+    }));
     results.push(...batchResults);
   }
 
-  // Rohdaten speichern
   await fs.outputJson(argv.output, results, { spaces: 2 });
   console.log(`✔  Rohdaten gespeichert: ${argv.output}`);
 
-  // HTML-Report erzeugen
+  /* ---------- Report generieren ---------- */
   console.log("📄  Erzeuge HTML-Report …");
   await generateReport(results, {
-    templatePath: path.join(__dirname, "../reports/templates/bitv-report-template.html"),
-    outputPath: argv.report,
-    thresholds,
+    templatePath: path.resolve(argv.template),
+    outputPath:   path.resolve(argv.report),
+    mappingPath:  path.resolve(argv.mapping),
+    criteriaPath: path.resolve(argv.criteria),   // ← WCAG-Metadaten
   });
   console.log(`✔  Report gespeichert: ${argv.report}`);
 }
 
 main().catch((err) => {
-  console.error("🛑 Unerwarteter Fehler:", err);
+  console.error("🛑  Unerwarteter Fehler:", err);
   process.exit(1);
 });

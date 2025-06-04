@@ -1,0 +1,627 @@
+{
+  "svg-img-alt": [
+    "1.1.1"
+  ],
+  "role-img-alt": [
+    "1.1.1"
+  ],
+  "object-alt": [
+    "1.1.1"
+  ],
+  "input-image-alt": [
+    "1.1.1",
+    "4.1.2"
+  ],
+  "image-alt": [
+    "1.1.1"
+  ],
+  "aria-progressbar-name": [
+    "1.1.1"
+  ],
+  "aria-meter-name": [
+    "1.1.1"
+  ],
+  "applet_alt_exists": [
+    "1.1.1"
+  ],
+  "applet_alt_exists_duplicate_code": [
+    "1.1.1"
+  ],
+  "applet_alt_exists_no_inner": [
+    "1.1.1"
+  ],
+  "img_alt_redundant_same_link": [
+    "1.1.1"
+  ],
+  "img_alt_redundant_prev_link": [
+    "1.1.1"
+  ],
+  "img_alt_redundant_next_link": [
+    "1.1.1"
+  ],
+  "img_alt_valid_blank": [
+    "1.1.1"
+  ],
+  "img_alt_valid_missing": [
+    "1.1.1"
+  ],
+  "img_alt_valid_no_alt_or_title": [
+    "1.1.1"
+  ],
+  "area_alt_exists": [
+    "1.1.1"
+  ],
+  "imagebutton_alt_exists": [
+    "1.1.1"
+  ],
+  "imagemap_alt_exists": [
+    "1.1.1"
+  ],
+  "img_alt_decorative": [
+    "1.1.1"
+  ],
+  "img_alt_null": [
+    "1.1.1"
+  ],
+  "object_text_exists": [
+    "1.1.1"
+  ],
+  "svg_graphics_labelled": [
+    "1.1.1"
+  ],
+  "img_alt_misuse": [
+    "img_alt_misuse"
+  ],
+  "img_ismap_misuse": [
+    "img_ismap_misuse"
+  ],
+  "img_longdesc_misuse": [
+    "img_longdesc_misuse"
+  ],
+  "media_alt_exists": [
+    "media_alt_exists"
+  ],
+  "style_background_decorative": [
+    "style_background_decorative"
+  ],
+  "figure_label_exists": [
+    "figure_label_exists"
+  ],
+  "embed_alt_exists": [
+    "embed_alt_exists"
+  ],
+  "embed_noembed_exists": [
+    "embed_noembed_exists"
+  ],
+  "media_alt_brief": [
+    "media_alt_brief"
+  ],
+  "noembed_content_exists": [
+    "noembed_content_exists"
+  ],
+  "canvas_content_described": [
+    "canvas_content_described",
+    "2.1.1",
+    "4.1.2"
+  ],
+  "img_alt_background": [
+    "img_alt_background"
+  ],
+  "style_highcontrast_visible": [
+    "style_highcontrast_visible",
+    "1.4.3",
+    "1.4.11"
+  ],
+  "media_audio_transcribed": [
+    "1.2.1"
+  ],
+  "video-caption": [
+    "1.2.2"
+  ],
+  "caption_track_exists": [
+    "1.2.2"
+  ],
+  "media_track_available": [
+    "1.2.3"
+  ],
+  "media_live_captioned": [
+    "1.2.4"
+  ],
+  "th-has-data-cells": [
+    "1.3.1"
+  ],
+  "td-headers-attr": [
+    "1.3.1"
+  ],
+  "listitem": [
+    "1.3.1"
+  ],
+  "list": [
+    "1.3.1"
+  ],
+  "dlitem": [
+    "1.3.1"
+  ],
+  "definition-list": [
+    "1.3.1"
+  ],
+  "aria-required-parent": [
+    "1.3.1"
+  ],
+  "aria-required-children": [
+    "1.3.1"
+  ],
+  "aria-hidden-body": [
+    "1.3.1",
+    "4.1.2"
+  ],
+  "input_checkboxes_grouped": [
+    "1.3.1"
+  ],
+  "table_headers_ref_valid": [
+    "1.3.1"
+  ],
+  "fieldset_label_valid": [
+    "1.3.1",
+    "3.3.2"
+  ],
+  "dir_attribute_valid": [
+    "1.3.2"
+  ],
+  "text_whitespace_valid": [
+    "1.3.2"
+  ],
+  "text_sensory_misuse": [
+    "1.3.3"
+  ],
+  "element_orientation_unlocked": [
+    "1.3.4"
+  ],
+  "autocomplete-valid": [
+    "1.3.5"
+  ],
+  "input_autocomplete_valid": [
+    "1.3.5"
+  ],
+  "link-in-text-block": [
+    "1.4.1"
+  ],
+  "form_font_color": [
+    "1.4.1"
+  ],
+  "style_color_misuse": [
+    "1.4.1"
+  ],
+  "no-autoplay-audio": [
+    "1.4.2"
+  ],
+  "media_autostart_controllable": [
+    "1.4.2"
+  ],
+  "color-contrast": [
+    "1.4.3"
+  ],
+  "text_contrast_sufficient": [
+    "1.4.3"
+  ],
+  "meta-viewport": [
+    "1.4.4"
+  ],
+  "style_viewport_resizable": [
+    "1.4.4",
+    "1.4.10"
+  ],
+  "meta_viewport_zoomable": [
+    "1.4.4"
+  ],
+  "avoid-inline-spacing": [
+    "1.4.12"
+  ],
+  "text_spacing_valid": [
+    "1.4.12"
+  ],
+  "style_hover_persistent": [
+    "1.4.13"
+  ],
+  "server-side-image-map": [
+    "2.1.1"
+  ],
+  "scrollable-region-focusable": [
+    "2.1.1",
+    "2.1.3"
+  ],
+  "frame-focusable-content": [
+    "2.1.1"
+  ],
+  "aria_activedescendant_tabindex_valid": [
+    "2.1.1"
+  ],
+  "aria_child_tabbable": [
+    "2.1.1"
+  ],
+  "element_scrollable_tabbable": [
+    "2.1.1"
+  ],
+  "iframe_interactive_tabbable": [
+    "2.1.1"
+  ],
+  "application_content_accessible": [
+    "2.1.1"
+  ],
+  "aria_keyboard_handler_exists": [
+    "2.1.1"
+  ],
+  "script_focus_blur_review": [
+    "2.1.1",
+    "2.4.7",
+    "3.2.1"
+  ],
+  "script_onclick_misuse": [
+    "2.1.1"
+  ],
+  "widget_tabbable_exists": [
+    "2.1.1"
+  ],
+  "widget_tabbable_single": [
+    "2.1.1",
+    "2.4.3"
+  ],
+  "media_keyboard_controllable": [
+    "2.1.1"
+  ],
+  "script_onclick_avoid": [
+    "2.1.1"
+  ],
+  "element_mouseevent_keyboard": [
+    "2.1.1"
+  ],
+  "download_keyboard_controllable": [
+    "2.1.2"
+  ],
+  "meta-refresh": [
+    "2.2.1"
+  ],
+  "meta_refresh_delay": [
+    "2.2.1"
+  ],
+  "marquee": [
+    "2.2.2"
+  ],
+  "blink": [
+    "2.2.2"
+  ],
+  "blink_elem_deprecated": [
+    "2.2.2"
+  ],
+  "marquee_elem_avoid": [
+    "2.2.2"
+  ],
+  "blink_css_review": [
+    "2.2.2"
+  ],
+  "bypass": [
+    "2.4.1"
+  ],
+  "aria_application_label_unique": [
+    "2.4.1"
+  ],
+  "aria_application_labelled": [
+    "2.4.1"
+  ],
+  "aria_article_label_unique": [
+    "2.4.1"
+  ],
+  "aria_banner_label_unique": [
+    "2.4.1"
+  ],
+  "aria_banner_single": [
+    "2.4.1"
+  ],
+  "aria_complementary_label_unique": [
+    "2.4.1"
+  ],
+  "aria_complementary_labelled": [
+    "2.4.1"
+  ],
+  "aria_contentinfo_label_unique": [
+    "2.4.1"
+  ],
+  "aria_contentinfo_single": [
+    "2.4.1"
+  ],
+  "aria_document_label_unique": [
+    "2.4.1"
+  ],
+  "aria_form_label_unique": [
+    "2.4.1"
+  ],
+  "aria_main_label_unique": [
+    "2.4.1"
+  ],
+  "aria_navigation_label_unique": [
+    "2.4.1"
+  ],
+  "aria_region_label_unique": [
+    "2.4.1"
+  ],
+  "aria_region_labelled": [
+    "2.4.1"
+  ],
+  "aria_toolbar_label_unique": [
+    "2.4.1"
+  ],
+  "skip_main_exists": [
+    "2.4.1"
+  ],
+  "frame_src_valid": [
+    "2.4.1"
+  ],
+  "html_skipnav_exists": [
+    "2.4.1"
+  ],
+  "skip_main_described": [
+    "2.4.1"
+  ],
+  "aria_complementary_label_visible": [
+    "2.4.1"
+  ],
+  "aria_content_in_landmark": [
+    "2.4.1"
+  ],
+  "aria_contentinfo_misuse": [
+    "2.4.1"
+  ],
+  "aria_landmark_name_unique": [
+    "2.4.1"
+  ],
+  "aria_main_label_visible": [
+    "2.4.1"
+  ],
+  "document-title": [
+    "2.4.2"
+  ],
+  "page_title_exists": [
+    "2.4.2"
+  ],
+  "page_title_valid": [
+    "2.4.2"
+  ],
+  "link-name": [
+    "2.4.4",
+    "4.1.2"
+  ],
+  "area-alt": [
+    "2.4.4",
+    "4.1.2"
+  ],
+  "img_alt_redundant": [
+    "2.4.4"
+  ],
+  "a_text_purpose": [
+    "2.4.4",
+    "4.1.2"
+  ],
+  "heading_content_exists": [
+    "2.4.6"
+  ],
+  "element_tabbable_visible": [
+    "2.4.7"
+  ],
+  "style_focus_visible": [
+    "2.4.7"
+  ],
+  "label_name_visible": [
+    "2.5.3"
+  ],
+  "input_label_visible": [
+    "2.5.3",
+    "3.3.2"
+  ],
+  "html-xml-lang-mismatch": [
+    "3.1.1"
+  ],
+  "html-lang-valid": [
+    "3.1.1"
+  ],
+  "html-has-lang": [
+    "3.1.1"
+  ],
+  "html_lang_exists": [
+    "3.1.1"
+  ],
+  "html_lang_valid": [
+    "3.1.1"
+  ],
+  "valid-lang": [
+    "3.1.2"
+  ],
+  "element_lang_valid": [
+    "3.1.2"
+  ],
+  "script_select_review": [
+    "3.2.1"
+  ],
+  "form_interaction_review": [
+    "3.2.2"
+  ],
+  "form_submit_button_exists": [
+    "3.2.2"
+  ],
+  "input_onchange_review": [
+    "3.2.2"
+  ],
+  "a_target_warning": [
+    "3.2.2"
+  ],
+  "error_message_exists": [
+    "3.3.1"
+  ],
+  "form-field-multiple-labels": [
+    "3.3.2"
+  ],
+  "input_label_after": [
+    "3.3.2"
+  ],
+  "input_label_before": [
+    "3.3.2"
+  ],
+  "element_accesskey_labelled": [
+    "3.3.2"
+  ],
+  "summary-name": [
+    "4.1.2"
+  ],
+  "select-name": [
+    "4.1.2"
+  ],
+  "nested-interactive": [
+    "4.1.2"
+  ],
+  "label": [
+    "4.1.2"
+  ],
+  "input-button-name": [
+    "4.1.2"
+  ],
+  "frame-title": [
+    "4.1.2"
+  ],
+  "frame-title-unique": [
+    "4.1.2"
+  ],
+  "duplicate-id-aria": [
+    "4.1.2"
+  ],
+  "button-name": [
+    "4.1.2"
+  ],
+  "aria-valid-attr": [
+    "4.1.2"
+  ],
+  "aria-valid-attr-value": [
+    "4.1.2"
+  ],
+  "aria-tooltip-name": [
+    "4.1.2"
+  ],
+  "aria-toggle-field-name": [
+    "4.1.2"
+  ],
+  "aria-roles": [
+    "4.1.2"
+  ],
+  "aria-required-attr": [
+    "4.1.2"
+  ],
+  "aria-prohibited-attr": [
+    "4.1.2"
+  ],
+  "aria-input-field-name": [
+    "4.1.2"
+  ],
+  "aria-hidden-focus": [
+    "4.1.2"
+  ],
+  "aria-deprecated-role": [
+    "4.1.2"
+  ],
+  "aria-conditional-attr": [
+    "4.1.2"
+  ],
+  "aria-command-name": [
+    "4.1.2"
+  ],
+  "aria-braille-equivalent": [
+    "4.1.2"
+  ],
+  "aria-allowed-attr": [
+    "4.1.2"
+  ],
+  "combobox_popup_reference": [
+    "4.1.2"
+  ],
+  "aria_activedescendant_valid": [
+    "4.1.2"
+  ],
+  "combobox_active_descendant": [
+    "4.1.2"
+  ],
+  "input_haspopup_conflict": [
+    "4.1.2"
+  ],
+  "aria_role_valid": [
+    "4.1.2"
+  ],
+  "combobox_autocomplete_valid": [
+    "4.1.2"
+  ],
+  "combobox_focusable_elements": [
+    "4.1.2"
+  ],
+  "combobox_haspopup_valid": [
+    "4.1.2"
+  ],
+  "input_label_exists": [
+    "4.1.2"
+  ],
+  "aria_descendant_valid": [
+    "4.1.2"
+  ],
+  "aria_role_allowed": [
+    "4.1.2"
+  ],
+  "aria_attribute_allowed": [
+    "4.1.2"
+  ],
+  "aria_attribute_conflict": [
+    "4.1.2"
+  ],
+  "aria_attribute_exists": [
+    "4.1.2"
+  ],
+  "aria_attribute_required": [
+    "4.1.2"
+  ],
+  "aria_attribute_value_valid": [
+    "4.1.2"
+  ],
+  "aria_eventhandler_role_valid": [
+    "4.1.2"
+  ],
+  "aria_hidden_nontabbable": [
+    "4.1.2"
+  ],
+  "aria_id_unique": [
+    "4.1.2"
+  ],
+  "aria_widget_labelled": [
+    "4.1.2"
+  ],
+  "combobox_design_valid": [
+    "4.1.2"
+  ],
+  "frame_title_exists": [
+    "4.1.2"
+  ],
+  "label_content_exists": [
+    "4.1.2"
+  ],
+  "list_children_valid": [
+    "4.1.2"
+  ],
+  "table_aria_descendants": [
+    "4.1.2"
+  ],
+  "element_tabbable_role_valid": [
+    "4.1.2"
+  ],
+  "aria_accessiblename_exists": [
+    "4.1.2"
+  ],
+  "aria_attribute_redundant": [
+    "4.1.2"
+  ],
+  "status_messages": [
+    "4.1.3"
+  ]
+}

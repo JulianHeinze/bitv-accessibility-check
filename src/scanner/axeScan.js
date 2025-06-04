@@ -22,8 +22,14 @@ async function runAxeScan(url) {
   await page.evaluate(axeSource);
 
   // ❸  axe.run() starten
-  const results = await page.evaluate(async () => await window.axe.run());
-
+const results = await page.evaluate(async () =>
+  await window.axe.run({
+    runOnly: {
+      type: "tag",
+      values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]
+    }
+  })
+);
   await browser.close();
 
   // Ergebnisse nur zurückgeben, CLI speichert sie
