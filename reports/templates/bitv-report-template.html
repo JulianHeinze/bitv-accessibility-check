@@ -1,89 +1,159 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <title>Accessibility‑Report</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      :root{
-        --pass:#176617;--fail:#a80000;--manual:#a06a00;
-        --bg-pass:#e9f8ea;--bg-fail:#fbeaea;--bg-manual:#fff7e6;
-      }
-      *{box-sizing:border-box;}
-      body{margin:0;padding:1rem 2rem;font-family:system-ui,sans-serif;color:#222;}
-      h1{font-size:1.9rem;margin:0 0 1.5rem;}
-      h2{font-size:1.5rem;margin:2.5rem 0 1rem;border-bottom:2px solid #ccc;padding-bottom:.25rem;}
-      table{width:100%;border-collapse:collapse;margin:0 0 2rem;}
-      th,td{border:1px solid #ddd;padding:.5rem;vertical-align:top;font-size:.875rem;}
-      th{background:#f6f7f8;text-align:left;font-weight:600;}
-      code{font-family:ui-monospace,monospace;font-size:.8rem;background:#f3f4f6;padding:.1rem .25rem;border-radius:4px;}
-      tr.pass{background:var(--bg-pass);}tr.fail{background:var(--bg-fail);}tr.manual{background:var(--bg-manual);} 
-      tr.pass td:last-child{color:var(--pass);}tr.fail td:last-child{color:var(--fail);}tr.manual td:last-child{color:var(--manual);} 
-      details{margin:0;}
-      details>summary{cursor:pointer;list-style:none;position:relative;font-weight:600;}
-      details>summary::-webkit-details-marker{display:none;}
-      details>summary:after{content:"▸";position:absolute;left:-1rem;transition:transform .2s ease;}
-      details[open]>summary:after{transform:rotate(90deg);}      
-      ul{margin:.25rem 0 .5rem 1rem;padding-left:1.25rem;}
-    </style>
-  </head>
-  <body>
-    <h1>Accessibility‑Report</h1>
-    <p>Generiert: {{generated}}</p>
+<head>
+<meta charset="utf-8"/>
+<title>Accessibility-Report</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>
+  :root{
+    --pass:#176617;--fail:#a80000;--manual:#a06a00;--notrel:#666;
+    --bg-pass:#e9f8ea;--bg-fail:#fbeaea;--bg-manual:#fff7e6;--bg-notrel:#f2f2f2;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:1rem 2rem;font-family:system-ui,sans-serif;color:#222}
+  h1{font-size:1.9rem;margin:0 0 1.5rem}
+  h2{font-size:1.5rem;margin:2.5rem 0 1rem;border-bottom:2px solid #ccc;padding-bottom:.25rem}
+  table{width:100%;border-collapse:collapse;margin-bottom:2rem}
+  th,td{border:1px solid #ddd;padding:.5rem;font-size:.875rem;vertical-align:top}
+  th{background:#f6f7f8;font-weight:600;text-align:left}
 
-    {{#each pages}}
-      <h2>{{url}}</h2>
-      <table>
-        <thead>
-          <tr>
-            <th style="width:10rem">WCAG (Level)</th>
-            <th style="width:14rem">Titel</th>
-            <th style="width:22rem">Beschreibung</th>
-            <th style="width:26rem">Prüfregel / Verstöße</th>
-            <th style="width:8rem">Status</th>
+  tr.pass{background:var(--bg-pass)}
+  tr.fail{background:var(--bg-fail)}
+  tr.manual{background:var(--bg-manual)}
+  tr.notrel{background:var(--bg-notrel)}
+
+  tr.pass td:last-child{color:var(--pass)}
+  tr.fail td:last-child{color:var(--fail)}
+  tr.manual td:last-child{color:var(--manual)}
+  tr.notrel td:last-child{color:var(--notrel)}
+
+  tr.manual-checked{font-style:italic}
+
+  tr.chapter-head{background:#d0d0d0;font-weight:700;cursor:pointer;border:1px solid #ccc}
+  tr.chapter-head:hover{background:#c5c5c5}
+  .hidden{display:none}
+  select{font-size:.8rem}
+
+  code{font-family:ui-monospace,monospace;font-size:.8rem;background:#f3f4f6;padding:.1rem .25rem;border-radius:4px}
+  details>summary{cursor:pointer;list-style:none;position:relative;font-weight:600}
+  details>summary::-webkit-details-marker{display:none}
+  details>summary:after{content:"▸";position:absolute;left:-1rem;transition:transform .2s}
+  details[open]>summary:after{transform:rotate(90deg)}
+  ul{margin:.25rem 0 .5rem 1rem;padding-left:1.25rem}
+</style>
+</head>
+
+<body>
+<h1>Accessibility-Report</h1>
+<p>Generiert: {{generated}}</p>
+
+{{#each pages}}
+  <h2>{{url}}</h2>
+  {{#if error}}
+    <p style="color:#a80000;font-weight:600">Fehler beim Scan: {{error}}</p>
+  {{else}}
+    <table>
+      <thead>
+        <tr>
+          <th style="width:12rem">EN-ID / WCAG</th>
+          <th style="width:14rem">Titel</th>
+          <th style="width:22rem">Beschreibung</th>
+          <th style="width:26rem">Prüfregel / Verstöße</th>
+          <th style="width:8rem">Status</th>
+          <th style="width:11rem">Manuell</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each (group-by "chapter" wcag)}}
+        <tr class="chapter-head" data-chap="{{this.0.chapter}}">
+          <td colspan="6"><span class="twist">▾</span>{{this.0.chapter}} {{this.0.chapterTitle}}</td>
+        </tr>
+        {{#each this}}
+          <tr class="{{statusClass status}}" data-chap="{{chapter}}">
+            <td>
+              <strong>{{en}}</strong>
+              {{#if wcag}}<span style="white-space:nowrap">({{wcag}})</span>{{/if}}
+              {{#if level}}<br>Level&nbsp;{{level}}{{/if}}
+            </td>
+            <td>{{name}}</td>
+            <td>
+              {{#if description}}
+                <details><summary>Beschreibung anzeigen</summary><p>{{description}}</p></details>
+              {{else}}–{{/if}}
+            </td>
+            <td>
+              {{#if (add violations.axe.length violations.ibm.length)}}
+                <details>
+                  <summary>{{add violations.axe.length violations.ibm.length}} Verstöße anzeigen</summary>
+                  {{#if violations.axe.length}}
+                    <strong>Axe:</strong>
+                    <ul>{{#each violations.axe}}<li><code>{{selector}}</code> – {{message}}</li>{{/each}}</ul>
+                  {{/if}}
+                  {{#if violations.ibm.length}}
+                    <strong>IBM:</strong>
+                    <ul>{{#each violations.ibm}}<li><code>{{selector}}</code> – {{message}}</li>{{/each}}</ul>
+                  {{/if}}
+                </details>
+              {{else}}–{{/if}}
+            </td>
+            <td class="status-cell">{{status}}</td>
+            <td>
+              <select class="manual-select" data-id="{{en}}">
+                <option value="">–</option>
+                <option value="pass">✓ erfüllt</option>
+                <option value="fail">✗ nicht erfüllt</option>
+                <option value="notrel">🚫 nicht relevant</option>
+              </select>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {{#each wcag}}
-            <tr class="{{statusClass status}}">
-              <td><strong>{{id}}</strong><br>Level {{level}}</td>
-              <td>{{name}}</td>
-              <td>
-                {{#if description}}
-                  <details>
-                    <summary>Beschreibung anzeigen</summary>
-                    <p>{{description}}</p>
-                  </details>
-                {{else}}–{{/if}}
-              </td>
-              <td>
-                {{#if (add violations.axe.length violations.ibm.length)}}
-                  <details>
-                    <summary>{{add violations.axe.length violations.ibm.length}} Verstöße anzeigen</summary>
-                    {{#if violations.axe.length}}
-                      <strong>Axe:</strong>
-                      <ul>
-                        {{#each violations.axe}}
-                          <li><code>{{selector}}</code> – {{message}}</li>
-                        {{/each}}
-                      </ul>
-                    {{/if}}
-                    {{#if violations.ibm.length}}
-                      <strong>IBM:</strong>
-                      <ul>
-                        {{#each violations.ibm}}
-                          <li><code>{{selector}}</code> – {{message}}</li>
-                        {{/each}}
-                      </ul>
-                    {{/if}}
-                  </details>
-                {{else}}–{{/if}}
-              </td>
-              <td>{{status}}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    {{/each}}
-  </body>
+        {{/each}}
+      {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+{{/each}}
+
+<script>
+document.querySelectorAll(".chapter-head").forEach(r=>{
+  r.addEventListener("click",()=>{
+    const chap=r.dataset.chap, hidden=r.classList.toggle("collapsed");
+    r.querySelector(".twist").textContent = hidden ? "▸" : "▾";
+    document.querySelectorAll('tr[data-chap="'+chap+'"]:not(.chapter-head)')
+      .forEach(tr=>tr.classList.toggle("hidden", hidden));
+  });
+});
+
+document.querySelectorAll(".manual-select").forEach(sel=>{
+  const id   = sel.dataset.id;
+  const row  = sel.closest("tr");
+  const cell = row.querySelector(".status-cell");
+  const origText  = cell.textContent.trim();
+  const key  = "manual-"+location.pathname+"-"+id;
+
+  sel.value = localStorage.getItem(key) || "";
+  apply(sel.value);
+
+  sel.addEventListener("change", ()=>{
+    localStorage.setItem(key, sel.value);
+    apply(sel.value);
+  });
+
+  function apply(v){
+    row.classList.remove("manual-checked", "notrel");
+    if(v==="pass"){
+      row.classList.add("manual-checked");
+      cell.textContent="✓ erfüllt (manuell)";
+    }else if(v==="fail"){
+      row.classList.add("manual-checked");
+      cell.textContent="✗ nicht erfüllt (manuell)";
+    }else if(v==="notrel"){
+      row.classList.add("notrel");
+      cell.textContent="🚫 nicht relevant";
+    }else{
+      cell.textContent=origText;
+    }
+  }
+});
+</script>
+</body>
 </html>

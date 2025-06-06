@@ -1,25 +1,43 @@
-// src/report/reportGenerator.js – WCAG-HTML-Report (axe + IBM)
+// src/report/reportGenerator.js – WCAG-/EN-HTML-Report (axe + IBM)
 // -----------------------------------------------------------------------------
+//
+//  Änderungen gegenüber der Originalversion sind mit  [★]  markiert.
+//
 
-const fs = require("fs-extra");
-const path = require("path");
+const fs         = require("fs-extra");
+const path       = require("path");
 const Handlebars = require("handlebars");
 
-/*──────────────────────── Handlebars-Helper ───────────────────────*/
+/*──────────────────────── Helpers ───────────────────────────────*/
 Handlebars.registerHelper("statusClass", (s) =>
-  s.startsWith("✓") ? "pass" : s.startsWith("✗") ? "fail" : "manual"
+  s.startsWith("✓") ? "pass"
+: s.startsWith("✗") ? "fail"
+: "manual"                        // ⚠️ / – / 🚫
 );
+
+/* ★  group-by – funktioniert als Sub-Expression */
+/* ★ group-by – behält jetzt die Original-Reihenfolge bei (Map statt Plain‑Object) */
+Handlebars.registerHelper("group-by", function (field, list) {
+  const groups = new Map();
+  (list || []).forEach((item) => {
+    const k = item[field] || "";
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(item);
+  });
+  return Array.from(groups.values());   // Reihenfolge der ersten Vorkommen
+});
+
 Handlebars.registerHelper("add", (...args) => {
-  const opts = args.pop();                     // letzter Eintrag = Optionen
+  const opts = args.pop();
   return args.reduce((sum, v) => sum + (v == null ? 0 : +v), 0);
 });
 
-/*──────────────────────── Parser axe / IBM ───────────────────────*/
+/*──────────────────────── Parser axe / IBM ─────────────────────*/
 const outcomeFromValue = (a) => {
   if (!Array.isArray(a)) return "unknown";
   if (a.includes("VIOLATION") || a.includes("FAIL")) return "fail";
-  if (a.includes("PASS")) return "pass";
-  if (a.includes("POTENTIAL")) return "potential";
+  if (a.includes("PASS"))                           return "pass";
+  if (a.includes("POTENTIAL"))                      return "potential";
   return "unknown";
 };
 
@@ -27,9 +45,9 @@ function parseAxe(item) {
   if (!item.results?.axe?.ok) return [];
   const axe = item.results.axe.data;
   const groups = {
-    violations: "fail",
-    passes: "pass",
-    incomplete: "potential",
+    violations:   "fail",
+    passes:       "pass",
+    incomplete:   "potential",
     inapplicable: "inapplicable",
   };
   const out = [];
@@ -64,18 +82,28 @@ function parseIbm(item) {
 
 const extractRecords = (item) => [...parseAxe(item), ...parseIbm(item)];
 
-/*──────────────────────── Mapping-Utilities ──────────────────────*/
+/*──────────────────────── Mapping-Utilities ─────────────────────*/
 const asScObj = (raw) => {
   if (!raw) return null;
-  if (typeof raw === "string") return { id: raw, name: raw };
+  if (typeof raw === "string") return { id: raw, en: raw, wcag: raw, name: raw };
+
   return {
-    id:   String(raw.wcag_id || raw.id || ""),
-    name: String(raw.name_de || raw.name || raw.wcag_id || raw.id || ""),
+    id:   String(raw.en_id || raw.wcag_id || raw.id || ""),
+    en:   String(raw.en_id   || ""),
+    wcag: String(raw.wcag_id || ""),
+    name: String(
+      raw.name_de || raw.name ||
+      raw.en_id   || raw.wcag_id || raw.id || ""
+    ),
+
+    /* ★ Kapitel-Infos direkt übernehmen */
+    chapter:         String(raw.chapter         || ""),
+    chapterTitle:    String(raw.chapterTitle    || ""),
   };
 };
 
 function normalizeRuleMap(raw) {
-  if (!Array.isArray(raw)) return raw;          // bereits rule-zentriert
+  if (!Array.isArray(raw)) return raw;
   const m = {};
   raw.forEach((sc) => {
     const obj = asScObj(sc);
@@ -94,80 +122,131 @@ function buildReverseMap(ruleMap) {
     (Array.isArray(entry) ? entry : [entry]).forEach((raw) => {
       const sc = asScObj(raw);
       if (!sc?.id) return;
-      (rev[sc.id] = rev[sc.id] || { sc, rules: [] }).rules.push(ruleId);
+
+      const keys = new Set([sc.id, sc.wcag].filter(Boolean));
+      keys.forEach((key) => {
+        (rev[key] = rev[key] || { sc, rules: [] }).rules.push(ruleId);
+      });
     });
   }
   return rev;
 }
 
-/*──────────────────────── WCAG-Checkliste ───────────────────────*/
-function buildWcagChecklist(records, ruleMap, scMeta) {
-  const rev    = buildReverseMap(ruleMap);
-  const status = {};                 // { scId: "pass"|"fail" }
-  const viol   = {};                 // { scId: { axe:[], ibm:[] } }
+/*──────────────────────── WCAG-/EN-Liste ───────────────────────*/
+/*
+ * ★ Änderung:  buildWcagChecklist erhält ein zusätzliches Argument
+ *   "orderSource" (Array). Ist preserveOrder=true (Standard) und
+ *   orderSource vorhanden, wird exakt dessen Reihenfolge verwendet.
+ */
+function buildWcagChecklist(records, ruleMap, scMeta, orderSource = [], { preserveOrder = true } = {}) {
+  const rev      = buildReverseMap(ruleMap);
+  const outcomes = {};
+  const viol     = {};
 
   records.forEach((rec) => {
     const entry = ruleMap[rec.ruleId];
     if (!entry) return;
+
     (Array.isArray(entry) ? entry : [entry]).forEach((raw) => {
       const sc = asScObj(raw);
       if (!sc?.id) return;
-      status[sc.id] ??= "pass";
+
+      const o = (outcomes[sc.id] = outcomes[sc.id] || {pass:false,fail:false,inapp:false});
+      if      (rec.outcome === "fail")        o.fail  = true;
+      else if (rec.outcome === "pass")        o.pass  = true;
+      else if (rec.outcome === "inapplicable")o.inapp = true;
+
       if (rec.outcome === "fail") {
-        status[sc.id] = "fail";
         const bucket = (viol[sc.id] = viol[sc.id] || { axe: [], ibm: [] });
         bucket[rec.src].push(rec);
       }
     });
   });
 
-  // Quelle der Kriterien: Metadaten-Datei oder nur gefundene
-  const srcList = Object.keys(scMeta).length
-    ? Object.values(scMeta)                       // alle Kriterien
-    : Object.values(rev).map((o) => ({            // nur gemappte
-        wcag_id: o.sc.id,
-        name_de: o.sc.name,
-      }));
+  let srcList;
 
-  return srcList
-    .sort((a, b) =>
-      a.wcag_id.localeCompare(b.wcag_id, "de", { numeric: true })
-    )
-    .map((meta) => ({
-      id:          meta.wcag_id,
+  /* ★ 1) Wenn preserveOrder & orderSource → genau diese Reihenfolge */
+  if (preserveOrder && Array.isArray(orderSource) && orderSource.length) {
+    srcList = orderSource;
+  } else {
+    /* 2) Alternative Wege wie bisher */
+    srcList = Object.keys(scMeta).length
+      ? [...new Set(Object.values(scMeta))]
+      : Object.values(rev).map((o) => ({
+          wcag_id: o.sc.wcag,
+          en_id:   o.sc.en,
+          name_de: o.sc.name,
+        }));
+
+    if (!preserveOrder) {
+      srcList.sort((a, b) => {
+        const toNumericArray = (id) =>
+          (id || "")
+            .split(".")
+            .map((part) => parseInt(part, 10))
+            .filter((n) => !isNaN(n));
+
+        const idA_raw = a.en_id || a.wcag_id || "";
+        const idB_raw = b.en_id || b.wcag_id || "";
+
+        const idA = toNumericArray(idA_raw);
+        const idB = toNumericArray(idB_raw);
+
+        for (let i = 0; i < Math.max(idA.length, idB.length); i++) {
+          const valA = idA[i] ?? 0;
+          const valB = idB[i] ?? 0;
+          if (valA !== valB) return valA - valB;
+        }
+        return idA.length - idB.length;
+      });
+    }
+  }
+
+  return srcList.map((meta) => {
+    const r = rev[meta.en_id] || rev[meta.wcag_id] || {};
+    const o = outcomes[r.sc?.id] || {};
+
+    let status;
+    if (o.fail)               status = "✗ nicht erfüllt";
+    else if (o.pass)          status = "✓ erfüllt";
+    else if (o.inapp)         status = "– nicht anwendbar";
+    else if (r.rules?.length) status = "⚠️ manuell prüfen";
+    else                      status = "🚫 nicht automatisch prüfbar";
+
+    const chapter      = meta.chapter      || (meta.en_id || meta.wcag_id).split(".")[0];
+    const chapterTitle = meta.chapterTitle || "";
+
+    return {
+      id:   meta.wcag_id || meta.en_id,
+      en:   meta.en_id   || "",
+      wcag: meta.wcag_id || "",
       name:        meta.name_de || meta.name,
-      principle:   meta.principle,
       level:       meta.level,
       description: meta.description_de || meta.description,
-      rules:       rev[meta.wcag_id]?.rules || [],
-      status:      status[meta.wcag_id]
-                    ? status[meta.wcag_id] === "fail"
-                      ? "✗ nicht erfüllt"
-                      : "✓ erfüllt"
-                    : "⚠️ manuell prüfen",
-      violations:  viol[meta.wcag_id] || { axe: [], ibm: [] },
-    }));
+      chapter, chapterTitle,
+      rules:       r.rules || [],
+      status,
+      violations:  viol[r.sc?.id] || { axe: [], ibm: [] },
+    };
+  });
 }
 
-/*──────────────────────── Page-Summary ──────────────────────────*/
+/*──────────────────────── Page-Summary ─────────────────────────*/
 function buildSummary(records) {
-  const levels = [
-    "critical", "serious", "moderate", "minor",
-    "violation", "potentialviolation",
-  ];
-  const out = Object.fromEntries(levels.map((l) => [l, 0]));
+  const out = {critical:0, serious:0, moderate:0, minor:0, violation:0, potentialviolation:0};
   records.forEach((r) => {
     if (r.outcome === "fail" && out[r.impact] !== undefined) out[r.impact]++;
   });
   return out;
 }
 
-function buildPage(item, ruleMap, scMeta) {
+/* ★ buildPage erhält orderSource   */
+function buildPage(item, ruleMap, scMeta, orderSource) {
   const recs = extractRecords(item);
   return {
     url:     item.url,
     summary: buildSummary(recs),
-    wcag:    buildWcagChecklist(recs, ruleMap, scMeta),
+    wcag:    buildWcagChecklist(recs, ruleMap, scMeta, orderSource /* mapping order */, { preserveOrder: true }),
   };
 }
 
@@ -176,33 +255,30 @@ async function generateReport(
   results,
   { templatePath, outputPath, mappingPath, criteriaPath }
 ) {
-  /* 1 | Kriterien-Datei ermitteln */
   if (!criteriaPath) {
-    criteriaPath = path.join(
-      path.dirname(mappingPath || templatePath),   // → …/src/mapping
-      "mapping.json"                               // ← dein Metadaten-File
-    );
+    criteriaPath = path.join(path.dirname(mappingPath || templatePath),
+                             "mapping.json");
   }
 
-  /* 2 | Template + Regel-Mapping lesen */
   const [tplSrc, mappingRaw] = await Promise.all([
     fs.readFile(templatePath, "utf8"),
     fs.readJson(mappingPath),
   ]);
 
-  /* 3 | WCAG-Metadaten laden */
+  /* Metadaten in scMeta */
   let scMeta = {};
   try {
     const criteriaRaw = await fs.readJson(criteriaPath);
-    console.log("✅  WCAG-Kriterien geladen:", criteriaRaw.length);
-    scMeta = Object.fromEntries(
-      criteriaRaw.map((c) => [String(c.wcag_id), c])
-    );
+    criteriaRaw.forEach((c) => {
+      const k1 = c.wcag_id ? String(c.wcag_id) : null;
+      const k2 = c.en_id   ? String(c.en_id)   : null;
+      if (k1) scMeta[k1] = c;
+      if (k2) scMeta[k2] = c;
+    });
   } catch (e) {
-    console.warn("⚠️  Konnte WCAG-Kriterien nicht laden:", e.message);
+    console.warn("⚠️  Konnte Kriterien nicht laden:", e.message);
   }
 
-  /* 4 | Datenstruktur für Template erzeugen */
   const ruleMap = normalizeRuleMap(mappingRaw);
   const tpl     = Handlebars.compile(tplSrc);
 
@@ -210,14 +286,12 @@ async function generateReport(
     const ok = item.results?.axe?.ok || item.results?.ibm?.ok;
     if (!ok) {
       const err = item.results?.axe?.error
-               || item.results?.ibm?.error
-               || "Scan-Error";
+               || item.results?.ibm?.error || "Scan-Error";
       return { url: item.url, error: err };
     }
-    return buildPage(item, ruleMap, scMeta);
+    return buildPage(item, ruleMap, scMeta, mappingRaw);
   });
 
-  /* 5 | HTML ausgeben */
   await fs.outputFile(
     outputPath,
     tpl({ pages, generated: new Date().toLocaleString("de-DE") }),

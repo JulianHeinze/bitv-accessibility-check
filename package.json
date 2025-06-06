@@ -1,32 +1,34 @@
 {
   "name": "web-accessibility-crawler",
-  "version": "1.0.0",
-  "main": "check-url.js",
+  "version": "1.1.0",
+  "description": "Crawler und GUI für Web-Accessibility-Audits (axe + IBM)",
+  "main": "src/cli.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "scan": "node src/cli.js",
-    "start-gui": "node gui/server.js",
+    "dev:gui": "node src/server.js",
+    "report": "open reports/output/output.html",
     "postinstall": "npx puppeteer browsers install chrome"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "accessibility-checker": "^4.0.4",
     "axe-core": "^4.10.3",
-    "chrome-launcher": "^1.2.0",
     "express": "^5.1.0",
     "fs-extra": "^11.3.0",
     "handlebars": "^4.7.8",
-    "lighthouse": "^12.6.0",
     "node-fetch": "^3.3.2",
-    "pa11y": "^9.0.0",
     "puppeteer": "^24.8.0",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "accessibility-checker": "^4.0.4"
+    "chrome-launcher": "^1.2.0",
+    "lighthouse": "^12.6.0",
+    "pa11y": "^9.0.0"
   }
 }

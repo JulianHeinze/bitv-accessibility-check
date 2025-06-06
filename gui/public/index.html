@@ -1,53 +1,67 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Accessibility Crawler GUI</title>
-  <style>
-    body { font-family: sans-serif; padding: 1rem; }
-    input { width: 300px; }
-    pre   { background: #f4f4f4; padding: 1rem; overflow: auto; }
-  </style>
-</head>
-<body>
-  <h1>Accessibility Crawler</h1>
-  <p>
-    URL: <input id="url" placeholder="https://example.com" />
-    <button id="scan">Scan starten</button>
-  </p>
-  <div id="status"></div>
-  <h2>Ergebnis (JSON)</h2>
-  <pre id="output"></pre>
-  <script>
-    document.getElementById("scan").addEventListener("click", async () => {
-      const url = document.getElementById("url").value.trim();
-      const status = document.getElementById("status");
-      const out    = document.getElementById("output");
-      status.textContent = "";
-      out.textContent    = "";
+<meta charset="utf-8" />
+<title>Accessibility Crawler</title>
+<style>
+  body{font-family:sans-serif;padding:1rem}
+  input[type=text]{width:320px}
+  #pc{width:100%;height:14px;background:#eee;border-radius:7px;overflow:hidden;display:none;margin-top:.5rem}
+  #pb{height:100%;width:0%;background:#3b82f6;transition:width .3s}
+  iframe{width:100%;height:80vh;border:1px solid #ccc;background:#fff;margin-top:1rem}
+</style>
 
-      if (!url) {
-        status.textContent = "Bitte eine URL eingeben.";
-        return;
-      }
-      status.textContent = "🔍 Scanne …";
-      try {
-        const resp = await fetch("/api/scan", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url })
-        });
-        const data = await resp.json();
-        if (data.success) {
-          status.textContent = "✔ Scan abgeschlossen.";
-          out.textContent    = JSON.stringify(data.result, null, 2);
-        } else {
-          status.textContent = "❌ Fehler: " + data.error;
-        }
-      } catch (e) {
-        status.textContent = "🚨 Netzwerk-Fehler: " + e.message;
-      }
+<h1>Accessibility Crawler</h1>
+
+<p>
+  URL:&nbsp;
+  <input id="u" type="text" placeholder="https://example.com">
+  <label><input id="chk" type="checkbox"> gesamte&nbsp;Sitemap&nbsp;prüfen</label>
+  <button id="go">Scan starten</button>
+</p>
+
+<div id="pc"><div id="pb"></div></div>
+<p id="pm"></p>
+<iframe id="rep"></iframe>
+
+<script>
+const pc=document.getElementById("pc"),
+      pb=document.getElementById("pb"),
+      pm=document.getElementById("pm"),
+      rep=document.getElementById("rep"),
+      u =document.getElementById("u"),
+      chk=document.getElementById("chk");
+
+/* ---------- Progress ---------- */
+const es = new EventSource("/api/progress");
+es.onmessage = (e)=>{
+  const {percent,message}=JSON.parse(e.data);
+  if(percent>0){
+    pc.style.display="block";
+    pb.style.width = percent + "%";
+    pm.textContent = message + " (" + percent + "%)";
+  }
+  if(percent>=100) setTimeout(()=>pc.style.display="none",1500);
+};
+
+/* ---------- Scan ---------- */
+document.getElementById("go").onclick = async ()=>{
+  const url = u.value.trim();
+  if(!url){alert("URL fehlt");return;}
+
+  pb.style.width="0%"; pm.textContent=""; rep.src="";
+  try{
+    const resp = await fetch("/api/scan",{
+      method:"POST",
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({url, sitemap: chk.checked})
     });
-  </script>
-</body>
-</html>
+    const data = await resp.json();
+    if(data.success){
+      rep.src = (data.index || "/reports/output/output.html") + "?ts=" + Date.now();
+    }else{
+      alert("Fehler: "+data.error);
+    }
+  }catch(e){
+    alert("Netzwerk-Fehler: "+e.message);
+  }
+};
+</script>
