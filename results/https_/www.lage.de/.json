@@ -1,0 +1,2101 @@
+{
+    "results": [
+        {
+            "ruleId": "style_color_misuse",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/head[1]/link[17]",
+                "aria": "/document[1]"
+            },
+            "ruleTime": 1,
+            "reasonId": "Potential_1",
+            "message": "Verify color is not used as the only visual means of conveying information",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 0,
+                "top": 0,
+                "height": 0,
+                "width": 0
+            },
+            "snippet": "<link href=\"/layout/lage/layout.css?__ts=1715840358\" type=\"text/css\" media=\"screen\" rel=\"stylesheet\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/style_color_misuse.html#%7B%22message%22%3A%22Verify%20color%20is%20not%20used%20as%20the%20only%20visual%20means%20of%20conveying%20information%22%2C%22snippet%22%3A%22%3Clink%20href%3D%5C%22%2Flayout%2Flage%2Flayout.css%3F__ts%3D1715840358%5C%22%20type%3D%5C%22text%2Fcss%5C%22%20media%3D%5C%22screen%5C%22%20rel%3D%5C%22stylesheet%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22style_color_misuse%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[1]/div[1]/a[1]",
+                "aria": "/document[1]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 650,
+                "top": 667,
+                "height": 50,
+                "width": 120
+            },
+            "snippet": "<a class=\"cc_btn cc_btn_accept_all\" data-cc-event=\"click:dismiss\" href=\"#null\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22cc_btn%20cc_btn_accept_all%5C%22%20data-cc-event%3D%5C%22click%3Adismiss%5C%22%20href%3D%5C%22%23null%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "element_tabbable_unobscured",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[1]/div[1]/a[1]",
+                "aria": "/document[1]/link[1]"
+            },
+            "ruleTime": 3,
+            "reasonId": "potential_obscured",
+            "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 650,
+                "top": 667,
+                "height": 50,
+                "width": 120
+            },
+            "snippet": "<a class=\"cc_btn cc_btn_accept_all\" data-cc-event=\"click:dismiss\" href=\"#null\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22cc_btn%20cc_btn_accept_all%5C%22%20data-cc-event%3D%5C%22click%3Adismiss%5C%22%20href%3D%5C%22%23null%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[1]/div[1]/p[1]/a[1]",
+                "aria": "/document[1]/paragraph[1]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 441,
+                "top": 691,
+                "height": 21,
+                "width": 76
+            },
+            "snippet": "<a href=\"/Datenschutz\" class=\"cc_more_info\" data-cc-if=\"options.link\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%2FDatenschutz%5C%22%20class%3D%5C%22cc_more_info%5C%22%20data-cc-if%3D%5C%22options.link%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "element_tabbable_unobscured",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[1]/div[1]/p[1]/a[1]",
+                "aria": "/document[1]/paragraph[1]/link[1]"
+            },
+            "ruleTime": 1,
+            "reasonId": "potential_obscured",
+            "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 441,
+                "top": 691,
+                "height": 21,
+                "width": 76
+            },
+            "snippet": "<a href=\"/Datenschutz\" class=\"cc_more_info\" data-cc-if=\"options.link\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%2FDatenschutz%5C%22%20class%3D%5C%22cc_more_info%5C%22%20data-cc-if%3D%5C%22options.link%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[1]/div[1]/p[1]/a[1]",
+                "aria": "/document[1]/paragraph[1]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 2.46 with its background is less than the WCAG AA minimum requirements for text of size 17px and weight of 400",
+            "messageArgs": [
+                "2.46",
+                17,
+                400,
+                "#e6a400",
+                "#646c74",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 441,
+                "top": 691,
+                "height": 21,
+                "width": 76
+            },
+            "snippet": "<a href=\"/Datenschutz\" class=\"cc_more_info\" data-cc-if=\"options.link\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%202.46%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2017px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%2FDatenschutz%5C%22%20class%3D%5C%22cc_more_info%5C%22%20data-cc-if%3D%5C%22options.link%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%222.46%22%2C17%2C400%2C%22%23e6a400%22%2C%22%23646c74%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[1]/ul[1]",
+                "aria": "/document[1]/list[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": -5000,
+                "top": -4960,
+                "height": 120,
+                "width": 159
+            },
+            "snippet": "<ul>",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Cul%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[1]/ul[1]/li[1]/a[1]",
+                "aria": "/document[1]/list[1]/listitem[1]/link[1]"
+            },
+            "ruleTime": 1,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                16,
+                400,
+                "#6991b9",
+                "#ffffff",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": -4960,
+                "top": -4960,
+                "height": 24,
+                "width": 119
+            },
+            "snippet": "<a href=\"#anker_schnellnavigation\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2016px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23anker_schnellnavigation%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C16%2C400%2C%22%236991b9%22%2C%22%23ffffff%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[1]/ul[1]/li[2]/a[1]",
+                "aria": "/document[1]/list[1]/listitem[2]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                16,
+                400,
+                "#6991b9",
+                "#ffffff",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": -4960,
+                "top": -4936,
+                "height": 24,
+                "width": 41
+            },
+            "snippet": "<a href=\"#anker_suche\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2016px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23anker_suche%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C16%2C400%2C%22%236991b9%22%2C%22%23ffffff%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[1]/ul[1]/li[3]/a[1]",
+                "aria": "/document[1]/list[1]/listitem[3]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                16,
+                400,
+                "#6991b9",
+                "#ffffff",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": -4960,
+                "top": -4912,
+                "height": 24,
+                "width": 112
+            },
+            "snippet": "<a href=\"#anker_hauptnavigation\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2016px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23anker_hauptnavigation%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C16%2C400%2C%22%236991b9%22%2C%22%23ffffff%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[1]/ul[1]/li[4]/a[1]",
+                "aria": "/document[1]/list[1]/listitem[4]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                16,
+                400,
+                "#6991b9",
+                "#ffffff",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": -4960,
+                "top": -4888,
+                "height": 24,
+                "width": 81
+            },
+            "snippet": "<a href=\"#anker_seiteninhalt\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2016px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23anker_seiteninhalt%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C16%2C400%2C%22%236991b9%22%2C%22%23ffffff%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[1]/ul[1]/li[5]/a[1]",
+                "aria": "/document[1]/list[1]/listitem[5]/link[1]"
+            },
+            "ruleTime": 1,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                16,
+                400,
+                "#6991b9",
+                "#ffffff",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": -4960,
+                "top": -4864,
+                "height": 24,
+                "width": 57
+            },
+            "snippet": "<a href=\"#anker_footer\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2016px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23anker_footer%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C16%2C400%2C%22%236991b9%22%2C%22%23ffffff%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "aria_banner_label_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]",
+                "aria": "/document[1]/banner[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_label_not_unique",
+            "message": "Multiple elements with \"banner\" role do not have unique labels",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 0,
+                "top": 0,
+                "height": 82,
+                "width": 800
+            },
+            "snippet": "<header>",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_banner_label_unique.html#%7B%22message%22%3A%22Multiple%20elements%20with%20%5C%22banner%5C%22%20role%20do%20not%20have%20unique%20labels%22%2C%22snippet%22%3A%22%3Cheader%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_label_not_unique%22%2C%22ruleId%22%3A%22aria_banner_label_unique%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_banner_label_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/div[1]",
+                "aria": "/document[1]/banner[1]/banner[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_label_not_unique",
+            "message": "Multiple elements with \"banner\" role do not have unique labels",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 15,
+                "top": 20,
+                "height": 93,
+                "width": 135
+            },
+            "snippet": "<div role=\"banner\" class=\"logo\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_banner_label_unique.html#%7B%22message%22%3A%22Multiple%20elements%20with%20%5C%22banner%5C%22%20role%20do%20not%20have%20unique%20labels%22%2C%22snippet%22%3A%22%3Cdiv%20role%3D%5C%22banner%5C%22%20class%3D%5C%22logo%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_label_not_unique%22%2C%22ruleId%22%3A%22aria_banner_label_unique%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "element_id_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/nav[1]/ul[1]",
+                "aria": "/document[1]/banner[1]/navigation[1]/list[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_2",
+            "message": "The <ul> element has the id \"rid_0\" that is already in use",
+            "messageArgs": [
+                "ul",
+                "rid_0"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 119,
+                "top": 5,
+                "height": 75,
+                "width": 616
+            },
+            "snippet": "<ul class=\"nlv_1 dropit\" id=\"rid_0\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cul%3E%20element%20has%20the%20id%20%5C%22rid_0%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cul%20class%3D%5C%22nlv_1%20dropit%5C%22%20id%3D%5C%22rid_0%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_2%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22ul%22%2C%22rid_0%22%5D%7D"
+        },
+        {
+            "ruleId": "element_id_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/nav[1]/ul[1]/li[2]",
+                "aria": "/document[1]/banner[1]/navigation[1]/list[1]/listitem[2]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_2",
+            "message": "The <li> element has the id \"nlt_2517_6\" that is already in use",
+            "messageArgs": [
+                "li",
+                "nlt_2517_6"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 280,
+                "top": 5,
+                "height": 75,
+                "width": 154
+            },
+            "snippet": "<li class=\"npt_off childs dropit-trigger\" id=\"nlt_2517_6\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cli%3E%20element%20has%20the%20id%20%5C%22nlt_2517_6%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cli%20class%3D%5C%22npt_off%20childs%20dropit-trigger%5C%22%20id%3D%5C%22nlt_2517_6%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_2%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22li%22%2C%22nlt_2517_6%22%5D%7D"
+        },
+        {
+            "ruleId": "element_id_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/nav[1]/ul[1]/li[2]/a[1]",
+                "aria": "/document[1]/banner[1]/navigation[1]/list[1]/listitem[2]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_2",
+            "message": "The <a> element has the id \"nid_2517_6\" that is already in use",
+            "messageArgs": [
+                "a",
+                "nid_2517_6"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 280,
+                "top": 5,
+                "height": 75,
+                "width": 154
+            },
+            "snippet": "<a class=\"nlk_off childs\" id=\"nid_2517_6\" href=\"/Rathaus-Politik/\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Ca%3E%20element%20has%20the%20id%20%5C%22nid_2517_6%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22nlk_off%20childs%5C%22%20id%3D%5C%22nid_2517_6%5C%22%20href%3D%5C%22%2FRathaus-Politik%2F%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_2%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22a%22%2C%22nid_2517_6%22%5D%7D"
+        },
+        {
+            "ruleId": "element_id_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/nav[1]/ul[1]/li[3]",
+                "aria": "/document[1]/banner[1]/navigation[1]/list[1]/listitem[3]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_2",
+            "message": "The <li> element has the id \"nlt_2517_7\" that is already in use",
+            "messageArgs": [
+                "li",
+                "nlt_2517_7"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 436,
+                "top": 5,
+                "height": 75,
+                "width": 125
+            },
+            "snippet": "<li class=\"npt_off childs dropit-trigger\" id=\"nlt_2517_7\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cli%3E%20element%20has%20the%20id%20%5C%22nlt_2517_7%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cli%20class%3D%5C%22npt_off%20childs%20dropit-trigger%5C%22%20id%3D%5C%22nlt_2517_7%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_2%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22li%22%2C%22nlt_2517_7%22%5D%7D"
+        },
+        {
+            "ruleId": "element_id_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/nav[1]/ul[1]/li[3]/a[1]",
+                "aria": "/document[1]/banner[1]/navigation[1]/list[1]/listitem[3]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_2",
+            "message": "The <a> element has the id \"nid_2517_7\" that is already in use",
+            "messageArgs": [
+                "a",
+                "nid_2517_7"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 436,
+                "top": 5,
+                "height": 75,
+                "width": 125
+            },
+            "snippet": "<a class=\"nlk_off childs\" id=\"nid_2517_7\" href=\"/Leben-in-Lage/\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Ca%3E%20element%20has%20the%20id%20%5C%22nid_2517_7%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22nlk_off%20childs%5C%22%20id%3D%5C%22nid_2517_7%5C%22%20href%3D%5C%22%2FLeben-in-Lage%2F%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_2%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22a%22%2C%22nid_2517_7%22%5D%7D"
+        },
+        {
+            "ruleId": "element_id_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/nav[1]/ul[1]/li[4]",
+                "aria": "/document[1]/banner[1]/navigation[1]/list[1]/listitem[4]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_2",
+            "message": "The <li> element has the id \"nlt_2517_8\" that is already in use",
+            "messageArgs": [
+                "li",
+                "nlt_2517_8"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 564,
+                "top": 5,
+                "height": 75,
+                "width": 172
+            },
+            "snippet": "<li class=\"npt_off npt_last childs dropit-trigger\" id=\"nlt_2517_8\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cli%3E%20element%20has%20the%20id%20%5C%22nlt_2517_8%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cli%20class%3D%5C%22npt_off%20npt_last%20childs%20dropit-trigger%5C%22%20id%3D%5C%22nlt_2517_8%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_2%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22li%22%2C%22nlt_2517_8%22%5D%7D"
+        },
+        {
+            "ruleId": "element_id_unique",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/header[1]/div[2]/nav[1]/ul[1]/li[4]/a[1]",
+                "aria": "/document[1]/banner[1]/navigation[1]/list[1]/listitem[4]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_2",
+            "message": "The <a> element has the id \"nid_2517_8\" that is already in use",
+            "messageArgs": [
+                "a",
+                "nid_2517_8"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 564,
+                "top": 5,
+                "height": 75,
+                "width": 172
+            },
+            "snippet": "<a class=\"nlk_off npt_last childs\" id=\"nid_2517_8\" href=\"/Bauen-Wirtschaft/\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Ca%3E%20element%20has%20the%20id%20%5C%22nid_2517_8%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22nlk_off%20npt_last%20childs%5C%22%20id%3D%5C%22nid_2517_8%5C%22%20href%3D%5C%22%2FBauen-Wirtschaft%2F%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_2%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22a%22%2C%22nid_2517_8%22%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[1]/ul[1]",
+                "aria": "/document[1]/list[2]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 0,
+                "top": 82,
+                "height": 224,
+                "width": 800
+            },
+            "snippet": "<ul class=\"titelbild slides clearfix\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Cul%20class%3D%5C%22titelbild%20slides%20clearfix%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[1]/ul[1]/li[2]/small[1]",
+                "aria": "/document[1]/list[2]/listitem[2]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_graphic_background",
+            "message": "Verify the contrast ratio of the text against the lightest and the darkest colors of the background meets the WCAG AA minimum requirements for text of size 12.8px and weight of 400",
+            "messageArgs": [
+                "1.00",
+                12.8,
+                400
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 1413,
+                "top": 287,
+                "height": 20,
+                "width": 131
+            },
+            "snippet": "<small class=\"mc2_ac\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Verify%20the%20contrast%20ratio%20of%20the%20text%20against%20the%20lightest%20and%20the%20darkest%20colors%20of%20the%20background%20meets%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2012.8px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Csmall%20class%3D%5C%22mc2_ac%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_graphic_background%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%221.00%22%2C12.8%2C400%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[1]/ul[1]/li[4]/small[1]",
+                "aria": "/document[1]/list[2]/listitem[4]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_graphic_background",
+            "message": "Verify the contrast ratio of the text against the lightest and the darkest colors of the background meets the WCAG AA minimum requirements for text of size 12.8px and weight of 400",
+            "messageArgs": [
+                "1.00",
+                12.8,
+                400
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 1443,
+                "top": 287,
+                "height": 20,
+                "width": 101
+            },
+            "snippet": "<small class=\"mc2_ac\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Verify%20the%20contrast%20ratio%20of%20the%20text%20against%20the%20lightest%20and%20the%20darkest%20colors%20of%20the%20background%20meets%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2012.8px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Csmall%20class%3D%5C%22mc2_ac%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_graphic_background%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%221.00%22%2C12.8%2C400%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[1]/a[1]",
+                "aria": "/document[1]/list[3]/listitem[1]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 350,
+                "top": 198,
+                "height": 10,
+                "width": 10
+            },
+            "snippet": "<a class=\"ikiss-active\" href=\"#\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22ikiss-active%5C%22%20href%3D%5C%22%23%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[2]/a[1]",
+                "aria": "/document[1]/list[3]/listitem[2]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 370,
+                "top": 198,
+                "height": 10,
+                "width": 10
+            },
+            "snippet": "<a href=\"#\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[3]/a[1]",
+                "aria": "/document[1]/list[3]/listitem[3]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 390,
+                "top": 198,
+                "height": 10,
+                "width": 10
+            },
+            "snippet": "<a href=\"#\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[4]/a[1]",
+                "aria": "/document[1]/list[3]/listitem[4]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 410,
+                "top": 198,
+                "height": 10,
+                "width": 10
+            },
+            "snippet": "<a href=\"#\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[1]/ol[1]/li[5]/a[1]",
+                "aria": "/document[1]/list[3]/listitem[5]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 430,
+                "top": 198,
+                "height": 10,
+                "width": 10
+            },
+            "snippet": "<a href=\"#\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[1]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Online-Termine' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Online-Termine"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 85,
+                "top": 347,
+                "height": 27,
+                "width": 119
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Online-Termine'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Online-Termine%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[1]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600",
+            "messageArgs": [
+                "3.05",
+                18,
+                600,
+                "#6991b9",
+                "#f4f6f8",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 85,
+                "top": 347,
+                "height": 27,
+                "width": 119
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.05%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20600%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.05%22%2C18%2C600%2C%22%236991b9%22%2C%22%23f4f6f8%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[2]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Mängelmelder' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Mängelmelder"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 345,
+                "top": 347,
+                "height": 27,
+                "width": 112
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'M%C3%A4ngelmelder'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22M%C3%A4ngelmelder%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[2]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600",
+            "messageArgs": [
+                "3.05",
+                18,
+                600,
+                "#6991b9",
+                "#f4f6f8",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 345,
+                "top": 347,
+                "height": 27,
+                "width": 112
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.05%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20600%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.05%22%2C18%2C600%2C%22%236991b9%22%2C%22%23f4f6f8%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[3]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Jobs & Ausbildung' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Jobs & Ausbildung"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 587,
+                "top": 347,
+                "height": 27,
+                "width": 140
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Jobs%20%26%20Ausbildung'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Jobs%20%26%20Ausbildung%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[3]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600",
+            "messageArgs": [
+                "3.05",
+                18,
+                600,
+                "#6991b9",
+                "#f4f6f8",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 587,
+                "top": 347,
+                "height": 27,
+                "width": 140
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.05%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20600%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.05%22%2C18%2C600%2C%22%236991b9%22%2C%22%23f4f6f8%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[4]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Serviceportal' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Serviceportal"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 93,
+                "top": 438,
+                "height": 27,
+                "width": 102
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Serviceportal'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Serviceportal%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[4]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600",
+            "messageArgs": [
+                "3.05",
+                18,
+                600,
+                "#6991b9",
+                "#f4f6f8",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 93,
+                "top": 438,
+                "height": 27,
+                "width": 102
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.05%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20600%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.05%22%2C18%2C600%2C%22%236991b9%22%2C%22%23f4f6f8%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[5]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600",
+            "messageArgs": [
+                "3.05",
+                18,
+                600,
+                "#6991b9",
+                "#f4f6f8",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 353,
+                "top": 424,
+                "height": 54,
+                "width": 95
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.05%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20600%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.05%22%2C18%2C600%2C%22%236991b9%22%2C%22%23f4f6f8%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]/div[2]/p[1]/br[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[5]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'entwicklung' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "entwicklung"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 446,
+                "top": 424,
+                "height": 27,
+                "width": 0
+            },
+            "snippet": "<br>",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'entwicklung'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22entwicklung%22%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[6]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Wochenmarkt' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Wochenmarkt"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 603,
+                "top": 438,
+                "height": 27,
+                "width": 109
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Wochenmarkt'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Wochenmarkt%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[1]/listitem[6]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 1,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.05 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 600",
+            "messageArgs": [
+                "3.05",
+                18,
+                600,
+                "#6991b9",
+                "#f4f6f8",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 603,
+                "top": 438,
+                "height": 27,
+                "width": 109
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.05%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20600%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.05%22%2C18%2C600%2C%22%236991b9%22%2C%22%23f4f6f8%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[2]/listitem[1]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Bauen & Wirtschaft' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Bauen & Wirtschaft"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 30,
+                "top": 902,
+                "height": 31,
+                "width": 340
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Bauen%20%26%20Wirtschaft'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Bauen%20%26%20Wirtschaft%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/div[2]/span[1]",
+                "aria": "/document[1]/main[1]/list[2]/listitem[1]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                18,
+                400,
+                "#ffffff",
+                "#6991b9",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 270,
+                "top": 1054,
+                "height": 37,
+                "width": 101
+            },
+            "snippet": "<span class=\"more\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Cspan%20class%3D%5C%22more%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C18%2C400%2C%22%23ffffff%22%2C%22%236991b9%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[2]/listitem[2]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Bürgerservice' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Bürgerservice"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 430,
+                "top": 902,
+                "height": 31,
+                "width": 340
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'B%C3%BCrgerservice'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22B%C3%BCrgerservice%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/div[2]/span[1]",
+                "aria": "/document[1]/main[1]/list[2]/listitem[2]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                18,
+                400,
+                "#ffffff",
+                "#6991b9",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 670,
+                "top": 1054,
+                "height": 37,
+                "width": 101
+            },
+            "snippet": "<span class=\"more\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Cspan%20class%3D%5C%22more%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C18%2C400%2C%22%23ffffff%22%2C%22%236991b9%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[2]/listitem[3]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Familie, Kinder & Jugend' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Familie, Kinder & Jugend"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 30,
+                "top": 1398,
+                "height": 31,
+                "width": 340
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Familie%2C%20Kinder%20%26%20Jugend'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Familie%2C%20Kinder%20%26%20Jugend%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/div[2]/span[1]",
+                "aria": "/document[1]/main[1]/list[2]/listitem[3]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                18,
+                400,
+                "#ffffff",
+                "#6991b9",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 270,
+                "top": 1550,
+                "height": 37,
+                "width": 101
+            },
+            "snippet": "<span class=\"more\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Cspan%20class%3D%5C%22more%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C18%2C400%2C%22%23ffffff%22%2C%22%236991b9%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[2]/listitem[4]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Stadtentwicklung' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Stadtentwicklung"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 430,
+                "top": 1398,
+                "height": 31,
+                "width": 340
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Stadtentwicklung'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Stadtentwicklung%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/div[2]/span[1]",
+                "aria": "/document[1]/main[1]/list[2]/listitem[4]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 3.31 with its background is less than the WCAG AA minimum requirements for text of size 18px and weight of 400",
+            "messageArgs": [
+                "3.31",
+                18,
+                400,
+                "#ffffff",
+                "#6991b9",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 670,
+                "top": 1550,
+                "height": 37,
+                "width": 101
+            },
+            "snippet": "<span class=\"more\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%203.31%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2018px%20and%20weight%20of%20400%22%2C%22snippet%22%3A%22%3Cspan%20class%3D%5C%22more%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%223.31%22%2C18%2C400%2C%22%23ffffff%22%2C%22%236991b9%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "style_focus_visible",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/p[1]/a[1]",
+                "aria": "/document[1]/main[1]/paragraph[1]/link[1]"
+            },
+            "ruleTime": 8,
+            "reasonId": "potential_focus_not_visible",
+            "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 75,
+                "top": 2703,
+                "height": 54,
+                "width": 251
+            },
+            "snippet": "<a class=\"csslink_intern\" href=\"/Rathaus-Politik/Dienstleistungen/Mitteilungen/Der-B%C3%BCrgermeister-informiert/\" target=\"_self\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22csslink_intern%5C%22%20href%3D%5C%22%2FRathaus-Politik%2FDienstleistungen%2FMitteilungen%2FDer-B%25C3%25BCrgermeister-informiert%2F%5C%22%20target%3D%5C%22_self%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "style_focus_visible",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/p[1]/a[1]",
+                "aria": "/document[1]/main[1]/paragraph[2]/link[1]"
+            },
+            "ruleTime": 8,
+            "reasonId": "potential_focus_not_visible",
+            "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 480,
+                "top": 2516,
+                "height": 54,
+                "width": 241
+            },
+            "snippet": "<a class=\"csslink_intern\" href=\"/Rathaus-Politik/Dienstleistungen/Mitteilungen/Kurzmitteilungen/\" target=\"_self\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22csslink_intern%5C%22%20href%3D%5C%22%2FRathaus-Politik%2FDienstleistungen%2FMitteilungen%2FKurzmitteilungen%2F%5C%22%20target%3D%5C%22_self%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[3]/listitem[1]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Veranstaltungen in Lage' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Veranstaltungen in Lage"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 15,
+                "top": 2838,
+                "height": 55,
+                "width": 770
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Veranstaltungen%20in%20Lage'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Veranstaltungen%20in%20Lage%22%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[3]/listitem[1]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 2.17 with its background is less than the WCAG AA minimum requirements for text of size 35.992px and weight of 600",
+            "messageArgs": [
+                "2.17",
+                35.992,
+                600,
+                "#ffffff",
+                "#e6a400",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 15,
+                "top": 2838,
+                "height": 55,
+                "width": 770
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%202.17%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2035.992px%20and%20weight%20of%20600%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%222.17%22%2C35.992%2C600%2C%22%23ffffff%22%2C%22%23e6a400%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[2]",
+                "aria": "/document[1]/main[1]/list[3]/listitem[1]/link[1]/paragraph[2]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 2.17 with its background is less than the WCAG AA minimum requirements for text of size 22px and weight of 300",
+            "messageArgs": [
+                "2.17",
+                22,
+                300,
+                "#ffffff",
+                "#e6a400",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 15,
+                "top": 2915,
+                "height": 102,
+                "width": 770
+            },
+            "snippet": "<p>",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%202.17%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2022px%20and%20weight%20of%20300%22%2C%22snippet%22%3A%22%3Cp%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%222.17%22%2C22%2C300%2C%22%23ffffff%22%2C%22%23e6a400%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_contrast_sufficient",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/div[2]/span[1]",
+                "aria": "/document[1]/main[1]/list[3]/listitem[1]/link[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "fail_contrast",
+            "message": "Text contrast of 2.17 with its background is less than the WCAG AA minimum requirements for text of size 17.996px and weight of 600",
+            "messageArgs": [
+                "2.17",
+                17.996,
+                600,
+                "#ffffff",
+                "#e6a400",
+                false,
+                false
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 245,
+                "top": 3044,
+                "height": 49,
+                "width": 310
+            },
+            "snippet": "<span class=\"more\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_contrast_sufficient.html#%7B%22message%22%3A%22Text%20contrast%20of%202.17%20with%20its%20background%20is%20less%20than%20the%20WCAG%20AA%20minimum%20requirements%20for%20text%20of%20size%2017.996px%20and%20weight%20of%20600%22%2C%22snippet%22%3A%22%3Cspan%20class%3D%5C%22more%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_contrast%22%2C%22ruleId%22%3A%22text_contrast_sufficient%22%2C%22msgArgs%22%3A%5B%222.17%22%2C17.996%2C600%2C%22%23ffffff%22%2C%22%23e6a400%22%2Cfalse%2Cfalse%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[4]/listitem[1]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Stadtpolitik' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Stadtpolitik"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 15,
+                "top": 3138,
+                "height": 55,
+                "width": 770
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Stadtpolitik'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Stadtpolitik%22%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[5]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[5]/listitem[1]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Sportangebote' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Sportangebote"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 30,
+                "top": 3619,
+                "height": 36,
+                "width": 355
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Sportangebote'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Sportangebote%22%5D%7D"
+        },
+        {
+            "ruleId": "text_quoted_correctly",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[5]/div[1]/ul[1]/li[1]/a[1]/div[2]/p[2]",
+                "aria": "/document[1]/main[1]/list[5]/listitem[1]/link[1]/paragraph[2]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Potential_1",
+            "message": "If the following text is a quotation, mark it as a <q> or <blockquote> element: \"Stadt des Sports\"",
+            "messageArgs": [
+                "\"Stadt des Sports\""
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 30,
+                "top": 3660,
+                "height": 80,
+                "width": 355
+            },
+            "snippet": "<p>",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_quoted_correctly.html#%7B%22message%22%3A%22If%20the%20following%20text%20is%20a%20quotation%2C%20mark%20it%20as%20a%20%3Cq%3E%20or%20%3Cblockquote%3E%20element%3A%20%5C%22Stadt%20des%20Sports%5C%22%22%2C%22snippet%22%3A%22%3Cp%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22text_quoted_correctly%22%2C%22msgArgs%22%3A%5B%22%5C%22Stadt%20des%20Sports%5C%22%22%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[5]/div[1]/ul[1]/li[2]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[5]/listitem[2]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Radfahren und Wandern' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Radfahren und Wandern"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 415,
+                "top": 3639,
+                "height": 36,
+                "width": 355
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Radfahren%20und%20Wandern'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Radfahren%20und%20Wandern%22%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[5]/div[1]/ul[1]/li[3]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[5]/listitem[3]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Musikschule' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Musikschule"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 30,
+                "top": 3821,
+                "height": 36,
+                "width": 355
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Musikschule'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Musikschule%22%5D%7D"
+        },
+        {
+            "ruleId": "text_block_heading",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/section[1]/div[1]/div[5]/div[1]/ul[1]/li[4]/a[1]/div[2]/p[1]",
+                "aria": "/document[1]/main[1]/list[5]/listitem[4]/link[1]/paragraph[1]"
+            },
+            "ruleTime": 0,
+            "reasonId": "potential_heading",
+            "message": "Confirm this text 'Stadtmarketing' is used as a heading and if so, modify to use a heading element or role",
+            "messageArgs": [
+                "Stadtmarketing"
+            ],
+            "apiArgs": [],
+            "bounds": {
+                "left": 415,
+                "top": 3821,
+                "height": 36,
+                "width": 355
+            },
+            "snippet": "<p class=\"title\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Stadtmarketing'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cp%20class%3D%5C%22title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Stadtmarketing%22%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[2]/ul[1]",
+                "aria": "/document[1]/list[4]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 0,
+                "top": 4002,
+                "height": 130,
+                "width": 800
+            },
+            "snippet": "<ul class=\"flex-row\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Cul%20class%3D%5C%22flex-row%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[3]/ul[1]",
+                "aria": "/document[1]/list[5]"
+            },
+            "ruleTime": 1,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 52,
+                "top": 4147,
+                "height": 39,
+                "width": 485
+            },
+            "snippet": "<ul>",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Cul%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[2]/div[2]/div[3]/div[1]/a[1]",
+                "aria": "/document[1]/link[2]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 689,
+                "top": 4153,
+                "height": 33,
+                "width": 46
+            },
+            "snippet": "<a target=\"_blank\" href=\"https://facebook.com/Stadt.Lage\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20target%3D%5C%22_blank%5C%22%20href%3D%5C%22https%3A%2F%2Ffacebook.com%2FStadt.Lage%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "aria_content_in_landmark",
+            "value": [
+                "VIOLATION",
+                "FAIL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[4]/a[1]",
+                "aria": "/document[1]/link[4]"
+            },
+            "ruleTime": 0,
+            "reasonId": "Fail_1",
+            "message": "Content is not within a landmark element",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 0,
+                "top": -9999,
+                "height": 21,
+                "width": 116
+            },
+            "snippet": "<a style=\"position: absolute; top: -9999px; opacity: 0.75; z-index: 1;\" href=\"javascript:;\" title=\"Abbrechen\" class=\"highslide-loading\">",
+            "category": "Accessibility",
+            "level": "violation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20style%3D%5C%22position%3A%20absolute%3B%20top%3A%20-9999px%3B%20opacity%3A%200.75%3B%20z-index%3A%201%3B%5C%22%20href%3D%5C%22javascript%3A%3B%5C%22%20title%3D%5C%22Abbrechen%5C%22%20class%3D%5C%22highslide-loading%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "element_tabbable_visible",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[4]/a[1]",
+                "aria": "/document[1]/link[4]"
+            },
+            "ruleTime": 3,
+            "reasonId": "potential_visible",
+            "message": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 0,
+                "top": -9999,
+                "height": 21,
+                "width": 116
+            },
+            "snippet": "<a style=\"position: absolute; top: -9999px; opacity: 0.75; z-index: 1;\" href=\"javascript:;\" title=\"Abbrechen\" class=\"highslide-loading\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/element_tabbable_visible.html#%7B%22message%22%3A%22Confirm%20the%20element%20should%20be%20tabbable%20and%20if%20so%2C%20it%20becomes%20visible%20when%20it%20has%20keyboard%20focus%22%2C%22snippet%22%3A%22%3Ca%20style%3D%5C%22position%3A%20absolute%3B%20top%3A%20-9999px%3B%20opacity%3A%200.75%3B%20z-index%3A%201%3B%5C%22%20href%3D%5C%22javascript%3A%3B%5C%22%20title%3D%5C%22Abbrechen%5C%22%20class%3D%5C%22highslide-loading%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_visible%22%2C%22ruleId%22%3A%22element_tabbable_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        },
+        {
+            "ruleId": "style_focus_visible",
+            "value": [
+                "VIOLATION",
+                "POTENTIAL"
+            ],
+            "path": {
+                "dom": "/html[1]/body[1]/div[4]/a[1]",
+                "aria": "/document[1]/link[4]"
+            },
+            "ruleTime": 7,
+            "reasonId": "potential_focus_not_visible",
+            "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+            "messageArgs": [],
+            "apiArgs": [],
+            "bounds": {
+                "left": 0,
+                "top": -9999,
+                "height": 21,
+                "width": 116
+            },
+            "snippet": "<a style=\"position: absolute; top: -9999px; opacity: 0.75; z-index: 1;\" href=\"javascript:;\" title=\"Abbrechen\" class=\"highslide-loading\">",
+            "category": "Accessibility",
+            "level": "potentialviolation",
+            "ignored": false,
+            "help": "https://able.ibm.com/rules/archives/2025.05.29/doc/en-US/style_focus_visible.html#%7B%22message%22%3A%22Check%20the%20keyboard%20focus%20indicator%20is%20visible%20when%20using%20CSS%20declaration%20for%20'border'%20or%20'outline'%22%2C%22snippet%22%3A%22%3Ca%20style%3D%5C%22position%3A%20absolute%3B%20top%3A%20-9999px%3B%20opacity%3A%200.75%3B%20z-index%3A%201%3B%5C%22%20href%3D%5C%22javascript%3A%3B%5C%22%20title%3D%5C%22Abbrechen%5C%22%20class%3D%5C%22highslide-loading%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_focus_not_visible%22%2C%22ruleId%22%3A%22style_focus_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+        }
+    ],
+    "numExecuted": 2657,
+    "ruleTime": 1705,
+    "nls": {
+        "aria_content_in_landmark": {
+            "0": "All content must reside within an element with a landmark role",
+            "Fail_1": "Content is not within a landmark element"
+        },
+        "style_color_misuse": {
+            "0": "Combine color and descriptive markup to convey information",
+            "Potential_1": "Verify color is not used as the only visual means of conveying information"
+        },
+        "text_quoted_correctly": {
+            "0": "Quotations should be marked with <q> or <blockquote> elements",
+            "Potential_1": "If the following text is a quotation, mark it as a <q> or <blockquote> element: {0}"
+        },
+        "element_tabbable_unobscured": {
+            "0": "When an element receives focus, it is not entirely covered by other content",
+            "potential_obscured": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus"
+        },
+        "element_tabbable_visible": {
+            "0": "A tabbable element should be visible on the screen when it has keyboard focus",
+            "potential_visible": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus"
+        },
+        "style_focus_visible": {
+            "0": "The keyboard focus indicator should be visible when default border or outline is modified by CSS",
+            "potential_focus_not_visible": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'"
+        },
+        "text_contrast_sufficient": {
+            "0": "The contrast ratio of text with its background must meet WCAG AA requirements",
+            "fail_contrast": "Text contrast of {0} with its background is less than the WCAG AA minimum requirements for text of size {1}px and weight of {2}",
+            "potential_graphic_background": "Verify the contrast ratio of the text against the lightest and the darkest colors of the background meets the WCAG AA minimum requirements for text of size {1}px and weight of {2}"
+        },
+        "element_id_unique": {
+            "0": "Element 'id' attribute values must be unique within a document",
+            "Fail_2": "The <{0}> element has the id \"{1}\" that is already in use"
+        },
+        "aria_banner_label_unique": {
+            "0": "Each element with \"banner\" role must have a unique label that describes its purpose",
+            "fail_label_not_unique": "Multiple elements with \"banner\" role do not have unique labels"
+        },
+        "text_block_heading": {
+            "0": "Heading text should use a heading element or role",
+            "potential_heading": "Confirm this text '{0}' is used as a heading and if so, modify to use a heading element or role"
+        }
+    },
+    "summary": {
+        "counts": {
+            "ignored": 0,
+            "elements": 83,
+            "elementsViolation": 40,
+            "elementsViolationReview": 62,
+            "violation": 41,
+            "potentialviolation": 26,
+            "recommendation": 16,
+            "potentialrecommendation": 6,
+            "manual": 8,
+            "pass": 2560
+        },
+        "scanTime": 2246,
+        "ruleArchive": "Latest Deployment (latest)",
+        "policies": [
+            "IBM_Accessibility"
+        ],
+        "reportLevels": [
+            "violation",
+            "potentialviolation"
+        ],
+        "startScan": 1749222566639,
+        "URL": "https://www.lage.de/"
+    },
+    "scanID": "e70b45c0-a8cd-4201-af8a-039782e8c8b5",
+    "toolID": "undefined-vundefined",
+    "label": "https://www.lage.de/"
+}
