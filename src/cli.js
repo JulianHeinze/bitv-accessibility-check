@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // -----------------------------------------------------------------------------
-// Kommandozeilen-Interface für den Accessibility-Crawler
+// Kommandozeilen-Interface für den Accessibility-Crawler (mit ClusterScanEngine)
 // -----------------------------------------------------------------------------
 
 const path   = require("path");
@@ -9,8 +9,7 @@ const yargs  = require("yargs");
 const { hideBin } = require("yargs/helpers");
 
 const { loadSitemap }    = require("./crawler/sitemapLoader");
-const { runAxeScan }     = require("./scanner/axeScan");
-const { runIbmScan }     = require("./scanner/ibmcheck");
+const scanner  = require("./scanner/clusterScanEngine");
 const { generateReport } = require("./report/reportGenerator");
 const { concurrency: defaultConcurrency } = require("./config/settings");
 
@@ -51,22 +50,16 @@ async function main() {
   const urls = argv.url ? [argv.url] : await loadSitemap(argv.sitemap);
   console.log(`🔍  Scanne ${urls.length} URLs (parallel: ${argv.concurrency})`);
 
-  /* ---------- Scans ausführen ---------- */
-  const results = [];
-  for (let i = 0; i < urls.length; i += argv.concurrency) {
-    const batch = urls.slice(i, i + argv.concurrency);
-    const batchResults = await Promise.all(batch.map(async (u) => {
-      const settled = await Promise.allSettled([runAxeScan(u), runIbmScan(u)]);
-      const [axeRes, ibmRes] = settled.map((r) =>
-        r.status === "fulfilled"
-          ? { ok: true, data: r.value }
-          : { ok: false, error: r.reason?.message || String(r.reason) }
-      );
-      return { url: u, results: { axe: axeRes, ibm: ibmRes } };
-    }));
-    results.push(...batchResults);
-  }
+  /* ---------- Scans ausführen (neu mit puppeteer-cluster) ---------- */
+  const engine = new scanner(argv.concurrency);
+  await engine.init();
 
+  await engine.scanAll(urls);
+  const results = engine.results;
+
+  await engine.shutdown();
+
+  /* ---------- Ergebnisse speichern ---------- */
   await fs.outputJson(argv.output, results, { spaces: 2 });
   console.log(`✔  Rohdaten gespeichert: ${argv.output}`);
 
@@ -76,7 +69,7 @@ async function main() {
     templatePath: path.resolve(argv.template),
     outputPath:   path.resolve(argv.report),
     mappingPath:  path.resolve(argv.mapping),
-    criteriaPath: path.resolve(argv.criteria),   // ← WCAG-Metadaten
+    criteriaPath: path.resolve(argv.criteria),
   });
   console.log(`✔  Report gespeichert: ${argv.report}`);
 }

@@ -27,6 +27,20 @@
     "chapterTitle": "Allgemeine Anforderungen"
   },
   {
+    "en_id": "BITV NRW §4",
+    "name_de": "Erklärung zur Barrierefreiheit",
+    "description_de": " Die öffentlichen Stellen des Landes stellen gemäß § 10b Absatz 1 des Behindertengleichstellungsgesetzes Nordrhein-Westfalen eine Erklärung über die Vereinbarkeit ihrer Website und mobilen Anwendung mit den technischen Anforderungen gemäß § 3 bereit.",
+    "chapter": "5",
+    "chapterTitle": "Allgemeine Anforderungen"
+  },
+  {
+    "en_id": "BITV NRW §5",
+    "name_de": "Erklärung zur Barrierefreiheit",
+    "description_de": "Das elektronische Kontaktformular (Feedback-Mechanismus) nach § 10b Absatz 2 Nummer 2 des Behindertengleichstellungsgesetzes Nordrhein-Westfalen ist in der Erklärung zur Barrierefreiheit nach § 4 zu beschreiben und zu verlinken.",
+    "chapter": "5",
+    "chapterTitle": "Allgemeine Anforderungen"
+  },
+  {
     "en_id": "6.1",
     "name_de": "Audiobandbreite für Sprache",
     "name": "Audio bandwidth for speech",

@@ -2,19 +2,45 @@
 <meta charset="utf-8" />
 <title>Accessibility Crawler</title>
 <style>
-  body{font-family:sans-serif;padding:1rem}
-  input[type=text]{width:320px}
-  #pc{width:100%;height:14px;background:#eee;border-radius:7px;overflow:hidden;display:none;margin-top:.5rem}
-  #pb{height:100%;width:0%;background:#3b82f6;transition:width .3s}
-  iframe{width:100%;height:80vh;border:1px solid #ccc;background:#fff;margin-top:1rem}
+  body {
+    font-family: sans-serif;
+    padding: 1rem;
+  }
+  input[type='text'] {
+    width: 320px;
+  }
+  #pc {
+    width: 100%;
+    height: 14px;
+    background: #eee;
+    border-radius: 7px;
+    overflow: hidden;
+    display: none;
+    margin-top: 0.5rem;
+  }
+  #pb {
+    height: 100%;
+    width: 0%;
+    background: #3b82f6;
+    transition: width 0.3s;
+  }
+  iframe {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-top: 1rem;
+  }
 </style>
 
-<h1>Accessibility Crawler</h1>
+<h1>Prüfung der Barrierefreiheit</h1>
 
 <p>
   URL:&nbsp;
-  <input id="u" type="text" placeholder="https://example.com">
-  <label><input id="chk" type="checkbox"> gesamte&nbsp;Sitemap&nbsp;prüfen</label>
+  <input id="u" type="text" placeholder="https://example.com" />
+  <label
+    ><input id="chk" type="checkbox" /> gesamte&nbsp;Sitemap&nbsp;prüfen</label
+  >
   <button id="go">Scan starten</button>
 </p>
 
@@ -23,45 +49,51 @@
 <iframe id="rep"></iframe>
 
 <script>
-const pc=document.getElementById("pc"),
-      pb=document.getElementById("pb"),
-      pm=document.getElementById("pm"),
-      rep=document.getElementById("rep"),
-      u =document.getElementById("u"),
-      chk=document.getElementById("chk");
+  const pc = document.getElementById('pc'),
+    pb = document.getElementById('pb'),
+    pm = document.getElementById('pm'),
+    rep = document.getElementById('rep'),
+    u = document.getElementById('u'),
+    chk = document.getElementById('chk');
 
-/* ---------- Progress ---------- */
-const es = new EventSource("/api/progress");
-es.onmessage = (e)=>{
-  const {percent,message}=JSON.parse(e.data);
-  if(percent>0){
-    pc.style.display="block";
-    pb.style.width = percent + "%";
-    pm.textContent = message + " (" + percent + "%)";
-  }
-  if(percent>=100) setTimeout(()=>pc.style.display="none",1500);
-};
-
-/* ---------- Scan ---------- */
-document.getElementById("go").onclick = async ()=>{
-  const url = u.value.trim();
-  if(!url){alert("URL fehlt");return;}
-
-  pb.style.width="0%"; pm.textContent=""; rep.src="";
-  try{
-    const resp = await fetch("/api/scan",{
-      method:"POST",
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({url, sitemap: chk.checked})
-    });
-    const data = await resp.json();
-    if(data.success){
-      rep.src = (data.index || "/reports/output/output.html") + "?ts=" + Date.now();
-    }else{
-      alert("Fehler: "+data.error);
+  /* ---------- Progress ---------- */
+  const es = new EventSource('/api/progress');
+  es.onmessage = (e) => {
+    const { percent, message } = JSON.parse(e.data);
+    if (percent > 0) {
+      pc.style.display = 'block';
+      pb.style.width = percent + '%';
+      pm.textContent = message + ' (' + percent + '%)';
     }
-  }catch(e){
-    alert("Netzwerk-Fehler: "+e.message);
-  }
-};
+    if (percent >= 100) setTimeout(() => (pc.style.display = 'none'), 1500);
+  };
+
+  /* ---------- Scan ---------- */
+  document.getElementById('go').onclick = async () => {
+    const url = u.value.trim();
+    if (!url) {
+      alert('URL fehlt');
+      return;
+    }
+
+    pb.style.width = '0%';
+    pm.textContent = '';
+    rep.src = '';
+    try {
+      const resp = await fetch('/api/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, sitemap: chk.checked }),
+      });
+      const data = await resp.json();
+      if (data.success) {
+        rep.src =
+          (data.index || '/reports/output/output.html') + '?ts=' + Date.now();
+      } else {
+        alert('Fehler: ' + data.error);
+      }
+    } catch (e) {
+      alert('Netzwerk-Fehler: ' + e.message);
+    }
+  };
 </script>
