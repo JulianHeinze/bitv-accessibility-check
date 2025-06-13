@@ -1,18 +1,14 @@
-// src/report/reportGenerator.js – WCAG-/EN-HTML-Report (axe + IBM)
-// -----------------------------------------------------------------------------
-
 const fs = require('fs-extra');
 const path = require('path');
 const Handlebars = require('handlebars');
 
-// 💡 Import aus mappingEngine
+// Importiert Funktionen zur Ergebnisverarbeitung und Mapping aus der mappingEngine
 const {
   normalizeRuleMap,
   extractRecords,
   buildWcagChecklist,
 } = require('../mapping/mappingEngine'); // Pfad ggf. anpassen
 
-/*──────────────────────── Handlebars-Helpers ─────────────────────*/
 Handlebars.registerHelper('statusClass', (s) =>
   s.startsWith('✓') ? 'pass' : s.startsWith('✗') ? 'fail' : 'manual'
 );
@@ -36,7 +32,6 @@ Handlebars.registerHelper('add', (...args) => {
   return args.reduce((sum, v) => sum + (v == null ? 0 : +v), 0);
 });
 
-/*──────────────────────── Page-Summary ─────────────────────────*/
 function buildPage(item, ruleMap, scMeta, orderSource) {
   const recs = extractRecords(item);
   return {
@@ -47,7 +42,6 @@ function buildPage(item, ruleMap, scMeta, orderSource) {
   };
 }
 
-/*──────────────────────── Main-Generator ───────────────────────*/
 async function generateReport(
   results,
   { templatePath, outputPath, mappingPath, criteriaPath }
@@ -59,6 +53,7 @@ async function generateReport(
     );
   }
 
+  // Lade das Template für den Bericht und die Mapping Datei
   const [tplSrc, mappingRaw] = await Promise.all([
     fs.readFile(templatePath, 'utf8'),
     fs.readJson(mappingPath),
@@ -91,6 +86,7 @@ async function generateReport(
     return buildPage(item, ruleMap, scMeta, mappingRaw);
   });
 
+  // Schreibe den generierten HTML-Bericht
   await fs.outputFile(
     outputPath,
     tpl({ pages, generated: new Date().toLocaleString('de-DE') }),

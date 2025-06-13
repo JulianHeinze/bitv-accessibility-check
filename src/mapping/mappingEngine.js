@@ -1,6 +1,5 @@
-// src/engine/mappingEngine.js
-
 function asScObj(raw) {
+  // Wandelt den Einträge aus der mapping.json in die Struktur für die Erfolgskriterien
   if (!raw) return null;
   if (typeof raw === 'string')
     return { id: raw, en: raw, wcag: raw, name: raw };
@@ -17,6 +16,7 @@ function asScObj(raw) {
   };
 }
 
+// Normalisiert die Mapping-Datei, sodass die Regel-IDs der Tools den zugehörigen WCAG-Erfolgskriterien zugewiesen wird
 function normalizeRuleMap(raw) {
   if (!Array.isArray(raw)) return raw;
   const m = {};
@@ -28,24 +28,30 @@ function normalizeRuleMap(raw) {
       (m[r] = m[r] || []).push(sc);
     });
   });
+
   return m;
 }
 
 function buildReverseMap(ruleMap) {
+  //Macht dasselbe wie normalizeRuleMap, nur in umgekehrter Richtung für die spätere Zuordnung der Verstöße zu den Erfolgskriterien
   const rev = {};
+
   for (const [ruleId, entry] of Object.entries(ruleMap)) {
     (Array.isArray(entry) ? entry : [entry]).forEach((raw) => {
       const sc = asScObj(raw);
       if (!sc?.id) return;
+
       const keys = new Set([sc.id, sc.wcag].filter(Boolean));
       keys.forEach((key) => {
         (rev[key] = rev[key] || { sc, rules: [] }).rules.push(ruleId);
       });
     });
   }
+
   return rev;
 }
 
+//Führt die Ergebnisse zusammen
 function buildWcagChecklist(
   records,
   ruleMap,
@@ -54,10 +60,11 @@ function buildWcagChecklist(
   { preserveOrder = true } = {}
 ) {
   const rev = buildReverseMap(ruleMap);
-  const outcomes = {};
-  const viol = {};
-  const potentials = {};
+  const outcomes = {}; //Einträge pro Kriterium
+  const viol = {}; //Verstöße
+  const potentials = {}; //Mögliche Verstöße
 
+  //Jeder Eintrag aus den Ergebnissen der Prüftools wird den jeweiligen Erfolgskriterien zugeordnet
   records.forEach((rec) => {
     const entry = ruleMap[rec.ruleId];
     if (!entry) return;
@@ -65,23 +72,26 @@ function buildWcagChecklist(
     (Array.isArray(entry) ? entry : [entry]).forEach((raw) => {
       const sc = asScObj(raw);
       if (!sc?.id) return;
-
       const o = (outcomes[sc.id] = outcomes[sc.id] || {
         pass: false,
         fail: false,
         inapp: false,
         potential: false,
       });
+
+      //Festlegung des Status des jeweiligen Eintrag
       if (rec.outcome === 'fail') o.fail = true;
       else if (rec.outcome === 'pass') o.pass = true;
       else if (rec.outcome === 'inapplicable') o.inapp = true;
       else if (rec.outcome === 'potential') o.potential = true;
 
+      //Zählen von Verstößen
       if (rec.outcome === 'fail') {
         const bucket = (viol[sc.id] = viol[sc.id] || { axe: [], ibm: [] });
         bucket[rec.src].push(rec);
       }
 
+      //Zählen von möglichen Verstößen
       if (rec.outcome === 'potential') {
         const bucket = (potentials[sc.id] = potentials[sc.id] || {
           axe: [],
@@ -106,6 +116,7 @@ function buildWcagChecklist(
 
     if (!preserveOrder) {
       srcList.sort((a, b) => {
+        //Sortierung der Kriterien
         const toNumericArray = (id) =>
           (id || '')
             .split('.')
@@ -123,6 +134,7 @@ function buildWcagChecklist(
     }
   }
 
+  //Festlegung des Status der Erfolgskriterien für den späteren Bericht
   return srcList.map((meta) => {
     const r = rev[meta.en_id] || rev[meta.wcag_id] || {};
     const o = outcomes[r.sc?.id] || {};
@@ -154,6 +166,7 @@ function buildWcagChecklist(
   });
 }
 
+//Normalisiert die Ergebnisse der Prüfung des IBM Accessibility Checkers zu einer einheitlichen Bezeichnung
 function outcomeFromValue(a) {
   if (!Array.isArray(a)) return 'unknown';
   if (a.includes('POTENTIAL')) return 'potential';
@@ -189,6 +202,7 @@ function parseAxe(item) {
   return out;
 }
 
+//Nimmt die Ergebnisse der Prüfung entgegen und macht eine Liste aus jedem Eintrag
 function parseIbm(item) {
   if (!item.results?.ibm?.ok) return [];
   return (item.results.ibm.data || []).map((r) => ({
@@ -201,6 +215,7 @@ function parseIbm(item) {
   }));
 }
 
+//Führt die beiden Daten aus den Prüfern zusammen
 function extractRecords(item) {
   return [...parseAxe(item), ...parseIbm(item)];
 }

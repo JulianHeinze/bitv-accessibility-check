@@ -7,6 +7,7 @@ const ClusterScanEngine = require('./scanner/scanner');
 const { generateReport } = require('./report/reportGenerator');
 const { findSitemap } = require('./crawler/sitemapLoader');
 
+// Hilfsfunktion zur Erzeugung lesbarer Dateinamen aus URLs
 const slug = (url) =>
   url
     .replace(/^https?:\/\//i, '')
@@ -58,7 +59,7 @@ app.post('/api/scan', async (req, res) => {
     if (!urls.length) urls = [start];
     emit(1, `${urls.length} Seite(n) werden gescannt …`);
 
-    const engine = new ClusterScanEngine(4);
+    const engine = new ClusterScanEngine(5);
     await engine.init();
     engine.progressCallback = emit;
 
@@ -75,22 +76,25 @@ app.post('/api/scan', async (req, res) => {
       emit(pct, `${done}/${total} Seiten gescannt`);
     });
 
-    await engine.scanAll(urls);
+    await engine.scanAll(urls); // Scan aller URLs starten
     const results = engine.results;
     await engine.shutdown();
 
     const indexArr = [];
 
     for (const result of results) {
+      // Für jede geprüfte Seite Prüfbericht erstellen
       const file = `/reports/output/${slug(result.url)}.html`;
 
       const rawPath = path.resolve(
+        // Speicherung der Rohdaten (JSON)
         __dirname,
         `../data/raw/${slug(result.url)}.json`
       );
       await fs.outputJson(rawPath, result, { spaces: 2 });
 
       await generateReport([result], {
+        // Generierung des Prüfbericht
         templatePath: path.join(
           __dirname,
           '../reports/templates/bitv-report-template.html'
@@ -103,6 +107,7 @@ app.post('/api/scan', async (req, res) => {
       indexArr.push({ url: result.url, file });
     }
 
+    // Generierung einer Index-HTML-Datei mit allen Links zu den Einzelberichten
     const idxFile = '/reports/output/index.html';
     const rows = indexArr
       .map(
@@ -124,10 +129,12 @@ app.post('/api/scan', async (req, res) => {
   }
 });
 
+//Anzeige der Bericht-Startseite
 app.get('/report', (req, res) =>
   res.sendFile(path.resolve(__dirname, '../reports/output/index.html'))
 );
 
+// Startet den Webserver auf Port 3000
 app.listen(3000, () =>
   console.log('GUI-Server läuft unter  http://localhost:3000')
 );
