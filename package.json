@@ -1,0 +1,28 @@
+{
+  "name": "bitv-accessibility-check",
+  "version": "1.0",
+  "description": "Ein modulares Node.js-Tool zur automatisierten Prüfung der digitalen Barrierefreiheit nach BITV 2.0 und EN 301 549 mithilfe bestehender Accessibility-Checker.",
+  "main": "src/cli.js",
+  "scripts": {
+    "scan": "node src/cli.js",
+    "gui": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "accessibility-checker": "^4.0.4",
+    "axe-core": "^4.10.3",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.0",
+    "handlebars": "^4.7.8",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^24.8.0",
+    "puppeteer-cluster": "^0.24.0",
+    "xml2js": "^0.6.2",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "chrome-launcher": "^1.2.0"
+  }
+}
