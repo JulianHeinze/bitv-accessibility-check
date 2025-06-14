@@ -1,16 +1,11 @@
 {
-  "name": "web-accessibility-crawler",
-  "version": "1.1.0",
-  "description": "Crawler und GUI für Web-Accessibility-Audits (axe + IBM)",
+  "name": "bitv-accessibility-check",
+  "version": "1.0",
+  "description": "Ein modulares Node.js-Tool zur automatisierten Prüfung der digitalen Barrierefreiheit nach BITV 2.0 und EN 301 549 mithilfe bestehender Accessibility-Checker.",
   "main": "src/cli.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
     "scan": "node src/cli.js",
-    "dev:gui": "node src/server.js",
-    "report": "open reports/output/output.html",
-    "postinstall": "npx puppeteer browsers install chrome"
+    "gui": "node src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -28,8 +23,6 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "chrome-launcher": "^1.2.0",
-    "lighthouse": "^12.6.0",
-    "pa11y": "^9.0.0"
+    "chrome-launcher": "^1.2.0"
   }
 }

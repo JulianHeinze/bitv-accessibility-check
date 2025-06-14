@@ -1,3 +1,4 @@
+//Import von externen Modulen
 const fs = require('fs-extra');
 const { Cluster } = require('puppeteer-cluster');
 const aChecker = require('accessibility-checker');

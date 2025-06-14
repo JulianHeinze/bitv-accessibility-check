@@ -1,8 +1,10 @@
+//Import von externen Modulen
 const express = require('express');
 const path = require('path');
 const fs = require('fs-extra');
 const { EventEmitter } = require('events');
 
+//Eigene Module
 const ClusterScanEngine = require('./scanner/scanner');
 const { generateReport } = require('./report/reportGenerator');
 const { findSitemap } = require('./crawler/sitemapLoader');
@@ -17,6 +19,8 @@ const slug = (url) =>
 
 const progressEmitter = new EventEmitter();
 let lastPct = 0;
+
+//Sendet den Fortschrrittsstatus des Scan Vorgangs, damit dies in der GUI angezeigt werden kann
 function emit(pct, msg) {
   const p = Math.min(100, Math.max(lastPct + 1, Math.round(pct)));
   lastPct = p;
@@ -52,6 +56,7 @@ app.post('/api/scan', async (req, res) => {
     const looksXml = start.toLowerCase().endsWith('.xml');
     let urls = [];
 
+    //Falls ausgewählt wurde dass die gesamte Webseite gescannt wurde oder direkt eine Sitemap angegeben wurde wird die Sitemap der Seite geladen
     if (useSitemap || looksXml) {
       urls = await findSitemap(start);
     }
@@ -59,7 +64,7 @@ app.post('/api/scan', async (req, res) => {
     if (!urls.length) urls = [start];
     emit(1, `${urls.length} Seite(n) werden gescannt …`);
 
-    const engine = new ClusterScanEngine(5);
+    const engine = new ClusterScanEngine(5); //Scan mit 5 Instanzen zur schnelleren Prüfung
     await engine.init();
     engine.progressCallback = emit;
 
@@ -67,7 +72,8 @@ app.post('/api/scan', async (req, res) => {
     const total = urls.length;
 
     engine.cluster.on('taskerror', (err, data, willRetry) => {
-      emit(100, `❌ Fehler bei ${data}: ${err.message}`);
+      //Abfangen von Fehlern
+      emit(100, `Fehler bei ${data}: ${err.message}`);
     });
 
     engine.cluster.on('taskfinish', () => {

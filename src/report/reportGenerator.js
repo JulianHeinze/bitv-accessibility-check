@@ -1,8 +1,9 @@
+//Import von externen Modulen
 const fs = require('fs-extra');
 const path = require('path');
 const Handlebars = require('handlebars');
 
-// Importiert Funktionen zur Ergebnisverarbeitung und Mapping aus der mappingEngine
+// Importiert Funktionen zur Ergebnisverarbeitung und Mapping aus mappingEngine
 const {
   normalizeRuleMap,
   extractRecords,
@@ -59,7 +60,7 @@ async function generateReport(
     fs.readJson(mappingPath),
   ]);
 
-  // Metadaten (EN/DE/Gliederung) laden
+  // Mapping json Datei laden
   let scMeta = {};
   try {
     const criteriaRaw = await fs.readJson(criteriaPath);
@@ -70,17 +71,18 @@ async function generateReport(
       if (k2) scMeta[k2] = c;
     });
   } catch (e) {
-    console.warn('⚠️  Konnte Kriterien nicht laden:', e.message);
+    console.warn('Konnte Kriterien nicht laden:', e.message);
   }
 
   const ruleMap = normalizeRuleMap(mappingRaw);
   const tpl = Handlebars.compile(tplSrc);
 
+  //Aufbereitung der Ergebnisse pro Seite
   const pages = results.map((item) => {
     const ok = item.results?.axe?.ok || item.results?.ibm?.ok;
     if (!ok) {
       const err =
-        item.results?.axe?.error || item.results?.ibm?.error || 'Scan-Error';
+        item.results?.axe?.error || item.results?.ibm?.error || 'Fehler';
       return { url: item.url, error: err };
     }
     return buildPage(item, ruleMap, scMeta, mappingRaw);

@@ -1,8 +1,10 @@
+//Import von externen Modulen
 const path = require('path');
 const fs = require('fs-extra');
 const yargs = require('yargs');
 const { hideBin } = require('yargs/helpers');
 
+//Eigene Module
 const { loadSitemap } = require('./crawler/sitemapLoader');
 const scanner = require('./scanner/clusterScanEngine');
 const { generateReport } = require('./report/reportGenerator');
@@ -69,11 +71,11 @@ async function main() {
     .help('h')
     .alias('h', 'help').argv;
 
-  /* ---------- URLs sammeln ---------- */
+  //Lädt entweder einzelne URL oder Liste aus der Sitemap
   const urls = argv.url ? [argv.url] : await loadSitemap(argv.sitemap);
-  console.log(`🔍  Scanne ${urls.length} URLs (parallel: ${argv.concurrency})`);
+  console.log(`Scanne ${urls.length} URLs (parallel: ${argv.concurrency})`);
 
-  /* ---------- Scans ausführen (neu mit puppeteer-cluster) ---------- */
+  //startet den scan
   const engine = new scanner(argv.concurrency);
   await engine.init();
 
@@ -82,12 +84,12 @@ async function main() {
 
   await engine.shutdown();
 
-  /* ---------- Ergebnisse speichern ---------- */
+  //speichert die ergebnisse der prüfung
   await fs.outputJson(argv.output, results, { spaces: 2 });
-  console.log(`✔  Rohdaten gespeichert: ${argv.output}`);
+  console.log(`Rohdaten gespeichert: ${argv.output}`);
 
-  /* ---------- Report generieren ---------- */
-  console.log('📄  Erzeuge HTML-Report …');
+  //erstellt den prüfbericht
+  console.log('Erzeuge HTML-Report …');
   await generateReport(results, {
     templatePath: path.resolve(argv.template),
     outputPath: path.resolve(argv.report),
@@ -98,6 +100,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error('🛑  Unerwarteter Fehler:', err);
+  console.error('Unerwarteter Fehler:', err);
   process.exit(1);
 });

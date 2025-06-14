@@ -1,4 +1,4 @@
-const xml2js = require('xml2js');
+const xml2js = require('xml2js'); //Import von externen Modul
 
 async function loadSitemap(sitemapUrl, depth = 0) {
   console.log('🕸  Lese Sitemap:', sitemapUrl);
@@ -14,7 +14,7 @@ async function loadSitemap(sitemapUrl, depth = 0) {
     const urls = parsed.urlset.url
       .map((u) => u.loc?.[0])
       .filter((u) => typeof u === 'string');
-    console.log(`✅  ${urls.length} URLs extrahiert.`);
+    console.log(`${urls.length} URLs extrahiert.`);
     return urls;
   }
 
@@ -40,6 +40,7 @@ async function loadSitemap(sitemapUrl, depth = 0) {
 }
 
 async function robotsSm(url) {
+  //Dient dazu die Sitemap aus der robots.txt zu extrahieren
   const host = url.replace(/(^https?:\/\/[^\/]+).*/, '$1');
   const robotsUrl = host + '/robots.txt';
   try {
@@ -54,6 +55,7 @@ async function robotsSm(url) {
   }
 }
 
+//Lädt die Sitemap
 async function findSitemap(startUrl) {
   const tryLoad = async (url) => {
     try {
@@ -63,14 +65,14 @@ async function findSitemap(startUrl) {
     }
   };
 
-  const urlsFromDirect = await tryLoad(startUrl);
+  const urlsFromDirect = await tryLoad(startUrl); //Falls URL direkt auf die Sitemap zeigt
   if (urlsFromDirect?.length) return urlsFromDirect;
 
-  const guessed = startUrl.replace(/\/$/, '') + '/sitemap.xml';
+  const guessed = startUrl.replace(/\/$/, '') + '/sitemap.xml'; //Fügt der URL den Anhang hinzu, um auf die Sitemap der Webseite zu kommen
   const urlsFromGuess = await tryLoad(guessed);
   if (urlsFromGuess?.length) return urlsFromGuess;
 
-  const robotsUrl = await robotsSm(startUrl);
+  const robotsUrl = await robotsSm(startUrl); //Durchsucht robots.txt nach der Sitemap
   if (robotsUrl) {
     const urlsFromRobots = await tryLoad(robotsUrl);
     if (urlsFromRobots?.length) return urlsFromRobots;
